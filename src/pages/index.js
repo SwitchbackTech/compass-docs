@@ -19,7 +19,7 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/docs/getting-started/install"
           >
-            Get Started - 15 min ⏱️
+            Get Started - 23 min ⏱️
           </Link>
         </div>
       </div>

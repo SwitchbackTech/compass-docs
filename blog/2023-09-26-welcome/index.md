@@ -19,4 +19,6 @@ People liked the concepts, but they said the UX needed to be a lot better.
 
 Then I built a calendar from scratch, which took 2 years of on-and-off work.
 
-Then I open-sourced it. I explain the reason for open-sourcing it in [this post on my personal site](https://www.tylerdane.com/post/why-i-open-sourced-my-calendar-app-after-2-years).
+I open-sourced everything in Sept 2023.
+
+I explain the reason for doing this in [this post on my personal site](https://www.tylerdane.com/post/why-i-open-sourced-my-calendar-app-after-2-years).

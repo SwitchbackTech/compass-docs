@@ -16,7 +16,12 @@ const FeatureList = [
   {
     title: "And more",
     Svg: require("@site/static/img/mongo.svg").default,
-    description: <>MongoDB, Jest, React Testing Libray</>,
+    description: (
+      <>
+        MongoDB, Google Calendar API, Google OAuth2 API, yarn workspaces, Jest,
+        React Testing Libray, Custom CLI
+      </>
+    ),
   },
 ];
 
