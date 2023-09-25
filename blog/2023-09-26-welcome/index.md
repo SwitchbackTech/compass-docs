@@ -1,5 +1,5 @@
 ---
-slug: background
+slug: about
 title: The Story Behind Compass
 authors: [tyler]
 tags: [context]
@@ -22,3 +22,5 @@ Then I built a calendar from scratch, which took 2 years of on-and-off work.
 I open-sourced everything in Sept 2023.
 
 I explain the reason for doing this in [this post on my personal site](https://www.tylerdane.com/post/why-i-open-sourced-my-calendar-app-after-2-years).
+
+Checkout the [Compass Blog](https://www.compasscalendar.com/blog) for more updates about the project.

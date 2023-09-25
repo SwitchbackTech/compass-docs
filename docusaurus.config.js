@@ -70,7 +70,7 @@ const config = {
             position: "left",
             label: "Getting Started",
           },
-          { to: "/blog", label: "Blog", position: "left" },
+          { to: "/blog/about", label: "About", position: "left" },
           {
             href: "https://github.com/SwitchbackTech/compass",
             label: "GitHub",
@@ -96,6 +96,10 @@ const config = {
               {
                 label: "Landing Page",
                 href: "https://www.compasscalendar.com",
+              },
+              {
+                label: "Blog",
+                href: "https://www.compasscalendar.com/blog",
               },
               {
                 label: "Production App",
