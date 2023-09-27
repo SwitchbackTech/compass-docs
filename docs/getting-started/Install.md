@@ -101,27 +101,21 @@ You can skip this if you don't want to add emails to ConvertKit.
 
 Pfew! That was a lot of setup. Now for the fun part.
 
-1. From the root `compass` directory, run:
-
-   ```bash
-   cd compass
-   ```
-
-2. Start the backend in dev mode
+1. From the root `compass` directory, start the backend in dev mode
 
    ```bash
     yarn dev:backend
    ```
 
-3. Open a separate terminal & start the web app in dev mode
+2. Open a separate terminal & start the web app in dev mode
 
    ```bash
    yarn dev:web
    ```
 
-4. Open the app in your browser: [http://localhost:9080](http://localhost:9080)
+3. Open the app in your browser: [http://localhost:9080](http://localhost:9080)
 
-5. Sign in with one of your authorized test Google accounts
+4. Sign in with one of your authorized test Google accounts
 
    If all goes well, Compass will:
 
@@ -131,6 +125,6 @@ Pfew! That was a lot of setup. Now for the fun part.
    - Import events from the user's `primary` Google Calendar into MongoDB
    - Setup a sync channel to receive Google Calendar webhook notifications for the duration specified in the `.env` (if enabled)
 
-6. Try making a change to the frontend and backend code to confirm each service hot reloads
+5. Try making a change to the frontend and backend code to confirm each service hot reloads
 
 Did I miss something? Please open an issue or PR to help me improve this guide.
