@@ -1,62 +1,86 @@
 # Example `.env` file
 
-`packages/backend/src/.env`:
+This file contains your custom and sensitive information. It's not tracked by Git (see `.gitignore`), so you can safely copy this file, add your credentials, and keep it local.
+
+## Development Example
+
+This version of the `.env` should contain your development-variables.
+
+`packages/backend/.env`:
 
 ```bash
 # Don't ever commit this file or share the contents.
 
 ####################################################
-# Backend                                          #
+# 1. Backend                                       #
 ####################################################
-
-CORS=http://localhost:3000,http://localhost:9080,https://app.yourdomain.com
+# Location of Node server
+#   Feel free to use http in development. However, GCal API requires
+#   https in order to sync calendars. So if you use http,
+#   you won't receive notifications upon Gcal event changes
+BASEURL=http://localhost:3000/api
+CORS=http://localhost:3000,http://localhost:9080,https://app.yourdomain.com,app://rse
 LOG_LEVEL=debug         # options: error, warn, info, http, verbose, debug, silly
 NODE_ENV=development    # options: development, production
 PORT=3000               # Node.js server
+# Unique tokens for auth
+#   These defaults are fine for development, but
+#   you should change them before making your app externally available
+TOKEN_COMPASS_SYNC=YOUR_UNIQUE_STRING
+TOKEN_GCAL_NOTIFICATION=ANOTHER_UNIQUE_STRING
 
 
 ####################################################
-# Database                                         #
+# 2. Database                                      #
 ####################################################
-# Optional: Defaults to local MongoDB if empty
-MONGO_URI=mongodb+srv://admin:as9BmasHiH@cluster0.m99yy.mongodb.net/dev_calendar?authSource=admin&retryWrites=true&w=majority&tls=true # optional
-
-
-####################################################
-# Email                                            #
-####################################################
-
-# Get these from your ConvertKit account
-# Does not capture email during signup if any empty EMAILER_ value
-EMAILER_API_KEY=gLIhams83HaxmMGaAH                      # optional
-EMAILER_API_SECRET=DDBDMDBaha-mah83n5Plsjzgask44vMM     # optional
-EMAILER_LIST_ID=1829388                                 # optional
-
-EMAIL_FROM=no-rely@yourdomain.com
-EMAIL_TO=you@yourdomain.com
+MONGO_URI=mongodb+srv://admin:as9BmasHiH@cluster0.m99yy.mongodb.net/dev_calendar?authSource=admin&retryWrites=true&w=majority&tls=true
 
 
 ####################################################
-# Google OAuth and API                             #
+# 3. Google OAuth and API                          #
 ####################################################
 
 # Get these from your Google Cloud Platform Project
 CLIENT_ID=93031928383029-imm173832181hk392938191020saasdfasd9d.apps.googleusercontent.com
 CLIENT_SECRET=OiCPx-91AtmasndfUnrzTasdfas
-
 # The watch length in minutes for a Google Calendar channel
 # Set to a low value (like 10) for development and higher value for production.
 # Make sure to refresh the production channel before it expires
 CHANNEL_EXPIRATION_MIN=10
 
-# Where to receive GCal webhook notifications
-# Skips Gcal syncing if empty
-BASEURL=https://staging.yourdomain.com                  # optional
-
-
 ####################################################
-# User Sessions                                    #
+# 4. User Sessions                                 #
 ####################################################
 SUPERTOKENS_URI=https://9d9asdhfah2892gsjs9881hvnzmmzh-us-west-1.aws.supertokens.io:3572
 SUPERTOKENS_KEY=h03h3mGMB9asC1jUPje9chajsdEd
+
+####################################################
+# 5. CLI (optional)                                #
+####################################################
+# Set these values to save time while using the CLI
+
+STAGING_DOMAIN=staging.yourdomain.com
+PROD_DOMAIN=app.yourdomain.com
+
+####################################################
+# 6. Email (optional)                              #
+####################################################
+
+# Get these from your ConvertKit account
+# Does not capture email during signup if any empty EMAILER_ value
+EMAILER_API_KEY=gLIhams83HaxmMGaAH
+EMAILER_API_SECRET=DDBDMDBaha-mah83n5Plsjzgask44vMM
+EMAILER_LIST_ID=1829388
+```
+
+## Production Example
+
+It's helpful to keep your dev and prod configuration separate. Save your production variables in `packages/backend/.prod.env`
+When using the CLI to build, it will copy it to the artifact directory and rename it to `.env`.
+
+`packages/backend/.prod.env`:
+
+```bash
+# same keys as above, but with production values
+
 ```

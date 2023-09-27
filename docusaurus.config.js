@@ -85,7 +85,7 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "Getting Started",
+                label: "🏁 Getting Started",
                 to: "/docs/category/getting-started",
               },
             ],
@@ -94,16 +94,20 @@ const config = {
             title: "More",
             items: [
               {
-                label: "Landing Page",
+                label: "🌐 Landing Page",
                 href: "https://www.compasscalendar.com",
               },
               {
-                label: "Blog",
+                label: "✍ Blog",
                 href: "https://www.compasscalendar.com/blog",
               },
               {
-                label: "Production App",
+                label: "🔵 Production App",
                 href: "https://app.compasscalendar.com",
+              },
+              {
+                label: "💬 Discord Community",
+                href: "https://discord.gg/H3DVMnKmUd",
               },
             ],
           },

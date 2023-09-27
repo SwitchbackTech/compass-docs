@@ -6,9 +6,9 @@ In order to allow users to sign-in and sync their Google Calendars, you'll need 
 
 Then you'll need to update a few configuration values:
 
-1. Update `BASEURL` in `packages/backend/src/.env` with your URI
-1. Add the URL to the `CORS` list in `.env`
-1. Add your domain to the list of allowed redirect URIs in your Google Cloud project
+1. Update `BASEURL` in `packages/backend/.prod.env` with your URI
+2. Add the URL to the `CORS` list in `.prod.env`
+3. Add your domain to the list of allowed redirect URIs in your Google Cloud project
 
 ## Web
 

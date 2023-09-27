@@ -101,7 +101,7 @@ You can skip this if you don't want to add emails to ConvertKit.
 
 Pfew! That was a lot of setup. Now for the fun part.
 
-1. Make sure you're in the root `compass` directory
+1. From the root `compass` directory, run:
 
    ```bash
    cd compass
@@ -123,10 +123,14 @@ Pfew! That was a lot of setup. Now for the fun part.
 
 5. Sign in with one of your authorized test Google accounts
 
-If all goes well, Compass will:
+   If all goes well, Compass will:
 
-- Create a new user in MongoDB
-- Start a user session with Supertokens
-- Add the user's email to ConvertKit (if enabled)
-- Import events from the user's `primary` Google Calendar into MongoDB
-- Setup a sync channel to receive Google Calendar webhook notifications for the duration specified in the `.env` (if enabled)
+   - Create a new user in MongoDB
+   - Start a user session with Supertokens
+   - Add the user's email to ConvertKit (if enabled)
+   - Import events from the user's `primary` Google Calendar into MongoDB
+   - Setup a sync channel to receive Google Calendar webhook notifications for the duration specified in the `.env` (if enabled)
+
+6. Try making a change to the frontend and backend code to confirm each service hot reloads
+
+Did I miss something? Please open an issue or PR to help me improve this guide.
