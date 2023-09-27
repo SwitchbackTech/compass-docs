@@ -2,6 +2,8 @@
 
 The source code for the Compass documentation site.
 
+To see the Compass source code, visit: [SwitchbackTech/compass](https://github.com/SwitchbackTech/compass)
+
 ## Installation
 
 ```bash
