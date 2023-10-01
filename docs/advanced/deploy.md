@@ -12,13 +12,13 @@ Then you'll need to update a few configuration values:
 
 ## Web
 
-The web app is compiled into static assets. It's up to you to decide how to serve them to your users.
+The [build CLI for web](../getting-started/Build) uses webpack to compile the frontend code into JS and static assets. It's up to you to decide how to serve these files to your users.
 
 I use a Nginx revere proxy to serve the static assets and handle SSL. This requires more manual server configuration compared to a PaaS like Vercel or Heroku.
 
 ## Backend (API)
 
-The backend consists of Node files that run on a server. Similar to the web app, it's up to you to decide how to run the Node server. You could turn it into a container and deploy it on a PaaS. Or you could run it in a VM on a cloud provider, which is what I do.
+After running [the build CLI for the backend](../getting-started/Build), you'll have a bunch of Node files. You can copy these to your server and run them directly like a normal Node app -- by running `node node/packages/backend/src/app.js`. Similar to the web app, it's up to you to decide how to configure your Node server. You could turn it into a container and deploy it on a PaaS. Or you could run it in a VM on a cloud provider and use a tool like `pm2` to manage it, which is what I do.
 
 ## Desktop
 

@@ -12,7 +12,7 @@ From Fall 2023 - Spring 2024, I'll be working with a client full-time as a Softw
 
 That means that my responsiveness to PRs and GitHub issues will likely be inconsistent.
 
-I'm open to bringing on co-maintainers, but only after we've worked collaborated on the project for some time.
+I'm open to handing this off another maintainer, but only after you've been consistent and have a long-term plan for the project that I'm aligned with.
 
 For that reason, I suggest viewing the Compass repository as a live boilerplate / template rather than a steady project. It provides the foundation for a calendar app, which you can use to reference or fork. It solves a lot of the headaches that come with launching a production-ready calendar app. That said, it still has many limitations and imperfections.
 

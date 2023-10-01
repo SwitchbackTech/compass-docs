@@ -41,8 +41,10 @@ MONGO_URI=mongodb+srv://admin:as9BmasHiH@cluster0.m99yy.mongodb.net/dev_calendar
 ####################################################
 
 # Get these from your Google Cloud Platform Project
-CLIENT_ID=93031928383029-imm173832181hk392938191020saasdfasd9d.apps.googleusercontent.com
-CLIENT_SECRET=OiCPx-91AtmasndfUnrzTasdfas
+CLIENT_ID=UNIQUE_ID_FROM_YOUR_GOOGLE_CLOUD_PROJECT
+# CLIENT_ID will look something like: 93031928383029-imm173832181hk392938191020saasdfasd9d.apps.googleusercontent.com
+CLIENT_SECRET=UNIQUE_SECRET_FROM_YOUR_GOOGLE_CLOUD_PROJECT
+# CLIENT_SECRET will look something like: OiCPx-91AtmasndfUnrzTasdfas
 # The watch length in minutes for a Google Calendar channel
 # Set to a low value (like 10) for development and higher value for production.
 # Make sure to refresh the production channel before it expires
@@ -51,8 +53,10 @@ CHANNEL_EXPIRATION_MIN=10
 ####################################################
 # 4. User Sessions                                 #
 ####################################################
-SUPERTOKENS_URI=https://9d9asdhfah2892gsjs9881hvnzmmzh-us-west-1.aws.supertokens.io:3572
-SUPERTOKENS_KEY=h03h3mGMB9asC1jUPje9chajsdEd
+SUPERTOKENS_URI=UNIQUE_URI_FROM_YOUR_SUPERTOKENS_ACCOUNT
+# SUPERTOKENS_URI will look something like: https://9d9asdhfah2892gsjs9881hvnzmmzh-us-west-1.aws.supertokens.io:3572
+SUPERTOKENS_KEY=UNIQUE_KEY_FROM_YOUR_SUPERTOKENS_ACCOUNT
+# SUPERTOKENS_KEY will look something like: h03h3mGMB9asC1jUPje9chajsdEd
 
 ####################################################
 # 5. CLI (optional)                                #
@@ -76,7 +80,8 @@ EMAILER_LIST_ID=1829388
 ## Production Example
 
 It's helpful to keep your dev and prod configuration separate. Save your production variables in `packages/backend/.prod.env`
-When using the CLI to build, it will copy it to the artifact directory and rename it to `.env`.
+
+When using the CLI to build, it will copy it to the artifact directory and rename it to `.env`. See [the CLI page](../../advanced/CLI) for more details about the CLI.
 
 `packages/backend/.prod.env`:
 

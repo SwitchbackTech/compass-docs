@@ -8,7 +8,19 @@ Compass is a monorepo that contains everything needed to get a calendar app up a
 
 The trade-off for having the code in one repo is that it takes a little longer to get everything to work together. SorryBoutThat 🤷‍♂️
 
-## Install dependencies
+By the end of this guide, you'll have a local development environment that has:
+
+- a running NodeJS API server, which'll hot-reload upon changes
+- a running React web app, which'll also hot-reload upon changes
+- a MongoDB instance with your calendar data
+- a CLI, which you can use to build
+- `package.json` scripts to run local tests
+
+You'll then be ready to play with the local web app and test any changes you'd like to make.
+
+Ready? Let's go!
+
+## Get the Code
 
 1. Clone the repo:
 
@@ -18,18 +30,12 @@ The trade-off for having the code in one repo is that it takes a little longer t
    cd compass
    ```
 
-2. Install dependencies
-
-   ```bash
-   yarn
-   ```
-
 ## Create `.env` file
 
 This is the file that contains your custom and sensitive information. We're creating it now so we can update the values as we set up our third-party accounts.
 
 1. Create new file in `compass/packages/backend` called `.env`
-2. Copy & paste the contents from the example `.env` in the Configuration section
+2. Copy & paste the contents from [the example `.env`](Configuration/env)
 
 ## Setup Accounts
 
@@ -99,23 +105,29 @@ You can skip this if you don't want to add emails to ConvertKit.
 
 ## Start in Dev Mode
 
-Pfew! That was a lot of setup. Now for the fun part.
+Pfew! That was a lot of setup. Now for the fun part. Run these commands from the root `compass` directory
 
-1. From the root `compass` directory, start the backend in dev mode
+1. Install dependencies
+
+   ```bash
+   yarn
+   ```
+
+2. Start the backend in dev mode
 
    ```bash
     yarn dev:backend
    ```
 
-2. Open a separate terminal & start the web app in dev mode
+3. Open a separate terminal & start the web app in dev mode
 
    ```bash
    yarn dev:web
    ```
 
-3. Open the app in your browser: [http://localhost:9080](http://localhost:9080)
+4. Open the app in your browser: [http://localhost:9080](http://localhost:9080)
 
-4. Sign in with one of your authorized test Google accounts
+5. Sign in with one of your authorized test Google accounts
 
    If all goes well, Compass will:
 
@@ -125,6 +137,6 @@ Pfew! That was a lot of setup. Now for the fun part.
    - Import events from the user's `primary` Google Calendar into MongoDB
    - Setup a sync channel to receive Google Calendar webhook notifications for the duration specified in the `.env` (if enabled)
 
-5. Try making a change to the frontend and backend code to confirm each service hot reloads
+6. Try making a change to the frontend and backend code to confirm each service hot reloads
 
 Did I miss something? Please open an issue or PR to help me improve this guide.
