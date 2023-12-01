@@ -22,7 +22,7 @@ If you're still interested in making the project better, thank you in advance!! 
 
 ### 🐞 You found a bug
 
-- If the bug is a security vulnerability, please email me directly at: tyler@switchback.tech.
+- If the bug is a security vulnerability, please [report it here](https://github.com/SwitchbackTech/compass/security).
 - Ensure the bug was not already reported by searching under the issues
 - If it's a new bug, open a new issue, including as much relevant information as possible.
 
