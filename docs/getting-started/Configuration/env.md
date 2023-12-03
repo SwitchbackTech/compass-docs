@@ -33,8 +33,7 @@ TOKEN_GCAL_NOTIFICATION=ANOTHER_UNIQUE_STRING
 ####################################################
 # 2. Database                                      #
 ####################################################
-MONGO_URI=mongodb+srv://admin:as9BmasHiH@cluster0.m99yy.mongodb.net/dev_calendar?authSource=admin&retryWrites=true&w=majority&tls=true
-
+MONGO_URI=mongodb+srv://admin:YOUR_ADMIN_PW@cluster0.m99yy.mongodb.net/dev_calendar?authSource=admin&retryWrites=true&w=majority&tls=true
 
 ####################################################
 # 3. Google OAuth and API                          #
@@ -72,9 +71,9 @@ PROD_DOMAIN=app.yourdomain.com
 
 # Get these from your ConvertKit account
 # Does not capture email during signup if any empty EMAILER_ value
-EMAILER_API_KEY=gLIhams83HaxmMGaAH
-EMAILER_API_SECRET=DDBDMDBaha-mah83n5Plsjzgask44vMM
-EMAILER_LIST_ID=1829388
+EMAILER_API_KEY=UNIQUE_KEY_FROM_YOUR_CONVERTKIT_ACCOUNT
+EMAILER_API_SECRET=UNIQUE_SECRET_FROM_YOUR_CONVERTKIT_ACCOUNT
+EMAILER_LIST_ID=YOUR_LIST_ID # get this from the URL
 ```
 
 ## Production Example
