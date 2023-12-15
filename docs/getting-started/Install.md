@@ -143,7 +143,7 @@ Pfew! That was a lot of setup. Now for the fun part. Run these commands from the
    - Import events from the user's `primary` Google Calendar into MongoDB
    - Setup a sync channel to receive Google Calendar webhook notifications for the duration specified in the `.env` (if enabled)
 
-   Possible errors you'll encounter please visit this [documentantion]()
+   Possible bug you'll encounter during signing in, visit this [documentantion](https://github.com/AzharAhmed-bot/compass-docs/blob/Installation-doc-Update/docs/getting-started/DebugSignInDoc.md)
 
 6. Try making a change to the frontend and backend code to confirm each service hot reloads
 
