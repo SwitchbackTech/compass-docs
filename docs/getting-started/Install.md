@@ -64,6 +64,7 @@ To use Google OAuth, create a Google Cloud Platform project and setup an OAuth s
    - Copy the Client ID and Secret to your `.env` file
 
 ### MongoDB
+Before using Mongo db, ensure you [install](https://www.mongodb.com/docs/manual/installation/) it in your local machine.
 
 User data is stored across a few MongoDB collections. These collections are created automatically at runtime, so you just have to create an account to get started.
 
@@ -71,7 +72,12 @@ Compass connects to MongoDB through the NodeJS driver.
 
 1. Create a free [MongoDB Atlas account](https://www.mongodb.com/cloud/atlas/register)
 2. Get your Node.js driver [connection string](https://www.mongodb.com/docs/drivers/node/current/fundamentals/connection/connect/#std-label-node-connect-to-mongodb)
-   - Update the string with your password and save it to your `.env` file
+
+3. When you get your connection string,scroll down to the Network access in the left sidebar and add your current ip address. Make sure you always include your ip address when you switch networks because your device ip v4 address changes from one ISP to another and from time to time.
+
+      - Update the connection string in your `.env` file
+
+   
 
 ### Supertokens
 
@@ -136,6 +142,8 @@ Pfew! That was a lot of setup. Now for the fun part. Run these commands from the
    - Add the user's email to ConvertKit (if enabled)
    - Import events from the user's `primary` Google Calendar into MongoDB
    - Setup a sync channel to receive Google Calendar webhook notifications for the duration specified in the `.env` (if enabled)
+
+   Possible errors you'll encounter please visit this [documentantion]()
 
 6. Try making a change to the frontend and backend code to confirm each service hot reloads
 
