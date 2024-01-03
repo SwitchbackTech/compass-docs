@@ -73,7 +73,12 @@ const config = {
           { to: "/blog/about", label: "About", position: "left" },
           {
             href: "https://github.com/SwitchbackTech/compass",
-            label: "GitHub",
+            label: "Compass Repo",
+            position: "right",
+          },
+          {
+            href: "https://github.com/SwitchbackTech/compass-docs",
+            label: "This Doc Site's Repo",
             position: "right",
           },
         ],
