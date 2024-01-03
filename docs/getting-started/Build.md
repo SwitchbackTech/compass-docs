@@ -8,7 +8,9 @@ The CLI guides you through this process.
 
 ```bash
 # run from root directory
+
 yarn cli build
+
 # follow the prompts
 ```
 

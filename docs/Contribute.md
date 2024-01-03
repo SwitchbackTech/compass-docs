@@ -22,8 +22,8 @@ Long-term, I want to turn Compass into a bootstrapped business that operates for
 
 What I can't currently offer to contributors:
 
-- 💰 Compensation
-- Immediate responses
+- ❌ Compensation
+- ❌ Immediate responses
 
 What I guarantee:
 
