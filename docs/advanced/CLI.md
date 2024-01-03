@@ -8,21 +8,21 @@ It exists within the `scripts` package and is run from the root directory.
 To see all the supported commands, run `yarn cli -h` from the root directory
 
 ```bash
-# example output from 9.2023. Options may have changed.
+$ yarn cli -h
 
-yarn cli -h
-
-Usage: cli [options]
-
+Usage: cli [options] [command]
 
 Options:
-  -b, --build                            builds packages
-  -d, --delete                           deletes users data from compass database
-  -e --environment <environment>         specify environment (`Category_VM` value)
-  -f, --force                            forces operation, no cautionary prompts
-  -p, --packages [pkgs...]               specifies which packages to build
-  -u, --user <id>                        specifies which user to run script for
-  -h, --help                             display help for command
+  -e, --environment [staging|production]  specify environment
+  -f, --force                             forces operation, no cautionary prompts
+  -u, --user [id|email]                   specifies which user to run script for
+  -h, --help                              display help for command
+
+Commands:
+  build [options] [nodePckgs|web]         build compass package(s)
+  delete                                  deletes users data from compass database
+  help [command]                          display help for command
+Waiting for the debugger to disconnect...
 ```
 
 ## Cleaning User Data
@@ -38,36 +38,31 @@ To delete a user's Compass data:
 1. Run command
 
    ```bash
-   yarn cli -d -u <email>
+   yarn cli delete -u <email>
    ```
 
-2. Wait for MongoDB connection to finish
+2. Confirm using your terminal prompt (press Enter)
 
-   ```bash
-   # wait until you see this inline in your terminal:
-   app:mongo.service: Connected to database: 'dev_calendar'
-   ```
-
-3. Confirm using your terminal prompt (press Enter)
-
-4. Log out of Compass (press `z` and then click Logout button)
+3. Log out of Compass (press `z` and then click Logout button)
 
    - This forces the browser to clear the user's session cookie
 
-5. Sign up again to start fresh
+4. Sign up again to start fresh
 
 ### Example Output
 
-```bash
-yarn cli -d -u testuser1@gmail.com
+```text
+yarn cli delete -u testuser1@gmail.com
 
-23-09-25 12:16:18 [debug] app:mongo.service: Connected to database: 'dev
 ? This will delete all Compass data for all users matching: >> testuser1@gmail.com <<
 Continue? (Y/n) Yes
+
 Okie dokie, deleting testuser1@gmail.com's Compass data ...
+
 Deleting Compass data for users matching: testuser1@gmail.com
 23-09-25 12:16:21 [debug] app:sync.service: Stopping all gcal event watches for user: 83n14f39a4fe422d472d6b99
 23-09-25 12:16:24 [info] app:user.service: Deleting all data for user: 83n14f39a4fe422d472d6b99
+
 Deleted: [
   {
     "priorities": 4,

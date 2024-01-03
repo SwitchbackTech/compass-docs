@@ -6,17 +6,34 @@ sidebar_position: 3
 
 ## Setting Expectations
 
-I've been both a thankless contributor and an overwhelmed maintainer. I don't want that to happen to you here, so I'm sharing more context about me and the project. I hope this helps you decide on your level of investment.
+I'm sharing more context about me and the project to help you decide on your level of investment in this project.
 
-From Fall 2023 - Spring 2024, I'll be working with a client full-time as a Software Engineer. My off-hours creative work will be spent making high-quality YouTube videos. I may carve out a few hours here and there to work on Compass, but I don't expect to make much progress. I don't know what I'll do after the contract ends.
+For better or worse, I refuse to stop working on Compass. However, I'm currently working full-time as a Software Engineer for another company, which means it might take me a few days to get back to you.
 
-That means that my responsiveness to PRs and GitHub issues will likely be inconsistent.
+### Timeline
 
-I'm open to handing this off another maintainer, but only after you've been consistent and have a long-term plan for the project that I'm aligned with.
+In the short-term, I'm focused on making Compass more stable and easier to use.
 
-For that reason, I suggest viewing the Compass repository as a live boilerplate / template rather than a steady project. It provides the foundation for a calendar app, which you can use to reference or fork. It solves a lot of the headaches that come with launching a production-ready calendar app. That said, it still has many limitations and imperfections.
+In the medium-term, I'll add some low-effort features that'll make Compass stand out from the competition.
 
-If you're still interested in making the project better, thank you in advance!! Although I can't promise consistency, I'll always appreciate and credit your contributions.
+Long-term, I want to turn Compass into a bootstrapped business that operates for decades.
+
+### What's in it for you
+
+What I can't currently offer to contributors:
+
+- 💰 Compensation
+- Immediate responses
+
+What I guarantee:
+
+- 🏆 Recognition (GitHub, changelogs, etc)
+
+What I'm open to offering:
+
+- 📝 Recommendation letter / reference for your next job (upon request)
+
+If you're still interested in making the project better, thank you in advance!!
 
 ## Next Steps
 
@@ -37,4 +54,4 @@ If you'd like to contribute a larger feature or fix, please create a GitHub issu
 
 ### 💅 You fixed whitespace, formatted code, or made a purely cosmetic patch
 
-Changes that are cosmetic in nature and do not add anything substantial to the stability, functionality, or testability will generally not be accepted
+Changes that are cosmetic in nature and do not add anything substantial to the stability, functionality, or testability will generally not be accepted.

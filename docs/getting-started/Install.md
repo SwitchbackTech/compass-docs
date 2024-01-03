@@ -15,6 +15,7 @@ By the end of this guide, you'll have a local development environment that has:
 - a MongoDB instance with your calendar data
 - a CLI, which you can use to build
 - `package.json` scripts to run local tests
+- immaculate spunk
 
 You'll then be ready to play with the local web app and test any changes you'd like to make.
 
@@ -64,6 +65,7 @@ To use Google OAuth, create a Google Cloud Platform project and setup an OAuth s
    - Copy the Client ID and Secret to your `.env` file
 
 ### MongoDB
+
 Before using Mongo db, ensure you [install](https://www.mongodb.com/docs/manual/installation/) it in your local machine.
 
 User data is stored across a few MongoDB collections. These collections are created automatically at runtime, so you just have to create an account to get started.
@@ -75,9 +77,7 @@ Compass connects to MongoDB through the NodeJS driver.
 
 3. When you get your connection string,scroll down to the Network access in the left sidebar and add your current ip address. Make sure you always include your ip address when you switch networks because your device ip v4 address changes from one ISP to another and from time to time.
 
-      - Update the connection string in your `.env` file
-
-   
+   - Update the connection string in your `.env` file
 
 ### Supertokens
 
@@ -122,7 +122,7 @@ Pfew! That was a lot of setup. Now for the fun part. Run these commands from the
 2. Start the backend in dev mode
 
    ```bash
-    yarn dev:backend
+   yarn dev:backend
    ```
 
 3. Open a separate terminal & start the web app in dev mode
@@ -143,7 +143,7 @@ Pfew! That was a lot of setup. Now for the fun part. Run these commands from the
    - Import events from the user's `primary` Google Calendar into MongoDB
    - Setup a sync channel to receive Google Calendar webhook notifications for the duration specified in the `.env` (if enabled)
 
-   Possible bug you'll encounter during signing in, visit this [documentantion](https://github.com/AzharAhmed-bot/compass-docs/blob/Installation-doc-Update/docs/getting-started/DebugSignInDoc.md)
+   To debug bug you'll encounter during signing in, visit the [troubleshooting page](/getting-started/Troubleshooting.md)
 
 6. Try making a change to the frontend and backend code to confirm each service hot reloads
 

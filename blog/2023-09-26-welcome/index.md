@@ -5,7 +5,7 @@ authors: [tyler]
 tags: [context]
 ---
 
-After building apps for other companies, I decided to build my own.
+After building apps for other companies, I decided to build my own in 2021.
 
 I spent two months researching and testing ideas.
 
@@ -19,8 +19,14 @@ People liked the concepts, but they said the UX needed to be a lot better.
 
 Then I built a calendar from scratch, which took 2 years of on-and-off work.
 
-I open-sourced everything in Sept 2023.
+I ran out of $ and time in Sept 2023, so I got a job and open-sourced everything.
 
-I explain the reason for doing this in [this post on my personal site](https://www.tylerdane.com/post/why-i-open-sourced-my-calendar-app-after-2-years).
+- More details about this decision in [this post on my personal site](https://www.tylerdane.com/post/why-i-open-sourced-my-calendar-app-after-2-years).
 
-Checkout the [Compass Blog](https://www.compasscalendar.com/blog) for more updates about the project.
+I tried walking away from the project from Oct-Dec 2023.
+
+In Jan 2024, I recommitted myself to the project.
+
+---
+
+Checkout the [Compass Blog](https://www.compasscalendar.com/blog) for more updates.
