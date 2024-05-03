@@ -23,10 +23,6 @@ I ran out of $ and time in Sept 2023, so I got a job and open-sourced everything
 
 - More details about this decision in [this post on my personal site](https://www.tylerdane.com/post/why-i-open-sourced-my-calendar-app-after-2-years).
 
-I tried walking away from the project from Oct-Dec 2023.
-
-In Jan 2024, I recommitted myself to the project.
-
 ---
 
 Checkout the [Compass Blog](https://www.compasscalendar.com/blog) for more updates.
