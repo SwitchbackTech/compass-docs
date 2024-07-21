@@ -12,11 +12,11 @@ For better or worse, I refuse to stop working on Compass. However, I'm currently
 
 ### Timeline
 
-In the short-term, I'm focused on making Compass more stable and easier to use.
+In the short-term, we're focused on making Compass more stable and easier to use.
 
-In the medium-term, I'll add some low-effort features that'll make Compass stand out from the competition.
+In the medium-term, we'll add some low-effort features that'll make Compass stand out from the competition.
 
-Long-term, I want to turn Compass into a bootstrapped business that operates for decades.
+Long-term, we'll turn Compass into a bootstrapped business that operates for decades.
 
 ### What's in it for you
 
@@ -32,21 +32,30 @@ What I guarantee:
 What I'm open to offering:
 
 - 📝 Recommendation letter / reference for your next job (upon request)
+- 📈 Preference for future opportunities @ Switchback
 
 If you're still interested in making the project better, thank you in advance!!
 
 ## Next Steps
 
-### 🐞 You found a bug
+### 🏁 You're ready to get started
+
+- Go to the project dashboard: https://github.com/orgs/SwitchbackTech/projects/2
+- Find an issue in the 'Todo' column that interests you
+- Ask any clarifying questions in the issue thread
+- Leave a comment saying you're working on this issue to avoid duplicate work
+- Fork the repository
+- Create a new branch with a descriptive name
+- Make your changes
+- Push your branch to your fork
+- Create a pull request
+- Wait for feedback, picking up another issue in the meantime if you'd like
+
+### 🐞 You found an undocumented bug
 
 - If the bug is a security vulnerability, please [report it here](https://github.com/SwitchbackTech/compass/security).
 - Ensure the bug was not already reported by searching under the issues
 - If it's a new bug, open a new issue, including as much relevant information as possible.
-
-### 🛠️ You wrote a patch that fixes a bug
-
-- Open a new GitHub pull request with the patch.
-- Ensure the PR description clearly describes the problem and solution. Include the relevant issue number if applicable.
 
 ### ☝️ You want to add a new feature or change an existing one
 
