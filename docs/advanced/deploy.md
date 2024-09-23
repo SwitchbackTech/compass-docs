@@ -18,7 +18,9 @@ I use a Nginx revere proxy to serve the static assets and handle SSL. This requi
 
 ## Backend (API)
 
-After running [the build CLI for the backend](../getting-started/Build), you'll have a bunch of Node files. You can copy these to your server and run them directly like a normal Node app -- by running `node node/packages/backend/src/app.js`. Similar to the web app, it's up to you to decide how to configure your Node server. You could turn it into a container and deploy it on a PaaS. Or you could run it in a VM on a cloud provider and use a tool like `pm2` to manage it, which is what I do.
+After running [the build CLI for the backend](../getting-started/Build), you'll have a bunch of Node files. You can copy these to your server and run them directly like a normal Node app -- by running `node node/packages/backend/src/app.js`. Similar to the web app, it's up to you to decide how to configure your Node server. You could turn it into a container and deploy it on a PaaS. Or you could run it in a VM on a cloud provider and use a tool like `pm2` to manage it. Depending on the PaaS you choose, you might need to configure the webserver to support websocket connections over a reverse proxy.
+
+Getting the backend production-ready can be a headache. LMK if you'd like someone (me, Tyler) to set it up for you.
 
 ## Desktop
 
