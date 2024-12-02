@@ -8,22 +8,9 @@ sidebar_position: 3
 
 I'm sharing more context about me and the project to help you decide on your level of investment in this project.
 
-For better or worse, I refuse to stop working on Compass. However, I'm currently working full-time as a Software Engineer for another company, which means it might take me a few days to get back to you.
-
-### Timeline
-
-In the short-term, we're focused on making Compass more stable and easier to use.
-
-In the medium-term, we'll add some low-effort features that'll make Compass stand out from the competition.
-
 Long-term, we'll turn Compass into a bootstrapped business that operates for decades.
 
 ### What's in it for you
-
-What I can't currently offer to contributors:
-
-- ❌ Compensation
-- ❌ Immediate responses
 
 What I guarantee:
 
@@ -31,8 +18,9 @@ What I guarantee:
 
 What I'm open to offering:
 
-- 📝 Recommendation letter / reference for your next job (upon request)
+- 📝 Reference for your next job (upon request)
 - 📈 Preference for future opportunities @ Switchback
+- 📈 Compensation
 
 If you're still interested in making the project better, thank you in advance!!
 
@@ -40,7 +28,7 @@ If you're still interested in making the project better, thank you in advance!!
 
 ### 🏁 You're ready to get started
 
-- Go to the project dashboard: https://github.com/orgs/SwitchbackTech/projects/2
+- Go to the [project dashboard](https://github.com/orgs/SwitchbackTech/projects/4)
 - Find an issue in the 'Todo' column that interests you
 - Ask any clarifying questions in the issue thread
 - Leave a comment saying you're working on this issue to avoid duplicate work
