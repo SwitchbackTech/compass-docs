@@ -15,14 +15,14 @@ I built a Figma prototype and showed it to more potential users. They liked it.
 
 Then I built a working prototype by extending an open-source calendar (Full Calendar) and added a few conceptual features.
 
-People liked the concepts, but they said the UX needed to be a lot better.
+People liked the concepts, but they said the UX sucked.
 
-Then I built a calendar from scratch, which took 2 years of on-and-off work.
+So I started building a calendar from scratch in 2022.
 
-I ran out of $ and time in Sept 2023, so I got a job and open-sourced everything.
+I ran out of money in Sept 2023, got a job, and [open-sourced everything](https://www.tylerdane.com/post/why-i-open-sourced-my-calendar-app-after-2-years).
 
-- More details about this decision in [this post on my personal site](https://www.tylerdane.com/post/why-i-open-sourced-my-calendar-app-after-2-years).
+I worked on a few side projects in 2024 in attempt to make lots of $ before concluding: having purpose is better than having a billion dollars.
 
----
+I starting working on Compass again in 2024.
 
-Checkout the [Compass Blog](https://www.compasscalendar.com/blog) for more updates.
+I will keep improving Compass until it reaches its potential as a profitable business that changes the way people manage their time.
