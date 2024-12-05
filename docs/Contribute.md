@@ -31,7 +31,7 @@ What I'm open to offering:
 ### 🏁 You're ready to pick up a new task
 
 1. Go to [the backlog](https://github.com/orgs/SwitchbackTech/projects/4)
-1. Find an issue in the 'Ready' column that interests you. If this is your first time contributing, look for issues with the `good first issue` label.
+1. Find an issue in the 'Ready' column that interests you. If this is your first time contributing, look for issues with the `good first issue` label. If there are multiple `good first issue`s, pick the one with the highest priority tag (in order of priority: `P0` then `P1` then `P2`).
 1. Ask any clarifying questions in the issue thread
 1. Leave a comment saying you're working on this issue to avoid duplicate work
 1. Fork the repository
