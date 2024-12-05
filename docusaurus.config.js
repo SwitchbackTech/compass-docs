@@ -110,10 +110,6 @@ const config = {
                 label: "🔵 Production App",
                 href: "https://app.compasscalendar.com",
               },
-              {
-                label: "💬 Discord Community",
-                href: "https://discord.gg/H3DVMnKmUd",
-              },
             ],
           },
         ],
