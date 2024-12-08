@@ -25,3 +25,11 @@ However, I haven't cleaned it up for public use yet.
 If this would be helpful, please let me know by creating a GitHub issue or upvoting the existing one.
 
 ![Postman preview](./assets/postman.png)
+
+### Debug routes
+
+These routes are exposed when in dev for debugging purposes. They are not available in production.
+
+| Area                       | Request                                                    |
+| -------------------------- | ---------------------------------------------------------- |
+| Simulate Gcal notification | `curl -X POST http://localhost:3000/api/event-change-demo` |
