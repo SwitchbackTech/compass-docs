@@ -1,4 +1,6 @@
-# Authentication + Syncing
+---
+title: Authentication + Syncing
+---
 
 Handling authentication and syncing between Compass and Google Calendar was the trickiest part of the project. Hopefully this helps you understand how it all works 😀
 
@@ -29,6 +31,10 @@ Handling authentication and syncing between Compass and Google Calendar was the 
 | nextSyncToken | gAPI    | helps G Cal know how many things changed for a resource since last sync. Origin: sync notification                                   |
 | channel token | Compass | a secret string that only Compass + Gcal know. Helps validate that a notification is from Gcal, and not hacker                       |
 | channelId     | Compass | identifies a specific watch (AKA notification channel) for a specific G Cal resource (calendar events, user settings, calendarlists) |
+
+## WebSocket Flow
+
+View the diagram and description from [this compass PR](https://github.com/SwitchbackTech/compass/pull/126)
 
 ## Auth Flows
 
