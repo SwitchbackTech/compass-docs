@@ -16,4 +16,4 @@ yarn cli build
 
 The artifacts will be placed in the `/build` directory.
 
-See [the CLI page](../guides/CLI) for more details about the CLI.
+See [the CLI page](../guides/cli) for more details about the CLI.

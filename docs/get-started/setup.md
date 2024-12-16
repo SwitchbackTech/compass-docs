@@ -33,7 +33,7 @@ Ready? Let's go!
 This is the file that contains your custom and sensitive information. We're creating it now so we can update the values as we set up our third-party accounts.
 
 1. Create new file in `compass/packages/backend` called `.env`
-2. Copy & paste the contents from [the example `.env`](Configuration/env)
+2. Copy & paste the contents from [the example `.env`](./configuration/env)
 
 ## Setup Accounts
 
@@ -139,8 +139,6 @@ Pfew! That was a lot of setup. Now for the fun part. Run these commands from the
    - Add the user's email to ConvertKit (if enabled)
    - Import events from the user's `primary` Google Calendar into MongoDB
    - Setup a sync channel to receive Google Calendar webhook notifications for the duration specified in the `.env` (if enabled)
-
-   To debug bug you'll encounter during signing in, visit the [troubleshooting page](../guides/troubleshoot)
 
 6. Try making a change to the frontend and backend code to confirm each service hot reloads
 

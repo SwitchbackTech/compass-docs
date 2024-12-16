@@ -26,3 +26,5 @@ I worked on a few side projects in 2024 in attempt to make lots of $ before conc
 I starting working on Compass again in 2024.
 
 I will keep improving Compass until it reaches its potential as a profitable business that changes the way people manage their time.
+
+<!-- truncate -->

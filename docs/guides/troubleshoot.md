@@ -47,7 +47,7 @@ mongod --version
 
 ### Mismatch User Id
 
-When you encounter a mismatch user id, the user is in your mongo collection is not the one being captured. This could be because you have duplicate users in your database. In order to fix this you need to clear your user data using this [documentation](/docs/guides/CLI#cleaning-user-data)
+When you encounter a mismatch user id, the user is in your mongo collection is not the one being captured. This could be because you have duplicate users in your database. In order to fix this you need to clear your user data using this [troubleshooting doc](../guides/troubleshoot.md#mismatch-user-id)
 
 ### Invalid domain name
 
