@@ -2,20 +2,17 @@
 sidebar_position: 0
 ---
 
-# How to Install & Develop
+# Setup
 
 Compass is a monorepo that contains everything needed to get a calendar app up and running, including frontend, backend, database, and dev scripts.
 
-The trade-off for having the code in one repo is that it takes a little longer to get everything to work together. SorryBoutThat 🤷‍♂️
-
 By the end of this guide, you'll have a local development environment that has:
 
-- a running NodeJS API server, which'll hot-reload upon changes
-- a running React web app, which'll also hot-reload upon changes
-- a MongoDB instance with your calendar data
-- a CLI, which you can use to build
-- `package.json` scripts to run local tests
-- immaculate spunk
+1. a running NodeJS API server, which'll hot-reload upon changes
+1. a running React web app, which'll also hot-reload upon changes
+1. a MongoDB instance with your calendar data
+1. a CLI, which you can use to create a distributable artifact
+1. `package.json` scripts to run local tests
 
 You'll then be ready to play with the local web app and test any changes you'd like to make.
 
@@ -143,7 +140,7 @@ Pfew! That was a lot of setup. Now for the fun part. Run these commands from the
    - Import events from the user's `primary` Google Calendar into MongoDB
    - Setup a sync channel to receive Google Calendar webhook notifications for the duration specified in the `.env` (if enabled)
 
-   To debug bug you'll encounter during signing in, visit the [troubleshooting page](/getting-started/Troubleshooting.md)
+   To debug bug you'll encounter during signing in, visit the [troubleshooting page](../guides/troubleshoot)
 
 6. Try making a change to the frontend and backend code to confirm each service hot reloads
 

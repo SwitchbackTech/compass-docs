@@ -1,4 +1,4 @@
-# Troubleshooting
+# Troubleshoot
 
 ## Unable to Sign In with Google in Local Compass Instance
 
@@ -47,7 +47,7 @@ mongod --version
 
 ### Mismatch User Id
 
-When you encounter a mismatch user id, probably is because the user id that was set in your mongo db is not the one being captured maybe because you have store many users in your database. In order to fix this you need to clear your user data using this [documentation](/docs/advanced/CLI#cleaning-user-data)
+When you encounter a mismatch user id, the user is in your mongo collection is not the one being captured. This could be because you have duplicate users in your database. In order to fix this you need to clear your user data using this [documentation](/docs/guides/CLI#cleaning-user-data)
 
 ### Invalid domain name
 

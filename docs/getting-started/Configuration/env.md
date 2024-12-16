@@ -80,7 +80,7 @@ EMAILER_LIST_ID=YOUR_LIST_ID # get this from the URL
 
 It's helpful to keep your dev and prod configuration separate. Save your production variables in `packages/backend/.prod.env`
 
-When using the CLI to build, it will copy it to the artifact directory and rename it to `.env`. See [the CLI page](../../advanced/CLI) for more details about the CLI.
+When using the CLI to build, it will copy it to the artifact directory and rename it to `.env`. See [the CLI page](../../guides/CLI) for more details about the CLI.
 
 `packages/backend/.prod.env`:
 

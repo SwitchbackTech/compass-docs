@@ -1,4 +1,4 @@
-# How to Test
+# Test
 
 ## Automated Testing
 

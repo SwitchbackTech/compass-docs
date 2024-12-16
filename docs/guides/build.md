@@ -1,4 +1,4 @@
-# How to Build
+# Build
 
 Most of the code is written in TypeScript. The development scripts use tools to transform TypeScript into JavaScript quickly.
 
@@ -16,4 +16,4 @@ yarn cli build
 
 The artifacts will be placed in the `/build` directory.
 
-See [the CLI page](../advanced/CLI) for more details about the CLI.
+See [the CLI page](../guides/CLI) for more details about the CLI.

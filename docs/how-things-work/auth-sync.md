@@ -2,7 +2,7 @@
 title: Authentication + Syncing
 ---
 
-Handling authentication and syncing between Compass and Google Calendar was the trickiest part of the project. Hopefully this helps you understand how it all works 😀
+Handling authentication and syncing between Compass and Google Calendar was the trickiest part of the project. Hopefully this helps you understand how it all works
 
 ## How Auth & Sync Work
 

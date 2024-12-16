@@ -1,4 +1,4 @@
-# How to use the CLI
+# CLI
 
 The Compass CLI was built to streamline common development tasks.
 It exists within the `scripts` package and is run from the root directory.

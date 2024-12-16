@@ -6,12 +6,12 @@ const FeatureList = [
   {
     title: "Frontend: React",
     Svg: require("@site/static/img/react.svg").default,
-    description: <>+ Redux, styled-components, TypeScript, webpack 💅🏻 </>,
+    description: <>Redux, styled-components, TypeScript, webpack </>,
   },
   {
     title: "Backend: Node",
     Svg: require("@site/static/img/nodejs.svg").default,
-    description: <> + Express, TypeScript</>,
+    description: <>Express, TypeScript</>,
   },
   {
     title: "And more",
@@ -19,7 +19,7 @@ const FeatureList = [
     description: (
       <>
         MongoDB, Google Calendar API, Google OAuth2 API, yarn workspaces, Jest,
-        React Testing Libray, Custom CLI
+        React Testing Libray, socket.io
       </>
     ),
   },
