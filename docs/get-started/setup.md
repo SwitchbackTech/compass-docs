@@ -60,10 +60,14 @@ To use Google OAuth, create a Google Cloud Platform project and setup an OAuth s
    - Add to Authorized JavaScript origins: `http://localhost:9080`
    - Add to Authorized redirect URIs: `http://localhost:3000`
    - Copy the Client ID and Secret to your `.env` file
+5. Ensure that you explicitly enabled Google Calendar API
+   - Search for Google Calendar using the search bar in the top section of the page
+   - Click on "Google Calendar API"
+   - Enable the API if it is not enabled
 
 ### MongoDB
 
-Before using Mongo db, ensure you [install](https://www.mongodb.com/docs/manual/installation/) it in your local machine.
+Before using Mongo db, ensure you create a free [MongoDB Atlas account](https://www.mongodb.com/cloud/atlas/register) that allows you to create a Mongo db database, which is the easiest and quickest way to get started with Mongo without needing to install it locally.
 
 User data is stored across a few MongoDB collections. These collections are created automatically at runtime, so you just have to create an account to get started.
 
