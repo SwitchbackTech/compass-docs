@@ -71,9 +71,9 @@ PROD_DOMAIN=app.yourdomain.com
 
 # Get these from your ConvertKit account
 # Does not capture email during signup if any empty EMAILER_ value
-EMAILER_API_KEY=UNIQUE_KEY_FROM_YOUR_CONVERTKIT_ACCOUNT
-EMAILER_API_SECRET=UNIQUE_SECRET_FROM_YOUR_CONVERTKIT_ACCOUNT
-EMAILER_LIST_ID=YOUR_LIST_ID # get this from the URL
+EMAILER_API_KEY=""
+EMAILER_API_SECRET=""
+EMAILER_LIST_ID="" # get this from the URL
 ```
 
 ## Production Example
