@@ -140,6 +140,12 @@ Pfew! That was a lot of setup. Now for the fun part. Run these commands from the
    - Import events from the user's `primary` Google Calendar into MongoDB
    - Setup a sync channel to receive Google Calendar webhook notifications for the duration specified in the `.env` (if enabled)
 
-6. Try making a change to the frontend and backend code to confirm each service hot reloads
+6. Make a change to the frontend and backend code to confirm each hot reloads
 
 Did I miss something? Please open an issue or PR to help me improve this guide.
+
+## Install Recommended Tools
+
+You already have everything you need, but these tools will make your life easier.
+
+- [Redux DevTools Browser Extension](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en): Helps debug Redux store, Redux Saga
