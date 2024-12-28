@@ -28,12 +28,12 @@ Ready? Let's go!
    cd compass
    ```
 
-## Create `.env` file
+## Setup the `.env` file
 
-This is the file that contains your custom and sensitive information. We're creating it now so we can update the values as we set up our third-party accounts.
+This is the file that contains your custom and sensitive information. We're setting it up now so we can update the values as we set up our third-party accounts.
 
-1. Create new file in `compass/packages/backend` called `.env`
-2. Copy & paste the contents from [the example `.env`](./configuration/env)
+1. Rename `compass/packages/backend/.env.example` to `compass/packages/backend/.env`
+2. Read through the comments to familiarize yourself with the environment variables
 
 ## Setup Accounts
 
@@ -142,10 +142,10 @@ Pfew! That was a lot of setup. Now for the fun part. Run these commands from the
 
 6. Make a change to the frontend and backend code to confirm each hot reloads
 
-Did I miss something? Please open an issue or PR to help me improve this guide.
-
 ## Install Recommended Tools
 
 You already have everything you need, but these tools will make your life easier.
 
-- [Redux DevTools Browser Extension](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en): Helps debug Redux store, Redux Saga
+- [Redux DevTools Browser Extension](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en): Helps debug Redux and Redux Saga
+
+Did I miss something? Please open an issue or PR to help me improve this guide.
