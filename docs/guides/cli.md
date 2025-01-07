@@ -13,16 +13,31 @@ $ yarn cli -h
 Usage: cli [options] [command]
 
 Options:
-  -e, --environment [staging|production]  specify environment
-  -f, --force                             forces operation, no cautionary prompts
-  -u, --user [id|email]                   specifies which user to run script for
-  -h, --help                              display help for command
+  -f, --force                        force operation, no cautionary prompts
+  -h, --help                         display help for command
 
 Commands:
-  build [options] [nodePckgs|web]         build compass package(s)
-  delete                                  deletes users data from compass database
-  help [command]                          display help for command
-Waiting for the debugger to disconnect...
+  build [options] [nodePckgs | web]  build compass package
+  delete [options]                   delete user data from compass database
+  help [command]                     display help for command
+```
+
+To see the options for a specific command, run `yarn cli <command> -h`
+
+```bash
+$ yarn cli build -h
+
+Usage: cli build [options] [nodePckgs | web]
+
+build compass package
+
+Arguments:
+  nodePckgs | web                           package to build (only provide 1)
+
+Options:
+  -c, --clientId <clientId>                 google client id to inject into build
+  -e, --environment [staging | production]  specify environment
+  -h, --help                                display help for command
 ```
 
 ## Cleaning User Data
