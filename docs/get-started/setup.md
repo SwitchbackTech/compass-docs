@@ -32,8 +32,8 @@ Ready? Let's go!
 
 This is the file that contains your custom and sensitive information. We're setting it up now so we can update the values as we set up our third-party accounts.
 
-1. Rename `compass/packages/backend/.env.example` to `compass/packages/backend/.env`
-2. Read through the comments to familiarize yourself with the environment variables
+1. Copy `compass/packages/backend/.env.example` and save as `compass/packages/backend/.env`.
+2. Read through the comments to familiarize yourself with the environment variables.
 
 ## Setup Accounts
 
@@ -52,7 +52,7 @@ To use Google OAuth, create a Google Cloud Platform project and setup an OAuth s
 3. [Configure your OAuth consent screen](https://support.google.com/cloud/answer/10311615#user-type) for internal testing
    - Set the User type to `External` and status to `Testing`
    - Add your test Google accounts to the list of authorized users
-   - You don't have to manually add scopes--The Compass code does that for you (`Login.tsx`)
+   - You don't have to manually add scopes -- the Compass code does that for you (`Login.tsx`)
 4. Get Google API Client ID & Secret
    - Go to [Credentials](https://console.cloud.google.com/apis/credentials) in your Google Cloud project
    - Create an OAuth Client ID
@@ -63,7 +63,7 @@ To use Google OAuth, create a Google Cloud Platform project and setup an OAuth s
 
 ### MongoDB
 
-Before using Mongo db, ensure you [install](https://www.mongodb.com/docs/manual/installation/) it in your local machine.
+Before using Mongo DB, ensure you [install](https://www.mongodb.com/docs/manual/installation/) it in your local machine.
 
 User data is stored across a few MongoDB collections. These collections are created automatically at runtime, so you just have to create an account to get started.
 
@@ -80,7 +80,7 @@ Compass connects to MongoDB through the NodeJS driver.
 
 Compass uses Supertokens to manage user sessions. This is what allows users to stay signed in between page refreshes. It also prompts reauthorization after an extended time away.
 
-Supertokens offers many different authentication options (AKA: recipes). Compass only uses their managed session service, which means you don't have to worry about a lot of their onboarding. What we do need is to get the credentials to Supertokens Core, their managed-service.
+Supertokens offers many different authentication options. Compass only uses their managed session service, which means you don't have to worry about a lot of their onboarding. What we do need is to get the credentials to Supertokens Core, their managed-service.
 
 Supertokens will provision the auth infrastructure in AWS for you, presenting a connection URI and API key afterwards. That's all we need to get started.
 
@@ -146,6 +146,7 @@ Pfew! That was a lot of setup. Now for the fun part. Run these commands from the
 
 You already have everything you need, but these tools will make your life easier.
 
+- [React Developer Tools](https://react.dev/learn/react-developer-tools): Helps debug React components
 - [Redux DevTools Browser Extension](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en): Helps debug Redux and Redux Saga
 
 Did I miss something? Please open an issue or PR to help me improve this guide.
