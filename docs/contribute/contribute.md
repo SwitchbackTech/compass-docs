@@ -16,11 +16,11 @@ Long-term, Compass will become a bootstrapped business that operates for decades
 
 ### What's in it for you
 
-What I guarantee:
+Guaranteed:
 
 - 🏆 Recognition (GitHub, changelogs, etc)
 
-What I'm open to offering:
+What I'm open to offering after consistent excellence:
 
 - 📝 Reference for your next job (upon request)
 - 📈 Preference for future opportunities @ Switchback
@@ -36,7 +36,7 @@ What I'm open to offering:
 1. Leave a comment saying you're working on this issue to avoid duplicate work
 1. Fork the repository
 1. Create a new branch with a descriptive name
-1. Make your changes
+1. Make your changes, following the [coding conventions](./convention-guide.md)
 1. Push your branch to your fork
 1. Create a pull request
 1. Wait for feedback, picking up another issue in the meantime if you'd like
