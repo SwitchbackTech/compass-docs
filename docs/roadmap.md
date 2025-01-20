@@ -87,14 +87,16 @@ Listen to the feedback that our existing users provided. Give them what they ask
 
 ---
 
-### Q4: Make it profitable
+### Q4: Make it good enough to share
 
-We will have shipped at least two big features, established revenue, and gotten a lot of feedback at this point. We’ll double-down on what’s working and drop what isn’t. As a result, we’ll have more revenue than expenses and set ourselves up to help users even more in 2026.
+We will have shipped at least two big features, established revenue, and gotten a lot of feedback at this point. We’ll double-down on what’s working and drop what isn’t. 
+
+This will solidfy the confidence users have in our product and ability to keep improving quickly. They will start referring others to our app. This referral base and our more vocal marketing will result in more usage and conversions. As a result, we’ll have more revenue than expenses and set ourselves up to help users even more in 2026.
 
 **October, November**
 
 - Muhammed: Focus on improving what’s working and ignoring/removing what isn’t. Fix any underlying foundational issues that’ll slow us down.
-- Tyler: Unblock Muhammed. Support, QA, miscellaneous code fixes.
+- Tyler: Unblock Muhammed. Support, QA, miscellaneous code fixes. 
 
 **December**
 
