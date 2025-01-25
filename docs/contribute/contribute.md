@@ -6,21 +6,17 @@ sidebar_position: 1
 
 ## Setting Expectations
 
-I'm sharing more context about the project to help you decide on your level of investment in this project.
+We're focused on giving minimalists a better way to manage their schedule and focus, and doing so in a profitable way, so that we can continue to provide value over the long-term.
 
-Short-term, we're focused on turning Compass into a minimal, yet reliable app.
+For a more detailed breakdown of our goals, see our [Roadmap](../roadmap.md).
 
-Medium-term, we'll build on that foundation to make Compass into a unique and premium product that helps people make better decisions.
-
-Long-term, Compass will become a bootstrapped business that operates for decades.
+If those goals align with your own, we'd love to have you contribute!
 
 ### What's in it for you
 
-Guaranteed:
+🏆 Recognition (GitHub, changelogs, etc)
 
-- 🏆 Recognition (GitHub, changelogs, etc)
-
-What I'm open to offering after consistent excellence:
+What my be offered after consistent excellence:
 
 - 📝 Reference for your next job (upon request)
 - 📈 Preference for future opportunities @ Switchback
@@ -30,16 +26,17 @@ What I'm open to offering after consistent excellence:
 
 ### 🏁 You're ready to pick up a new task
 
-1. Go to [the backlog](https://github.com/orgs/SwitchbackTech/projects/4)
-1. Find an issue in the 'Ready' column that interests you. If this is your first time contributing, look for issues with the `good first issue` label. If there are multiple `good first issue`s, pick the one with the highest priority tag (in order of priority: `P0` then `P1` then `P2`).
-1. Ask any clarifying questions in the issue thread
-1. Leave a comment saying you're working on this issue to avoid duplicate work
-1. Fork the repository
-1. Create a new branch with a descriptive name
-1. Make your changes, following the [coding conventions](./convention-guide.md)
-1. Push your branch to your fork
-1. Create a pull request
-1. Wait for feedback, picking up another issue in the meantime if you'd like
+1. Go to [the backlog](https://github.com/orgs/SwitchbackTech/projects/4/views/8). This is the view that shows each important issue by the quarter it's planned for.
+2. If you'd like to work on an issue in the `Ready` state for the current quarter _and you can submit a PR for it before the `End` date assigned to it_: ask to have the issue reassigned to you in the issue comments.
+3. If you're not sure if you can complete an issue in the current quarter in time, then find one for next quarter and ask to have it assigned to you.
+4. Ask any clarifying questions in the issue thread
+5. Leave a comment saying you're working on this issue to avoid duplicate work
+6. Fork the repository
+7. Create a new branch with a descriptive name
+8. Make your changes, following the [coding conventions](./convention-guide.md)
+9. Push your branch to your fork
+10. Create a pull request
+11. Wait for feedback, picking up another issue in the meantime if you'd like
 
 ### 🐞 You found an undocumented bug
 
@@ -47,9 +44,9 @@ What I'm open to offering after consistent excellence:
 - Ensure the bug was not already reported by searching under the issues
 - If it's a new bug, open a new issue, including as much relevant information as possible.
 
-### ☝️ You want to add a new feature or change an existing one
+### ☝️ You want to add a new feature or dramatically change an existing one
 
-If you'd like to contribute a larger feature or fix, please create a GitHub issue to discuss the change and get the 👍 before submitting a pull request. This will ensure that we're on the same page and that your work will be accepted.
+Larger features or changes that are not already on our [Roadmap](../roadmap.md) or in the backlog should be discussed in a GitHub issue before you start working on them. This will help ensure that your work is aligned with the project's goals and that you don't spend time on something that won't be prioritized.
 
 ### 💅 You fixed whitespace, formatted code, or made a purely cosmetic patch
 
