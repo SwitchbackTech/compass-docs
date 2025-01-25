@@ -109,5 +109,7 @@ These things are not important in 2025
 
 **Creating a mobile or desktop app.** More platforms means more complexity and slower iterations, so wait until users tell us these are important.
 
-**Getting feature-parity with existing calendars**
+**Getting feature-parity with existing calendars.**
 Google Calendar, Notion Calendar, Vimcal, Outlook - these apps are directed towards consumers who don’t want to pay and business users who have companies that will pay for them. Compass is focused on this niche user base in 2025: productivity enthusiast consumers who want minimal features and are happy to pay for quality, even if the product is immature.
+
+**Using a meta framework like Next.js or Remix.** These offer many benefits that would undoubtedly make the Compass codebase and product better ... eventually. Unfortunately, we don't have the resources to make a big DX investment that doesn't help us reach profitability in 2025. We are capable of delivering value to our users with our current stack, so we are not going to dramatically change our tools in 2025. In 2026 we'll have enough profit to hire more developers and consider rewriting the app in a new framework. In the meantime, we will continue to clean up the codebase as we go to make it more stable and understandable.
