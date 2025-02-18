@@ -6,6 +6,8 @@ Follow this guide to ensure consistency and give your PR the best change of bein
 
 These rules are not set in stone, and there may be exceptions. If you'd like to propose a change to the rules, we welcome your suggestions in the form of a GitHub issue in this repository. In that issue, explain why we should adjust the rule, provide an alternative, and explain why the alternative is better.
 
+
+
 ## Testing
 
 ### Write tests. Mostly unit. ~~Some integration.~~
@@ -45,6 +47,18 @@ Comments quickly become a net-negative for the codebase. Although they let you m
 We want to always use the best tool for the job. The best way to make the code understandable is to write cleaner code. The best way to explain high-level process flows is through a diagram. The best tool to track tasks is an issue tracker. Comments are not the best tool for any of these jobs.
 
 ## Cleanup
+
+### No Dead Code
+
+If the code is not used, do not add it.
+Do not proactively add half-implemented features of fixes.
+If you see code that is not used, create a new PR to delete it. Deleting it in a separate PR makes it easier to review the rest of your changes.
+
+It is, however, OK to create separate PRs to gradually implement features. However, the PRs should be focused on a single feature or fix, and they should be consecutive. Do not allow long time delays between PRs in a set that is related to the same feature, as this makes it more likely for the code to become stale and eventually die.
+
+#### Why this rule exists
+
+The codebase should reflect the reality of the product. Having a mix of implemented and unimplemented features makes it harder to understand the product and to maintain.
 
 ### Leave the code better than you found it
 
