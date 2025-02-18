@@ -19,9 +19,9 @@ If these goals align with your own, we'd love to work with you!
 
 🏆 Recognition (GitHub, changelogs, etc)
 
-What my be offered after consistent excellence:
+What may be offered after consistent excellence:
 
-- 📝 Reference for your next job (upon request)
+- 📝 Reference for your next job 
 - 📈 Compensation
 - 📈 Preference for future opportunities @ Switchback (the company behind Compass)
 
@@ -31,10 +31,11 @@ What my be offered after consistent excellence:
 
 1. Review the [roadmap](../roadmap.md) to confirm that the issue you'd like to work on is aligned with our goals
 1. Review [the quarterly backlog](https://github.com/orgs/SwitchbackTech/projects/4/views/8). This is the view that shows each important issue by the quarter it's planned for.
+1. Review [the timeline](https://github.com/orgs/SwitchbackTech/projects/4/views/7) to confirm that you could finish the issue you'd like to work on before its deadline.
 1. If this is your first time contributing, pick an issue in the `Ready` state for the _next_ quarter. Working on an issue in the next quarter gives you time to familiarize yourself with the codebase while still working on a priority change. It also gives us the chance to assess the quality of work and your reliability before giving you more responsibility.
-1. Find an issue you'd like to work on. _If you can submit a PR for it before the `End` date assigned to it_: ask to have the issue reassigned to you in the issue comments.
-1. Ask any clarifying questions in the issue thread
-1. Leave a comment stating that you're working on this issue, and share when you'll have the PR ready for review. This helps us avoid duplicate work, and ensures that you're on track to meet the `End` date.
+1. Find an issue you'd like to work on. _If you can submit a PR for it before the `End` date assigned to it_: ask to have the issue reassigned to you in the issue comments. If you can't finish it on time, find another issue in the next quarter that you could.
+1. Ask any clarifying questions in the issue thread.
+1. Leave a comment stating that you're working on this issue, and share when you'll have the PR ready for review. We will then assign the issue to you. This helps us avoid duplicate work, and ensures that you're on track to meet the `End` date.
 1. Fork the repository
 1. Create a new branch with a descriptive name
 1. Make your changes, following the [coding conventions](./convention-guide.md)
