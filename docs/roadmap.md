@@ -105,11 +105,13 @@ This will solidfy the confidence users have in our product and ability to keep i
 
 ## Anti-Priorities
 
-These things are not important in 2025
+These things are not important in 2025. We will not invest our time in these efforts in 2025.
 
 **Creating a mobile or desktop app.** More platforms means more complexity and slower iterations, so wait until users tell us these are important.
 
 **Getting feature-parity with existing calendars.**
 Google Calendar, Notion Calendar, Vimcal, Outlook - these apps are directed towards consumers who don’t want to pay and business users who have companies that will pay for them. Compass is focused on this niche user base in 2025: productivity enthusiast consumers who want minimal features and are happy to pay for quality, even if the product is immature.
 
-**Using a meta framework like Next.js or Remix.** These offer many benefits that would undoubtedly make the Compass codebase and product better ... eventually. Unfortunately, we don't have the resources to make a big DX investment that doesn't help us reach profitability in 2025. We are capable of delivering value to our users with our current stack, so we are not going to dramatically change our tools in 2025. In 2026 we'll have enough profit to hire more developers and consider rewriting the app in a new framework. In the meantime, we will continue to clean up the codebase as we go to make it more stable and understandable.
+**Changing our tech stack.** The first lines of Compass code were written in 2021, so some of the tools we use are already out-dated. Switching to more modern, popular tools like Next.js, Remix, Tailwind, Vite, React Query, etc. would undoubtedly make the Compass codebase and product better ... eventually. Unfortunately, we don't have the resources to make a big DX investment that doesn't help us reach profitability in 2025. We are capable of delivering value to our users with our current stack, so we are not going to dramatically change our tools in 2025. We will focus on making changes that help us reach profitability in a way that is reasonably clean and understandable, so that we can more easily migrate to tools in the future.
+
+In 2026 we'll have enough profit to hire more developers and consider rewriting the app in a new framework.

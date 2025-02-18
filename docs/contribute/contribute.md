@@ -6,11 +6,14 @@ sidebar_position: 1
 
 ## Setting Expectations
 
-We're focused on giving minimalists a better way to manage their schedule and focus, and doing so in a profitable way, so that we can continue to provide value over the long-term.
+We're laser-focused on two things:
 
-For a more detailed breakdown of our goals, see our [Roadmap](../roadmap.md).
+1. Helping minimalists manage their schedule and focus, so they can do more of what matters
+2. Being profitable, so that we can continue doing #1 for decades
 
-If those goals align with your own, we'd love to have you contribute!
+We're only accepting contributions that help us reach those goals. If you submit a PR that doesn't align with our goals, it will be rejected. The best way to avoid this scenario is to confirm that your proposed changes align with our priorities. You can verify this by reviewing the [Roadmap](../roadmap.md) and timeline (more links and details on how to do this below).
+
+If these goals align with your own, we'd love to work with you!
 
 ### What's in it for you
 
@@ -19,24 +22,25 @@ If those goals align with your own, we'd love to have you contribute!
 What my be offered after consistent excellence:
 
 - 📝 Reference for your next job (upon request)
-- 📈 Preference for future opportunities @ Switchback
 - 📈 Compensation
+- 📈 Preference for future opportunities @ Switchback (the company behind Compass)
 
 ## Workflows
 
 ### 🏁 You're ready to pick up a new task
 
-1. Go to [the backlog](https://github.com/orgs/SwitchbackTech/projects/4/views/8). This is the view that shows each important issue by the quarter it's planned for.
-2. If you'd like to work on an issue in the `Ready` state for the current quarter _and you can submit a PR for it before the `End` date assigned to it_: ask to have the issue reassigned to you in the issue comments.
-3. If you're not sure if you can complete an issue in the current quarter in time, then find one for next quarter and ask to have it assigned to you.
-4. Ask any clarifying questions in the issue thread
-5. Leave a comment saying you're working on this issue to avoid duplicate work
-6. Fork the repository
-7. Create a new branch with a descriptive name
-8. Make your changes, following the [coding conventions](./convention-guide.md)
-9. Push your branch to your fork
-10. Create a pull request
-11. Wait for feedback, picking up another issue in the meantime if you'd like
+1. Review the [roadmap](../roadmap.md) to confirm that the issue you'd like to work on is aligned with our goals
+1. Review [the quarterly backlog](https://github.com/orgs/SwitchbackTech/projects/4/views/8). This is the view that shows each important issue by the quarter it's planned for.
+1. If this is your first time contributing, pick an issue in the `Ready` state for the _next_ quarter. Working on an issue in the next quarter gives you time to familiarize yourself with the codebase while still working on a priority change. It also gives us the chance to assess the quality of work and your reliability before giving you more responsibility.
+1. Find an issue you'd like to work on. _If you can submit a PR for it before the `End` date assigned to it_: ask to have the issue reassigned to you in the issue comments.
+1. Ask any clarifying questions in the issue thread
+1. Leave a comment stating that you're working on this issue, and share when you'll have the PR ready for review. This helps us avoid duplicate work, and ensures that you're on track to meet the `End` date.
+1. Fork the repository
+1. Create a new branch with a descriptive name
+1. Make your changes, following the [coding conventions](./convention-guide.md)
+1. Push your branch to your fork
+1. Create a pull request
+1. Wait for feedback. You can continue this process with another issue while waiting for feedback.
 
 ### 🐞 You found an undocumented bug
 
@@ -46,7 +50,7 @@ What my be offered after consistent excellence:
 
 ### ☝️ You want to add a new feature or dramatically change an existing one
 
-Larger features or changes that are not already on our [Roadmap](../roadmap.md) or in the backlog should be discussed in a GitHub issue before you start working on them. This will help ensure that your work is aligned with the project's goals and that you don't spend time on something that won't be prioritized.
+Larger features or changes that are not already on our [Roadmap](../roadmap.md) or in the backlog will most likely be rejected. If you're unsure, open a GitHub issue before you start working. This will help ensure that your work is aligned with the project's goals and that you don't spend time on something that won't be prioritized.
 
 ### 💅 You fixed whitespace, formatted code, or made a purely cosmetic patch
 
