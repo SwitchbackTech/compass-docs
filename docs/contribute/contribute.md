@@ -39,6 +39,7 @@ What may be offered after consistent excellence:
 1. Fork the repository
 1. Create a new branch with a descriptive name
 1. Make your changes, following the [coding conventions](./convention-guide.md)
+1. Manually test your changes. See the [testing guide](./testing-guide.md) for more info on how to do this sufficiently.
 1. Push your branch to your fork
 1. Create a pull request
 1. Wait for feedback. You can continue this process with another issue while waiting for feedback.
