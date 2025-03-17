@@ -1,5 +1,7 @@
 # Testing Guide
 
+This doc explains how to write tests during development. For information on running tests, see the [Testing Guide](../guides/test.md).
+
 ## Write tests. Mostly unit. ~~Some integration.~~
 
 Tests should be
