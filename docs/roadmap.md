@@ -47,26 +47,23 @@ Below is a sample of work that’ll help us achieve this theme.
 
 At this point, we’ll have a solid, but minimal UX. Thanks to the email, we’ll also have more user feedback. Now it’s time to deliver even more value by adding new capabilities. These will solidify Compass as part of their daily routine, which will justify us requiring payment to use.
 
-After listening to existing user feedback, collecting survey results from our waitlist, and conducting market research since 2021, I’ve selected two capabilities to add this quarter:
+We will start by improving one of our existing core features: the someday list.
 
-1. Helping users plan and manage their focus using a pomodoro timer.
-2. Helping users manage their schedule with more flexibility by using the someday events in the sidebar.
-
-We will ship proof-of-concepts for each of these features, listen to feedback, and iterate quickly. By the end of June, we’ll have revenue.
+Then we'll ship proof-of-concepts for new features, listen to feedback, and iterate quickly.
 
 **April**:
 
 - Muhammed: Build upon the someday event feature. (This is an existing feature that we’ll make better.)
-- Tyler: Quickly fix high-priority bugs that users found. Build the pomodoro timer.
+- Tyler: Quickly fix high-priority bugs that users found
 
-**May**
+**May**:
 
 - Tyler: reach out to users to get early feedback on new features and determine the right pricing structure (freemium vs trial) and tiers.
-- Muhammed: Improve Someday and Pomodoro features based on feedback
+- Muhammed: Improve features based on feedback
 
-**June**
+**June**:
 
-- Muhammed: Improve Someday and Pomodoro features based on feedback.
+- Muhammed: Improve features based on feedback.
 - Tyler: add pricing to app and reach out to users directly to test the pitch. Send Q2 email.
 
 ---
@@ -75,7 +72,7 @@ We will ship proof-of-concepts for each of these features, listen to feedback, a
 
 Listen to the feedback that our existing users provided. Give them what they asked for (mostly), and get them to love the product.
 
-**July, August**
+**July, August:**
 
 - Muhammed: Improve based on user feedback. These may involve improving the new features, scrapping them and adding alternatives, or adding more basic calendar capabilities.
 - Tyler: Get feedback on the product and price, iterate on the pitch, update the landing page accordingly. Help with miscellaneous code fixes and support.
@@ -91,14 +88,14 @@ Listen to the feedback that our existing users provided. Give them what they ask
 
 We will have shipped at least two big features, established revenue, and gotten a lot of feedback at this point. We’ll double-down on what’s working and drop what isn’t. 
 
-This will solidfy the confidence users have in our product and ability to keep improving quickly. They will start referring others to our app. This referral base and our more vocal marketing will result in more usage and conversions. As a result, we’ll have more revenue than expenses and set ourselves up to help users even more in 2026.
+This will solidify the confidence users have in our product and ability to keep improving quickly. They will start referring others to our app. This referral base and our more vocal marketing will result in more usage and conversions. As a result, we’ll have more revenue than expenses and set ourselves up to help users even more in 2026.
 
-**October, November**
+**October, November:**
 
 - Muhammed: Focus on improving what’s working and ignoring/removing what isn’t. Fix any underlying foundational issues that’ll slow us down.
 - Tyler: Unblock Muhammed. Support, QA, miscellaneous code fixes. 
 
-**December**
+**December:**
 
 - Muhammed: Iterate based on feedback. Start getting ready for another developer through clean up, documentation, and foundational bug fixes.
 - Tyler: Support, minor bug fixes. Budget, create 2026 roadmap, invest in more staff and better infrastructure. Send Q4 release email.
