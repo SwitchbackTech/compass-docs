@@ -1,4 +1,4 @@
-# Recurring Events 
+# Recurring Events
 
 ## Core Concepts
 
@@ -6,17 +6,17 @@
 
 A recurring event in Google Calendar consists of:
 
-- A **base event** that defines the pattern (e.g., "Weekly Meeting every Monday at 2pm")
-- **instances** that follow that pattern (e.g., individual meetings on specific Mondays)
+- **Base event** that defines the pattern (e.g., "Weekly Meeting every Monday at 2pm")
+  - Base event: has `recurrence.eventId` AND `recurrence.rule` (e.g., "RRULE:FREQ=WEEKLY")
+  - `recurrence.eventId` === `gEventId`
+- **Instances**: Individual occurrences that follow that pattern (e.g., individual meetings on specific Mondays)
+  - Instance: has `recurrence.eventId` AND NOT `recurrence.rule`
+- **Recurrence Rule**: Defines how the event repeats (frequency, interval, exceptions)
+- **Original Start Time**: The time an instance was originally scheduled for (important when instances are modified)
 
 Think of it like a template (base event) that generates individual events (instances) based on a rule.
 
-### Key Properties
 
-- **Base Event**: Contains the recurrence rule (e.g., "RRULE:FREQ=WEEKLY")
-- **Instances**: Individual occurrences that follow the pattern
-- **Recurrence Rule**: Defines how the event repeats (frequency, interval, exceptions)
-- **Original Start Time**: The time an instance was originally scheduled for (important when instances are modified)
 
 ## Event Relationships and Workflow
 
@@ -27,7 +27,7 @@ graph TD
         Base -->|has| Rule[Recurrence Rule]
         Instances -->|link to| Base
         Instances -->|have| OriginalTime[Original Start Time]
-        
+
         BaseEvent[Base Event<br>ID: 123]
         InstanceEvent[Instance Event<br>ID: 123_20250323T120000Z]
         ModifiedBase[Modified Base<br>ID: 123_R20250323T120000Z]
@@ -94,7 +94,7 @@ graph LR
         Base -->|generates| Normal[Normal Instance]
         Base -->|generates| Modified[Modified Instance]
         Base -->|generates| Cancelled[Cancelled Instance]
-        
+
         Modified -->|has| OriginalTime[Original Start Time]
         Modified -->|links to| Base
         Normal -->|links to| Base
@@ -310,14 +310,14 @@ When changes occur in Google Calendar:
 
 When you receive events from Google Calendar, they follow these patterns:
 
-| Change Type        | Payload Contents                             | Key Indicators                                                                                                                 |
-| ------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| New Recurring      | Single base event with `recurrence` rule     | - Only contains the base\n- Has `recurrence` rule\n- No instance events                                                    |
+| Change Type        | Payload Contents                             | Key Indicators                                                                                                           |
+| ------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| New Recurring      | Single base event with `recurrence` rule     | - Only contains the base\n- Has `recurrence` rule\n- No instance events                                                  |
 | Edit One Instance  | Base event + modified instance               | - Instance has `_` in ID\n- Has `recurringEventId`\n- No `recurrence` rule\n- Other instances unchanged                  |
 | Edit This & Future | Original base + modified instance + new base | - Original base has `UNTIL` rule\n- Modified instance\n- New base with `_R` suffix\n- New base has new `recurrence` rule |
-| Edit All Instances | Modified base + new base                     | - Base has `UNTIL` rule\n- New base with `_R` suffix\n- All instances updated                                              |
-| Delete Instance    | Base event + cancelled instance              | - Instance marked as "cancelled"\n- Has `recurringEventId`\n- Base event unchanged                                         |
-| Delete Series      | All instances marked as "cancelled"          | - No base event\n- All events marked as "cancelled"\n- All have same `recurringEventId`                                    |
+| Edit All Instances | Modified base + new base                     | - Base has `UNTIL` rule\n- New base with `_R` suffix\n- All instances updated                                            |
+| Delete Instance    | Base event + cancelled instance              | - Instance marked as "cancelled"\n- Has `recurringEventId`\n- Base event unchanged                                       |
+| Delete Series      | All instances marked as "cancelled"          | - No base event\n- All events marked as "cancelled"\n- All have same `recurringEventId`                                  |
 
 ### Database Updates
 
@@ -392,13 +392,13 @@ class CalendarSyncService {
   private analyzeChanges(changes: gSchema$Event[]): ActionAnalysis {
     // Find base event and instances
     const baseEvent = changes.find(
-      (event) => event.recurrence && !event.recurringEventId,
+      (event) => event.recurrence && !event.recurringEventId
     );
     const instances = changes.filter((event) => event.recurringEventId);
 
     // Check for cancelled events
     const cancelledEvents = changes.filter(
-      (event) => event.status === "cancelled",
+      (event) => event.status === "cancelled"
     );
 
     // Determine the type of change
@@ -435,7 +435,7 @@ class CalendarSyncService {
       case "DELETE_INSTANCES":
         await this.deleteInstances(
           analysis.baseEvent?.id,
-          analysis.modifiedInstance,
+          analysis.modifiedInstance
         );
         break;
       // ... handle other cases ...
@@ -461,12 +461,12 @@ class CalendarSyncService {
 
   private async deleteInstances(
     baseEventId: string,
-    cancelledInstance: gSchema$Event,
+    cancelledInstance: gSchema$Event
   ) {
     // Mark instance as cancelled in database
     await db.events.updateOne(
       { id: cancelledInstance.id },
-      { $set: { status: "cancelled" } },
+      { $set: { status: "cancelled" } }
     );
   }
 }
