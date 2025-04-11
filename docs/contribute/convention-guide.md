@@ -12,19 +12,18 @@ These rules are not set in stone, and there may be exceptions. If you'd like to 
 
 ## Comments
 
-### Don’t use comments
+### Don’t overuse comments
 
-Unless:
+Comments are helpful if:
 
-1. The code itself is ambiguous
-2. The ambiguity can't be explained in tests or docs
-3. You’re writing a shared util that is ambiguous and used by different areas of the codebase. In this case, creating a docstring comment is acceptable.
+1. The code itself is ambiguous or complicated
+2. You’re writing a shared util that is ambiguous and used by different areas of the codebase.
 
-Instead of using comments:
+While comments can be helpful to explain complexity, strive for simplicity by:
 
-1. Write code that is self-explanatory
-2. Write tests that explain the code
-3. Create a diagram/doc in this repo. You can then create a comment that links to the diagram/doc.
+1. Writing code that is self-explanatory
+2. Writing tests that explain the code
+3. Creating a diagram/doc in this repo. You can then create a comment that links to the diagram/doc.
 
 ### Why this rule exists
 
