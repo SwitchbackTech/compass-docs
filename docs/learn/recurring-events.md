@@ -16,9 +16,7 @@ A recurring event in Google Calendar consists of:
 
 Think of it like a template (base event) that generates individual events (instances) based on a rule.
 
-
-
-## Event Relationships and Workflow
+### Event Relationships
 
 ```mermaid
 graph TD
@@ -32,90 +30,6 @@ graph TD
         InstanceEvent[Instance Event<br>ID: 123_20250323T120000Z]
         ModifiedBase[Modified Base<br>ID: 123_R20250323T120000Z]
     end
-```
-
-```mermaid
-graph TD
-    subgraph "Sync Process"
-        Watch[Watch for Changes] -->|1. Notification| Notify[Receive Notification]
-        Notify -->|2. Fetch| Fetch[Fetch Changes]
-        Fetch -->|3. Analyze| Analyze[Analyze Changes]
-        Analyze -->|4. Update| Update[Update Database]
-        Update -->|5. Store Token| Token[Store nextSyncToken]
-    end
-
-    subgraph "Change Types"
-        Create[Create Series]
-        EditOne[Edit One Instance]
-        EditFuture[Edit This & Future]
-        EditAll[Edit All Instances]
-        DeleteOne[Delete Instance]
-        DeleteAll[Delete Series]
-    end
-
-    Analyze -->|determines| Create
-    Analyze -->|determines| EditOne
-    Analyze -->|determines| EditFuture
-    Analyze -->|determines| EditAll
-    Analyze -->|determines| DeleteOne
-    Analyze -->|determines| DeleteAll
-```
-
-```mermaid
-sequenceDiagram
-    participant User
-    participant Google
-    participant Webhook
-    participant App
-    participant DB
-
-    Note over User,DB: Initial Setup
-    User->>Google: Create Recurring Event
-    Google->>App: Send Notification
-    App->>Google: Fetch Changes
-    Google-->>App: Return Events + nextSyncToken
-    App->>DB: Store Events & Token
-
-    Note over User,DB: Change Detection
-    User->>Google: Modify Event
-    Google->>Webhook: Send Notification
-    Webhook->>App: Forward Notification
-    App->>Google: Fetch Changes (with token)
-    Google-->>App: Return Changes + new token
-    App->>App: Analyze Changes
-    App->>DB: Update Database
-    App->>DB: Store new token
-```
-
-```mermaid
-graph LR
-    subgraph "Event States"
-        Base[Base Event] -->|has| Rule[Recurrence Rule]
-        Base -->|generates| Normal[Normal Instance]
-        Base -->|generates| Modified[Modified Instance]
-        Base -->|generates| Cancelled[Cancelled Instance]
-
-        Modified -->|has| OriginalTime[Original Start Time]
-        Modified -->|links to| Base
-        Normal -->|links to| Base
-        Cancelled -->|links to| Base
-    end
-
-    subgraph "Change Actions"
-        Create[Create Series]
-        EditOne[Edit One Instance]
-        EditFuture[Edit This & Future]
-        EditAll[Edit All Instances]
-        DeleteOne[Delete Instance]
-        DeleteAll[Delete Series]
-    end
-
-    Create -->|creates| Base
-    EditOne -->|modifies| Modified
-    EditFuture -->|splits| Base
-    EditAll -->|updates| Base
-    DeleteOne -->|marks as| Cancelled
-    DeleteAll -->|removes| Base
 ```
 
 ## Common Operations
@@ -306,183 +220,142 @@ When changes occur in Google Calendar:
      - Deleted events (marked as "cancelled")
      - A new `nextSyncToken` for the next sync
 
-### Payload Analysis
+```mermaid
+sequenceDiagram
+    participant User
+    participant Google
+    participant Webhook
+    participant App
+    participant DB
 
-When you receive events from Google Calendar, they follow these patterns:
+    Note over User,DB: Initial Setup
+    User->>Google: Create Recurring Event
+    Google->>App: Send Notification
+    App->>Google: Fetch Changes
+    Google-->>App: Return Events + nextSyncToken
+    App->>DB: Store Events & Token
 
-| Change Type        | Payload Contents                             | Key Indicators                                                                                                           |
-| ------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| New Recurring      | Single base event with `recurrence` rule     | - Only contains the base\n- Has `recurrence` rule\n- No instance events                                                  |
-| Edit One Instance  | Base event + modified instance               | - Instance has `_` in ID\n- Has `recurringEventId`\n- No `recurrence` rule\n- Other instances unchanged                  |
-| Edit This & Future | Original base + modified instance + new base | - Original base has `UNTIL` rule\n- Modified instance\n- New base with `_R` suffix\n- New base has new `recurrence` rule |
-| Edit All Instances | Modified base + new base                     | - Base has `UNTIL` rule\n- New base with `_R` suffix\n- All instances updated                                            |
-| Delete Instance    | Base event + cancelled instance              | - Instance marked as "cancelled"\n- Has `recurringEventId`\n- Base event unchanged                                       |
-| Delete Series      | All instances marked as "cancelled"          | - No base event\n- All events marked as "cancelled"\n- All have same `recurringEventId`                                  |
-
-### Database Updates
-
-After analyzing the payload:
-
-1. **Determine Action**
-
-   - Use the payload patterns to identify the type of change
-   - Choose the appropriate action (CREATE, UPDATE, DELETE)
-
-2. **Update Database**
-
-   - Apply the action to your database
-   - Maintain relationships between events
-   - Handle any necessary cleanup
-
-3. **Update Sync Token**
-   - Store the new `nextSyncToken` from Google
-   - Use it for the next sync operation
-
-## Example Implementation
-
-Here's a simplified example of how to implement this workflow:
-
-```typescript
-// Types for our sync system
-interface SyncState {
-  nextSyncToken: string;
-  calendarId: string;
-}
-
-interface ChangeNotification {
-  resourceId: string;
-  resourceState: "exists" | "not_exists";
-  channelId: string;
-}
-
-// Main sync service
-class CalendarSyncService {
-  private syncState: SyncState;
-
-  // Handle notification from Google
-  async handleNotification(notification: ChangeNotification) {
-    // 1. Fetch changes using stored sync token
-    const changes = await this.fetchChanges(this.syncState.nextSyncToken);
-
-    // 2. Analyze the changes
-    const analysis = this.analyzeChanges(changes);
-
-    // 3. Update database based on analysis
-    await this.updateDatabase(analysis);
-
-    // 4. Update sync token
-    this.syncState.nextSyncToken = changes.nextSyncToken;
-  }
-
-  // Fetch changes from Google Calendar
-  private async fetchChanges(syncToken: string) {
-    const response = await google.calendar.events.list({
-      calendarId: this.syncState.calendarId,
-      syncToken,
-      singleEvents: true, // Important for recurring events
-    });
-
-    return {
-      events: response.data.items,
-      nextSyncToken: response.data.nextSyncToken,
-    };
-  }
-
-  // Analyze changes to determine action
-  private analyzeChanges(changes: gSchema$Event[]): ActionAnalysis {
-    // Find base event and instances
-    const baseEvent = changes.find(
-      (event) => event.recurrence && !event.recurringEventId
-    );
-    const instances = changes.filter((event) => event.recurringEventId);
-
-    // Check for cancelled events
-    const cancelledEvents = changes.filter(
-      (event) => event.status === "cancelled"
-    );
-
-    // Determine the type of change
-    if (changes.length === 1 && baseEvent?.recurrence) {
-      return { action: "CREATE_SERIES", baseEvent };
-    }
-
-    if (!baseEvent && cancelledEvents.length === changes.length) {
-      return { action: "DELETE_SERIES" };
-    }
-
-    if (baseEvent && cancelledEvents.length > 0) {
-      return {
-        action: "DELETE_INSTANCES",
-        baseEvent,
-        modifiedInstance: cancelledEvents[0],
-      };
-    }
-
-    // ... handle other cases ...
-
-    throw new Error("Unable to determine change type");
-  }
-
-  // Update database based on analysis
-  private async updateDatabase(analysis: ActionAnalysis) {
-    switch (analysis.action) {
-      case "CREATE_SERIES":
-        await this.createSeries(analysis.baseEvent);
-        break;
-      case "DELETE_SERIES":
-        await this.deleteSeries(analysis.baseEvent?.id);
-        break;
-      case "DELETE_INSTANCES":
-        await this.deleteInstances(
-          analysis.baseEvent?.id,
-          analysis.modifiedInstance
-        );
-        break;
-      // ... handle other cases ...
-    }
-  }
-
-  // Helper methods for database operations
-  private async createSeries(baseEvent: gSchema$Event) {
-    // Store base event
-    await db.events.insert(baseEvent);
-
-    // Generate and store instances
-    const instances = await this.generateInstances(baseEvent);
-    await db.events.insertMany(instances);
-  }
-
-  private async deleteSeries(baseEventId: string) {
-    // Delete all events with this base event ID
-    await db.events.deleteMany({
-      $or: [{ id: baseEventId }, { recurringEventId: baseEventId }],
-    });
-  }
-
-  private async deleteInstances(
-    baseEventId: string,
-    cancelledInstance: gSchema$Event
-  ) {
-    // Mark instance as cancelled in database
-    await db.events.updateOne(
-      { id: cancelledInstance.id },
-      { $set: { status: "cancelled" } }
-    );
-  }
-}
+    Note over User,DB: Sync Changes
+    User->>Google: Modify Event
+    Google->>Webhook: Send Notification
+    Webhook->>App: Forward Notification
+    App->>Google: Fetch Changes (with token)
+    Google-->>App: Return Changes + new token
+    App->>App: Analyze Changes
+    App->>DB: Update Database
+    App->>DB: Store new token
 ```
 
-This example shows:
+## Splitting Series
 
-1. How to handle notifications from Google
-2. How to fetch changes using sync tokens
-3. How to analyze changes to determine the appropriate action
-4. How to update your database based on the analysis
+### Problem Summary
 
-Key points to remember:
+When users modify recurring events in Google Calendar using "this and following" operations, we need to handle the resulting series splits in our sync system. These splits can occur in two scenarios:
 
-- Always use `singleEvents: true` when fetching events
-- Keep track of sync tokens
-- Handle all possible change types
-- Maintain relationships between events
-- Consider performance when dealing with many instances
+1. Delete "this and following" - splits the series and deletes future instances
+
+2. Edit "this and following" - splits the series and creates a new series with modified properties
+
+The challenge is that Google Calendar's API sends these changes in potentially multiple payloads, and we can't rely on receiving all related changes in a single payload or in a specific order.
+
+### Solution Overview
+
+Treat each change as an independent operation based on the event's properties, not on payload combinations or ID patterns. This approach is more reliable as it:
+
+1. Uses documented API properties
+
+2. Doesn't rely on payload ordering
+
+3. Handles each change atomically
+
+4. Works consistently across all operation types
+
+### Approach
+
+Whenever a series is split, delete the following instances
+
+- Don't worry about what caused the split -- differentiating between editing 'this and following' vs deleting 'this and following'
+
+Has recurrence with UNTIL? → Original series being split
+Has recurringEventId? → Instance or new series
+Has status: "cancelled"? → Cancelled instance
+Has originalStartTime? → Modified instance
+
+### Design Flow: Detecting Series Splits
+
+```mermaid
+
+graph TD
+
+    A[Receive Google Calendar Event] --> B{Has recurringEventId?}
+
+    B -->|Yes| C{Status = cancelled?}
+
+    C -->|Yes| D[Delete Instance]
+
+    C -->|No| E[Update Instance]
+
+    B -->|No| F[Fetch Current State]
+
+    F --> G{Is Series Split?}
+
+    G -->|Yes| H[Update Original Series]
+
+    G -->|No| I[Create/Update Series]
+
+
+
+    H --> J[Delete Future Instances]
+
+    I --> K[Generate New Instances]
+
+
+
+    subgraph "Series Split Detection"
+
+    G -->|Compare| L[UNTIL Dates]
+
+    L -->|Earlier| G
+
+    end
+
+```
+
+### Anti-Pattern Design Flow
+
+We're sharing this flawed approach because it seems like a logical way to approach the problem, but it doesn't work. Do not do this.
+
+```mermaid
+graph TD
+    subgraph "Sync Process"
+        Watch[Watch for Changes] -->|1. Notification| Notify[Receive Notification]
+        Notify -->|2. Fetch| Fetch[Fetch Changes]
+        Fetch -->|3. Analyze| Analyze[Analyze Changes]
+        Analyze -->|4. Update| Update[Update Database]
+        Update -->|5. Store Token| Token[Store nextSyncToken]
+    end
+
+    subgraph "Change Types"
+        Create[Create Series]
+        EditOne[Edit One Instance]
+        EditFuture[Edit This & Future]
+        EditAll[Edit All Instances]
+        DeleteOne[Delete Instance]
+        DeleteAll[Delete Series]
+    end
+
+    Analyze -->|determines| Create
+    Analyze -->|determines| EditOne
+    Analyze -->|determines| EditFuture
+    Analyze -->|determines| EditAll
+    Analyze -->|determines| DeleteOne
+    Analyze -->|determines| DeleteAll
+```
+
+The flawed assumption is that you will be able to determine the user's action based on the payloads
+that you receive from Google Calendar after a notification is received. Unfortunately, this is not the case.
+Google Calendar API batches changes, and does not return them in a way that corresponds to what
+caused the change.
+
+Because of this, you are better off treating each change as an independent operation, without regard
+for what caused the change.
