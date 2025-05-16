@@ -51,4 +51,4 @@ When you encounter a mismatch user id, the user is in your mongo collection is n
 
 ### Invalid domain name
 
-When encountering invalid domain name, this is because the url you provided in the `SUPERTOKENS_..` value in your .env file is incorrect. This could be caused by you prematurely finished setting up your supertokens. Please make sure to completely set up your supertokens, then copy your assigned api key and url.
+When encountering invalid domain name, this is because the url you provided in the `SUPERTOKENS_..` value in your .env file is incorrect. This could be caused by you prematurely finished setting up your Supertokens. Please make sure to completely set up your Supertokens, then copy your assigned api key and url.
