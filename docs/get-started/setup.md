@@ -30,7 +30,7 @@ Ready? Let's go!
 
 ## Setup the `.env` file
 
-This is the file that contains your custom and sensitive information. We're setting it up now so we can update the values as we set up our third-party accounts.
+This is the file that contains your custom and sensitive information. We're creating the file now so we can update the values as we set up our third-party accounts.
 
 1. Copy `compass/packages/backend/.env.example` and save as `compass/packages/backend/.env`.
 2. Read through the comments to familiarize yourself with the environment variables.
@@ -67,20 +67,24 @@ To use Google OAuth, create a Google Cloud Platform project and setup an OAuth s
 
 ### MongoDB
 
+#### Overview
+
 Before using Mongo db, ensure you create a free [MongoDB Atlas account](https://www.mongodb.com/cloud/atlas/register) that allows you to create a Mongo db database, which is the easiest and quickest way to get started with Mongo without needing to install it locally.
 
 User data is stored across a few MongoDB collections. These collections are created automatically at runtime, so you just have to create an account to get started.
+
+#### Instructions
 
 Compass connects to MongoDB through the NodeJS driver.
 
 1. Create a free [MongoDB Atlas account](https://www.mongodb.com/cloud/atlas/register)
 2. Get your Node.js driver [connection string](https://www.mongodb.com/docs/drivers/node/current/fundamentals/connection/connect/#std-label-node-connect-to-mongodb)
-
 3. When you get your connection string,scroll down to the Network access in the left sidebar and add your current ip address. Make sure you always include your ip address when you switch networks because your device ip v4 address changes from one ISP to another and from time to time.
-
-   - Update the connection string in your `.env` file
+4. Add connection string to your `.env` file
 
 ### Supertokens
+
+#### Overview
 
 Compass uses Supertokens to manage user sessions. This is what allows users to stay signed in between page refreshes. It also prompts reauthorization after an extended time away.
 
@@ -88,27 +92,24 @@ Supertokens offers many different authentication options. Compass only uses thei
 
 Supertokens will provision the auth infrastructure in AWS for you, presenting a connection URI and API key afterwards. That's all we need to get started.
 
+#### Instructions
+
 1. Create a free [Supertokens account](https://supertokens.com/)
 2. Click trough the onboarding steps
    - If prompted for a recipe, select Passwordless
 3. Select the Managed Core option
 4. After your instance is configured, copy the connection URI and API key to your `.env` file
 
-### ConvertKit (optional)
+### Kit (optional)
 
-ConvertKit is an email marketing service. After a new user signs in, Compass adds their email to a ConvertKit subscriber list. You can combine this trigger with an automation in ConvertKit to send a welcome email to new users.
+Kit is an email marketing service. After a new user signs in, Compass creates a Kit subscriber and adds a tag. You can use this tag to trigger an automation sequence in Kit to send a welcome email to new users.
 
-You can skip this if you don't want to add emails to ConvertKit.
+You can skip this if you don't want to add emails to Kit.
 
-1. Create a free [ConvertKit account](https://convertkit.com/)
-2. Get your API key and Secret from the Account Settings
-3. Get your ConvertKit subscriber list ID
-   - Create a segment
-   - Go to Subscribers
-   - Click on the list you want to use
-   - Copy the ID from the URL
-4. Add the API key, Secret, and list ID to your `.env` file
-5. Update the to and from email addresses in your `.env` file
+1. Create a free [Kit account](https://kit.com/)
+2. Get your API secret from the Account Settings
+3. Get your Kit tag ID. You can find this in the URL of the tag page
+4. Add the API secret and tag ID to your `.env` file
 
 ## Start in Dev Mode
 
@@ -140,9 +141,9 @@ Pfew! That was a lot of setup. Now for the fun part. Run these commands from the
 
    - Create a new user in MongoDB
    - Start a user session with Supertokens
-   - Add the user's email to ConvertKit (if enabled)
+   - Add the user's email to Kit (if enabled)
    - Import events from the user's `primary` Google Calendar into MongoDB
-   - Setup a sync channel to receive Google Calendar webhook notifications for the duration specified in the `.env` (if enabled)
+   - Setup a sync channel to receive Google Calendar webhook notifications for the duration specified in the `.env` (if using HTTPS)
 
 6. Make a change to the frontend and backend code to confirm each hot reloads
 
@@ -153,4 +154,4 @@ You already have everything you need, but these tools will make your life easier
 - [React Developer Tools](https://react.dev/learn/react-developer-tools): Helps debug React components
 - [Redux DevTools Browser Extension](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en): Helps debug Redux and Redux Saga
 
-Did I miss something? Please open an issue or PR to help me improve this guide.
+Did we miss something? Please open an issue or PR to help us improve this guide.
