@@ -14,7 +14,7 @@ Then you'll need to update a few configuration values:
 
 The [build CLI for web](./build) uses webpack to compile the frontend code into JS and static assets. It's up to you to decide how to serve these files to your users.
 
-I use a Nginx revere proxy to serve the static assets and handle SSL. This requires more manual server configuration compared to a PaaS like Vercel or Heroku.
+We use a Nginx reverse proxy to serve the static assets and handle SSL. This requires more manual server configuration compared to a PaaS like Vercel or Heroku.
 
 ## Backend (API)
 
@@ -24,6 +24,6 @@ Getting the backend production-ready can be a headache. LMK if you'd like someon
 
 ## Desktop
 
-I originally built Compass as an Electron app. However, I quickly shifted to distributing it as a web app, because I found that easier to deploy and test.
+We originally built Compass as an Electron app. However, we quickly shifted to distributing it as a web app, because it's easier to deploy and test.
 
 The code in [`packages/electron` from this commit](https://github.com/SwitchbackTech/compass/commit/506c87d3dc05fed83d9a5b714fc4a637152c3bbe) comes from those early desktop days. It's probably broken, but it might be helpful to reference if you're keen to pick up where I left off. The structure is based on [this template](https://github.com/reZach/secure-electron-template).
