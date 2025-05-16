@@ -1,14 +1,10 @@
 # Coding Conventions
 
-Opinionated guide for writing code in the project, with a brief rationale for each rule. This guide is meant to reduce the cognitive load of understanding and contributing to the Compass codebase, making it maintain velocity.
+Opinionated guide for writing code in the project, with a brief rationale for each rule. This guide is meant to reduce the cognitive load of understanding and contributing to the Compass codebase.
 
 Follow this guide to ensure consistency and give your PR the best change of being accepted.
 
 These rules are not set in stone, and there may be exceptions. If you'd like to propose a change to the rules, we welcome your suggestions in the form of a GitHub issue in this repository. In that issue, explain why we should adjust the rule, provide an alternative, and explain why the alternative is better.
-
-
-
-
 
 ## Comments
 
@@ -18,6 +14,7 @@ Comments are helpful if:
 
 1. The code itself is ambiguous or complicated
 2. You’re writing a shared util that is ambiguous and used by different areas of the codebase.
+3. They give AI more context to understand the codebase.
 
 While comments can be helpful to explain complexity, strive for simplicity by:
 
@@ -55,8 +52,6 @@ How to do that:
 
 1. **Delete dead code**: If you see a function or variable that isn't used, delete it. We only want code that is used to exist in the codebase. It's easier to understand and maintain. Just do this deletion in a separate commit, so reviewers can differentiate your cleanup from your feature work.
 2. **Improve tests**: If you're working in a file and see a test that could be improved, improve it.
-3. **Do small refactors**: If you're working in a file and see a function or component that could be improved, refactor it. Be intentional about only changing the files that are relevant to your issue.
-
-For an example of how to do these refactors, see the commits and comments in [this PR](https://github.com/SwitchbackTech/compass/pull/209#issuecomment-2569223427).
+3. **Do small refactors**: If you're working in a file and see a function or component that could be improved, refactor it. Be intentional about only changing the files that are relevant to your issue. For an example of how to do these refactors, see the commits and comments in [this PR](https://github.com/SwitchbackTech/compass/pull/209#issuecomment-2569223427).
 
 4. **Do larger refactors**: If you think the codebase would improve through a larger refactor, open an issue first. In that issue, explain the problem, the solution, and the benefits of the solution. Get buy-in from the team before starting the refactor.
