@@ -6,6 +6,23 @@ Follow this guide to ensure consistency and give your PR the best change of bein
 
 These rules are not set in stone, and there may be exceptions. If you'd like to propose a change to the rules, we welcome your suggestions in the form of a GitHub issue in this repository. In that issue, explain why we should adjust the rule, provide an alternative, and explain why the alternative is better.
 
+## Commit Messages
+
+### Commit & PR Conventions
+
+Use [conventional commits](https://www.conventionalcommits.org), with an emoji at the start of the commit message.
+
+Using emojis on commit messages provides an easy way of identifying the purpose or intention of a commit with only looking at the emojis used.
+
+For a CLI tool that helps follow these formats, see [gitmoji](https://github.com/carloscuesta/gitmoji).
+
+Commit syntax should be:
+`<intention> [scope?][:?] <message>`
+
+- intention: An emoji that matches the changes.
+- scope: An optional string that adds contextual information for the scope of the change.
+- message: A brief explanation of the change.
+
 ## Comments
 
 ### Don’t overuse comments
