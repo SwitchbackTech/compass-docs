@@ -10,6 +10,24 @@ Everything will come together in 2025. We’ll use the foundational code, the le
 
 2025 will be our coming-of-age, where Compass grows from a cute side project into a tool that people trust with their most valuable asset — their time.
 
+### Decision Making Process for New Features
+
+We're delivering a minimal MVP and charging for it, so we need to be very selective about what we commit to in the meantime.
+
+```mermaid
+flowchart TD
+    A[Feature] --> B{Right Action,<br>Right Time?}
+    B -- No --> C[Ignore it]
+    B -- Yes --> D{Is it a small<br>feature/bug?}
+    D -- Yes --> E{Is it an<br>emergency?}
+    E -- Yes --> F[Fix it]
+    E -- No --> G[Defer it]
+    G --> H[Backlog<br>to be prioritized later]
+    D -- No --> I[Defer it]
+    I --> H
+
+```
+
 ## Quarterly Focus
 
 Each quarter has a theme. At the end of each quarter, I will email users explaining what we did and encouraging them to try it out.
@@ -86,14 +104,14 @@ Listen to the feedback that our existing users provided. Give them what they ask
 
 ### Q4: Make it good enough to share
 
-We will have shipped at least two big features, established revenue, and gotten a lot of feedback at this point. We’ll double-down on what’s working and drop what isn’t. 
+We will have shipped at least two big features, established revenue, and gotten a lot of feedback at this point. We’ll double-down on what’s working and drop what isn’t.
 
 This will solidify the confidence users have in our product and ability to keep improving quickly. They will start referring others to our app. This referral base and our more vocal marketing will result in more usage and conversions. As a result, we’ll have more revenue than expenses and set ourselves up to help users even more in 2026.
 
 **October, November:**
 
 - Muhammed: Focus on improving what’s working and ignoring/removing what isn’t. Fix any underlying foundational issues that’ll slow us down.
-- Tyler: Unblock Muhammed. Support, QA, miscellaneous code fixes. 
+- Tyler: Unblock Muhammed. Support, QA, miscellaneous code fixes.
 
 **December:**
 
