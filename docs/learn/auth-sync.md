@@ -115,6 +115,8 @@ Updates UI
 
 ## Validating User Requests
 
+For a step-by-step guide on how to create a user session and attach the access token to subsequent requests, see [this issue](https://github.com/SwitchbackTech/compass/issues/508)
+
 What happens when a user makes a change in Compass
 
 1. User makes a change in Compass
