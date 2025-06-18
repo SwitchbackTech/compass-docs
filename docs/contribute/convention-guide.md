@@ -25,6 +25,10 @@ Commit syntax should be:
 
 ## Comments
 
+### No TODOs in comments
+
+Don't use comments to track TODOs. Instead, create an issue for it in GitHub.
+
 ### Don’t overuse comments
 
 Comments are helpful if:
