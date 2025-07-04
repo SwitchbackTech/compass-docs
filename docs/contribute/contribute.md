@@ -49,7 +49,7 @@ What may be offered after consistent excellence\*:
 1. Manually test your changes. See the [testing guide](./testing-guide.md) for more info on how to do this sufficiently.
 1. Push your branch to your fork
 1. Create a pull request
-1. Link the PR to the issue it solves by including the issue number in the PR description. For example: `Fixes #123`
+1. Link the PR to the issue it solves by including the issue number in the PR description and using a [closing keyword](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/using-keywords-in-issues-and-pull-requests#linking-a-pull-request-to-an-issue). For example: `Fixes #123`
 1. Wait for feedback. You can continue this process with another issue while waiting for feedback.
 
 ### 🐞 You found an undocumented bug
