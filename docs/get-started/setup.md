@@ -111,6 +111,17 @@ You can skip this if you don't want to add emails to Kit.
 3. Get your Kit tag ID. You can find this in the URL of the tag page
 4. Add the API secret and tag ID to your `.env` file
 
+### Ngrok (optional)
+
+Ngrok exposes local networked services behinds NATs and firewalls to the public internet over a secure tunnel. It allows us to create an agent endpoint that forwards public traffic to localhost Compass API during development so that we can test our webhook endpoints(Gcal etc.) without needing access to a deployed instance..
+
+You can skip this if you're not working on, or going to test the webhook functionalities.
+
+1. Create a free [Ngrok account](https://dashboard.ngrok.com/signup/)
+2. Get your [Authtoken](https://dashboard.ngrok.com/get-started/your-authtoken) from the Ngrok Dashboard
+3. Create a [Static Domain](https://dashboard.ngrok.com/domains) from the Ngrok Dashboard
+4. Add the Authtoken(`NGROK_AUTHTOKEN`) and Static Domain(`NGROK_DOMAIN`) to your `.env` file
+
 ## Start in Dev Mode
 
 Pfew! That was a lot of setup. Now for the fun part. Run these commands from the root `compass` directory
