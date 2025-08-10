@@ -52,3 +52,47 @@ When you encounter a mismatch user id, the user is in your mongo collection is n
 ### Invalid domain name
 
 When encountering invalid domain name, this is because the url you provided in the `SUPERTOKENS_..` value in your .env file is incorrect. This could be caused by you prematurely finished setting up your Supertokens. Please make sure to completely set up your Supertokens, then copy your assigned api key and url.
+
+## Duplicate Compass Events Issue
+
+### Duplicate events appearing on calendar
+
+When duplicate Compass events are created that reference the same Google Calendar event ID, you may notice:
+
+- Duplicate events showing up in your calendar even though you didn't create them
+- Events continue duplicating when you refresh the page during sync
+- Deleting one duplicate event causes all duplicate events (and possibly the original) to be deleted
+- The app becomes unusable due to sync failures with MongoDB positional operators
+
+This issue typically occurs when:
+1. Your user session expires while using Compass
+2. You revisit Compass and the backend starts importing your events
+3. You refresh the page during the import process
+
+### Resolution
+
+To resolve this issue, you can run the CLI script to merge duplicate sync data:
+
+```sh
+npm run cli -- merge-duplicate-sync
+```
+
+Or to run without interactive prompts:
+
+```sh
+npm run cli -- merge-duplicate-sync --force
+```
+
+This script will:
+- Identify users with duplicate sync records in the database
+- Merge the duplicate records using unique identifiers
+- Remove duplicates while preserving all unique calendar and event data
+- Use database transactions to ensure data integrity
+
+**Note**: This is a temporary solution for local development environments. The team is working on a permanent fix to prevent this issue from occurring in the first place.
+
+### Additional Context
+
+For more details about this issue and the resolution approach, see:
+- [Original Issue #621](https://github.com/SwitchbackTech/compass/issues/621)
+- [Fix Implementation #666](https://github.com/SwitchbackTech/compass/pull/666)
