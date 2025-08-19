@@ -122,6 +122,30 @@ You can skip this if you're not working on, or going to test the webhook functio
 3. Create a [Static Domain](https://dashboard.ngrok.com/domains) from the Ngrok Dashboard
 4. Add the Authtoken(`NGROK_AUTHTOKEN`) and Static Domain(`NGROK_DOMAIN`) to your `.env` file
 
+### PostHog (optional)
+
+#### Overview
+
+PostHog provides analytics and error handling for Compass. This helps track user interactions and monitor application errors to improve the user experience and identify issues.
+
+Like Compass, PostHog is open-source and can be self-hosted. This makes it a good fit for users who are self-hosting Compass for their team and prefer to keep their analytics data in-house rather than sending it to a third-party provider.
+
+You can skip this if you don't want to collect analytics or error tracking data.
+
+#### Instructions
+
+1. Create a free [PostHog account](https://posthog.com/)
+2. Create a new project in your PostHog dashboard
+3. Get your Project API Key from the Project Settings
+4. Get your PostHog Host URL (usually `https://app.posthog.com` for PostHog Cloud, or your self-hosted URL)
+5. Add the API Key (`POSTHOG_KEY`) and Host URL (`POSTHOG_HOST`) to your `.env` file
+
+Alternatively, if you prefer to self-host PostHog:
+
+1. Follow the [PostHog self-hosting guide](https://posthog.com/docs/self-host) to deploy your own instance
+2. Use your self-hosted PostHog URL as the `POSTHOG_HOST` value
+3. Get the Project API Key from your self-hosted PostHog dashboard
+
 ## Start in Dev Mode
 
 Pfew! That was a lot of setup. Now for the fun part. Run these commands from the root `compass` directory
