@@ -67,7 +67,7 @@ To use Google OAuth, create a Google Cloud Platform project and setup an OAuth s
 
 ### MongoDB
 
-#### Overview
+#### MongoDB Overview
 
 Before using Mongo db, ensure you create a free [MongoDB Atlas account](https://www.mongodb.com/cloud/atlas/register) that allows you to create a Mongo db database, which is the easiest and quickest way to get started with Mongo without needing to install it locally.
 
@@ -84,7 +84,7 @@ Compass connects to MongoDB through the NodeJS driver.
 
 ### Supertokens
 
-#### Overview
+#### Supertokens Overview
 
 Compass uses Supertokens to manage user sessions. This is what allows users to stay signed in between page refreshes. It also prompts reauthorization after an extended time away.
 
@@ -92,35 +92,13 @@ Supertokens offers many different authentication options. Compass only uses thei
 
 Supertokens will provision the auth infrastructure in AWS for you, presenting a connection URI and API key afterwards. That's all we need to get started.
 
-#### Instructions
+#### Supertokens Instructions
 
 1. Create a free [Supertokens account](https://supertokens.com/)
 2. Click trough the onboarding steps
    - If prompted for a recipe, select Passwordless
 3. Select the Managed Core option
 4. After your instance is configured, copy the connection URI and API key to your `.env` file
-
-### Kit (optional)
-
-Kit is an email marketing service. After a new user signs in, Compass creates a Kit subscriber and adds a tag. You can use this tag to trigger an automation sequence in Kit to send a welcome email to new users.
-
-You can skip this if you don't want to add emails to Kit.
-
-1. Create a free [Kit account](https://kit.com/)
-2. Get your API secret from the Account Settings
-3. Get your Kit tag ID. You can find this in the URL of the tag page
-4. Add the API secret and tag ID to your `.env` file
-
-### Ngrok (optional)
-
-Ngrok exposes local networked services behinds NATs and firewalls to the public internet over a secure tunnel. It allows us to create an agent endpoint that forwards public traffic to localhost Compass API during development so that we can test our webhook endpoints(Gcal etc.) without needing access to a deployed instance..
-
-You can skip this if you're not working on, or going to test the webhook functionalities.
-
-1. Create a free [Ngrok account](https://dashboard.ngrok.com/signup/)
-2. Get your [Authtoken](https://dashboard.ngrok.com/get-started/your-authtoken) from the Ngrok Dashboard
-3. Create a [Static Domain](https://dashboard.ngrok.com/domains) from the Ngrok Dashboard
-4. Add the Authtoken(`NGROK_AUTHTOKEN`) and Static Domain(`NGROK_DOMAIN`) to your `.env` file
 
 ## Start in Dev Mode
 
@@ -166,3 +144,51 @@ You already have everything you need, but these tools will make your life easier
 - [Redux DevTools Browser Extension](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en): Helps debug Redux and Redux Saga
 
 Did we miss something? Please open an issue or PR to help us improve this guide.
+
+## Setup Optional Accounts
+
+Compass will work without these third-parties, but they can be useful for developers and teams who want a batteries-included setup.
+
+### Email Marketing: Kit
+
+Kit is an email marketing service. After a new user signs in, Compass creates a Kit subscriber and adds a tag. You can use this tag to trigger an automation sequence in Kit to send a welcome email to new users.
+
+You can skip this if you don't want to add emails to Kit.
+
+1. Create a free [Kit account](https://kit.com/)
+2. Get your API secret from the Account Settings
+3. Get your Kit tag ID. You can find this in the URL of the tag page
+4. Add the API secret and tag ID to your `.env` file
+
+### Calendar Sync Proxy: Ngrok
+
+Ngrok exposes local networked services behinds NATs and firewalls to the public internet over a secure tunnel. It allows us to create an agent endpoint that forwards public traffic to localhost Compass API during development so that we can test our webhook endpoints(Gcal etc.) without needing access to a deployed instance..
+
+You can skip this if you're not working on, or going to test the webhook functionalities.
+
+1. Create a free [Ngrok account](https://dashboard.ngrok.com/signup/)
+2. Get your [Authtoken](https://dashboard.ngrok.com/get-started/your-authtoken) from the Ngrok Dashboard
+3. Create a [Static Domain](https://dashboard.ngrok.com/domains) from the Ngrok Dashboard
+4. Add the Authtoken (`NGROK_AUTHTOKEN`) and Static Domain (`NGROK_DOMAIN`) to your `.env` file
+
+### Analytics: PostHog
+
+PostHog provides analytics and error handling for Compass. This helps track user interactions and monitor application errors to improve the user experience and identify issues.
+
+Like Compass, PostHog is open-source and can be self-hosted. This makes it a good fit for users who are self-hosting Compass for their team and prefer to keep their analytics data in-house.
+
+You can skip this if you don't want to collect analytics or error tracking data.
+
+#### PostHog Instructions
+
+1. Create a free [PostHog account](https://posthog.com/)
+2. Create a new project in your PostHog dashboard
+3. Get your Project API Key from the Project Settings
+4. Get your PostHog Host URL (usually `https://app.posthog.com` for PostHog Cloud, or your self-hosted URL)
+5. Add the API Key (`POSTHOG_KEY`) and Host URL (`POSTHOG_HOST`) to your `.env` file
+
+Alternatively, if you prefer to self-host PostHog:
+
+1. Follow the [PostHog self-hosting guide](https://posthog.com/docs/self-host) to deploy your own instance
+2. Use your self-hosted PostHog URL as the `POSTHOG_HOST` value
+3. Get the Project API Key from your self-hosted PostHog dashboard
