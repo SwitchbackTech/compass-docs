@@ -17,6 +17,16 @@ If these goals align with your own, we'd love to work with you!
 
 ### What's in it for you
 
+🚀 **Experience**
+
+Working on Compass gives you unique experience that you won't get anywhere else.
+
+**Meritocracy**: Compass operates on outputs, not resumes or locales. An Ex-Googler in SF gets the same treatment as someone in Mongolia who just learned HTML; We only care about the quality of the work you can produce.
+
+**Fullstack**: Since this is an open-source monorepo, you can get experience getting things to work end-to-end without silos. This'll help you become a true fullstack engineer.
+
+**Transparency**: Code isn't the only thing that we're transparent about. We publish our [handbook](https://compasscalendar.notion.site/), roadmap, technical guides, and lessons-learned across our repos and social media. Working in an open culture will give you more opportunities to grow as an engineer and leader.
+
 🏆 Recognition (GitHub, changelogs, etc)
 
 What may be offered after consistent excellence\*:
@@ -65,7 +75,3 @@ Larger features or changes that are not already on our [Roadmap](../roadmap.md) 
 ### 💅 You fixed whitespace, formatted code, or made a purely cosmetic patch
 
 Changes that are cosmetic in nature and do not add anything substantial to the stability, functionality, or testability will generally not be accepted.
-
-## Quality Assessment
-
-It can be hard to
