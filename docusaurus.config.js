@@ -85,27 +85,21 @@ const config = {
             label: "Get Started",
           },
           { to: "/blog/about", label: "About", position: "left" },
-          {
-            href: "https://github.com/SwitchbackTech/compass",
-            label: "Compass Repo",
-            position: "right",
-          },
-          {
-            href: "https://github.com/SwitchbackTech/compass-docs",
-            label: "This Doc Site's Repo",
-            position: "right",
-          },
         ],
       },
       footer: {
         style: "dark",
         links: [
           {
-            title: "Docs",
+            title: "Repos",
             items: [
               {
-                label: "🏁 Getting Started",
-                to: "/docs/category/get-started",
+                label: "🧭 Compass",
+                to: "https://github.com/SwitchbackTech/compass",
+              },
+              {
+                label: "📖 Doc Site (this one)",
+                to: "https://github.com/SwitchbackTech/compass-docs",
               },
             ],
           },
@@ -113,20 +107,33 @@ const config = {
             title: "More",
             items: [
               {
-                label: "🌐 Landing Page",
-                href: "https://www.compasscalendar.com",
+                label: "🔵 Production App",
+                href: "https://app.compasscalendar.com",
+              },
+              {
+                label: "📓 Handbook",
+                href: "https://compasscalendar.notion.site/",
               },
               {
                 label: "✍ Blog",
                 href: "https://www.compasscalendar.com/blog",
               },
-              {
-                label: "🔵 Production App",
-                href: "https://app.compasscalendar.com",
-              },
+            ],
+          },
+          {
+            title: "Social",
+            items: [
               {
                 label: "💬 Discord",
                 href: "https://www.discord.gg/H3DVMnKmUd",
+              },
+              {
+                label: "🤝 LinkedIn",
+                href: "https://www.linkedin.com/company/compass-calendar/",
+              },
+              {
+                label: "🐦 X",
+                href: "https://x.com/CompassCalendar",
               },
             ],
           },
