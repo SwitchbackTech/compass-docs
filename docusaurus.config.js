@@ -65,10 +65,11 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       image: "img/social_card.jpg",
+
       algolia: {
-        appId: process.env.ALGOLIA_APP_ID,
-        apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
-        indexName: process.env.ALGOLIA_INDEX_NAM,
+        appId: "8X35L27KEK",
+        apiKey: "9b2c833c8deea66a67ffb1277c58abe2",
+        indexName: "Compass Docs Crawler",
       },
       navbar: {
         title: "Compass Docs",
