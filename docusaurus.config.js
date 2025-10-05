@@ -95,11 +95,11 @@ const config = {
             items: [
               {
                 label: "🧭 Compass",
-                to: "https://github.com/SwitchbackTech/compass",
+                href: "https://github.com/SwitchbackTech/compass",
               },
               {
                 label: "📖 Doc Site (this one)",
-                to: "https://github.com/SwitchbackTech/compass-docs",
+                href: "https://github.com/SwitchbackTech/compass-docs",
               },
             ],
           },
