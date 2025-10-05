@@ -21,10 +21,12 @@ const config = {
   projectName: "compass-docs",
 
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
 
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
   },
 
   themes: ["@docusaurus/theme-mermaid"],
@@ -64,9 +66,9 @@ const config = {
     ({
       image: "img/social_card.jpg",
       algolia: {
-        appId: process.env.ALGOLIA_APP_ID || '8X35L27KEK',
-        apiKey: process.env.ALGOLIA_SEARCH_API_KEY || 'ALGOLIA_SEARCH_API_SECRET',
-        indexName: process.env.ALGOLIA_INDEX_NAME || 'Compass Docs Crawler',
+        appId: process.env.ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
+        indexName: process.env.ALGOLIA_INDEX_NAM,
       },
       navbar: {
         title: "Compass Docs",
