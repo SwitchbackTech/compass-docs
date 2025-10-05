@@ -8,6 +8,14 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    hsl(202, 100%, 67%),
+    hsl(195, 78%, 56%),
+    hsl(196, 60%, 59%),
+    hsl(205, 33%, 61%),
+    hsl(196, 45%, 78%)
+  );
 }
 
 @media screen and (max-width: 996px) {
