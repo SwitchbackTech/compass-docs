@@ -8,7 +8,7 @@ Definition of terms used in the source code and documentation.
 
 **Grid Event**: An event that is assigned to a specific time slot on the calendar in the grid view. These events have both a date and time.
 
-**Draft Event**: A calendar event that has pending changes that have not yet been persisted to the database. When a user makes changes to an event in the form, drags the event, or resizes its times, the user is operating on a draft event. After the user clicks "Save", the draft event is persisted to the database, and the Draft Event goes away and is replaced with the Event.
+**Draft Event**: A calendar event that has pending changes that have not yet been persisted to the database. When a user makes changes to an event in the form, drags the event or resizes its times, the user is operating on a draft event. After the user clicks "Save", the draft event is persisted to the database, and the Draft Event goes away and is replaced with the Event.
 
 **Someday Event**: These have `startDate` and `endDate` like regular timed events, but they have not yet been assigned to a specific time slot on the calendar in the grid. Instead, they are stored in the sidebar (Someday/Maybe list). These may be recurring or standalone.
 
