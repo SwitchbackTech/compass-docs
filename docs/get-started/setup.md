@@ -154,7 +154,7 @@ Both the frontend and backend support hot reloading during development:
 
 - **Viewing logs**: Check the terminal where you ran `yarn dev:backend` for API logs and the terminal where you ran `yarn dev:web` for build logs
 - **Testing changes**: After making changes, test them in the browser. The app should hot-reload automatically
-- **Database inspection**: MongoDB collections are created automatically. We recommend using the [MongoDB Compass](https://www.mongodb.com/products/compass) desktop app to visually inspect your database, view collections, documents, and run queries during local development. Connect using the same MongoDB connection string from your `.env` file.
+- **Database inspection**: MongoDB collections are created automatically. We recommend using the [MongoDB Compass](https://www.mongodb.com/products/compass) desktop app to visually inspect your database, view collections, documents, and run queries during local development. Connect using the same MongoDB connection string from your `.env.local` file.
 - **Clearing user data**: Use `yarn cli delete -u <email>` to clear a user's data and start fresh (see [CLI guide](../guides/cli.md))
 
 ### Debugging Tips
