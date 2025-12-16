@@ -83,7 +83,7 @@ Compass connects to MongoDB through the NodeJS driver.
 
 1. Create a free [MongoDB Atlas account](https://www.mongodb.com/cloud/atlas/register)
 2. Get your Node.js driver [connection string](https://www.mongodb.com/docs/drivers/node/current/fundamentals/connection/connect/#std-label-node-connect-to-mongodb)
-3. When you get your connection string,scroll down to the Network access in the left sidebar and add your current ip address. Make sure you always include your ip address when you switch networks because your device ip v4 address changes from one ISP to another and from time to time.
+3. When you get your connection string, scroll down to the Network access in the left sidebar and add your current ip address. Make sure you always include your ip address when you switch networks because your device ip v4 address changes from one ISP to another and from time to time.
 4. Add connection string to your `.env.local` file
 5. **Recommended**: Install [MongoDB Compass](https://www.mongodb.com/products/compass) desktop app to visually inspect and manage your database during local development. You can connect to your MongoDB Atlas instance using the same connection string from your `.env` file.
 
