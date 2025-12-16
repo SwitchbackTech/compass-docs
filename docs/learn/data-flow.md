@@ -42,36 +42,33 @@ This might help.
 
 ### Runtime - Events
 
-`useWeek.ts`
+The event flow follows this pattern:
 
-- imports the global dispatch from the redux store
-- on render:
-  - gets all week events: `getWeekEventsSlice.actions.request(...)`
-- on submit:
-  - if event exists (has an id): updates:
-    - `editEventSlice.actions.request(...)`
-  - if event doesn't exist: creates:
-    - `createEventSlice.actions.request(...)`
-- > (somehow knows to go to sagas ...)
+1. **Component** (e.g., `useWeek.ts` or similar hook/component):
+   - Imports the global dispatch from the Redux store
+   - On render: dispatches `getWeekEventsSlice.actions.request(...)` to fetch events
+   - On submit:
+     - If event exists (has an id): dispatches `editEventSlice.actions.request(...)`
+     - If event doesn't exist: dispatches `createEventSlice.actions.request(...)`
 
-`sagas.ts`
+2. **Redux Saga** (`sagas.ts`):
+   - Listens for dispatched actions
+   - **Getting Events**: `getWeekEventsSaga()` → `getEventsSaga()` → calls `eventsApi.getEvents()` in `events/api.ts`
+   - **Creating Event**: `createEventSaga()` → calls `eventsApi.createEvent()` in `ducks/events/api.ts`
+     - Creates event with new ID
+     - Adds to running list of events in localStorage (for optimistic updates)
 
-- Getting Events:
-  - `getWeekEventsSaga()` -> `getEventsSaga` using this week as params
-    ->
-    `events/api.ts` - `eventsApi.getEvents` - uses `getEventsHelper()` to get events
-- Creating Event:
-  - `createEventSaga()` triggered
-  - calls `eventsApi.createEvent`
-    ->
-    `ducks/events/api.ts` - `eventsApi.createEvent`: - creates event - creates new id, adds to running list of events in localStorage
+3. **API Layer** (`events/api.ts` or `ducks/events/api.ts`):
+   - Makes HTTP requests to the backend API
+   - Handles responses and updates the Redux store
 
 ### Runtime - Someday List
 
-#### Frontend finds someday events
+The Someday list follows a similar pattern:
 
-`EventsList` calls `getEvents()` on load
+1. **Component** (`EventsList`):
+   - Calls `getEvents()` on load to fetch someday events
 
-`SidebarEventContainer` - `mapStateToProps` -> `selectors.ts`
-
-- finds event from `entities` slice
+2. **Redux Selector** (`selectors.ts`):
+   - `SidebarEventContainer` uses `mapStateToProps` to connect to Redux
+   - Finds events from the `entities` slice that match someday criteria
