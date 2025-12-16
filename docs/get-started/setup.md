@@ -60,7 +60,7 @@ To use Google OAuth, create a Google Cloud Platform project and setup an OAuth s
    - Select Web Application
    - Add to Authorized JavaScript origins: `http://localhost:9080`
    - Add to Authorized redirect URIs: `http://localhost:3000`
-   - Copy the Client ID and Secret to your `.env` file
+   - Copy the Client ID and Secret to your `.env.local` file
 5. Enable the Google Calendar API in your GCP project
    - Navigate to the [API Library](https://console.cloud.google.com/apis/library) in your Google Cloud project
    - Use the search bar at the top of the page to search for "Google Calendar API"
