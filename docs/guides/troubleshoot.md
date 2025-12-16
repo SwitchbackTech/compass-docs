@@ -9,49 +9,8 @@ When you encounter a missing user id, it is because Compass is not connected to 
 Sometimes MongoDB is successfully connected when you run `yarn dev:backend` but you still get a missing user id error. This could be because:
 
 1. The MongoDB connection string in your `.env.local` file is incorrect
-2. Your IP address is not whitelisted in MongoDB Atlas (if using Atlas)
-3. The MongoDB service is not running (if using a local MongoDB instance)
-
-If you're using a local MongoDB instance, verify it's installed and running:
-
-If you use Ubuntu OS you can follow the following steps. However,if you use windows or other OS while running compass, follow this [installation](https://www.mongodb.com/docs/manual/installation/) for `mongodb`
-
-Update the APT packages index
-
-```sh
-sudo apt update
-```
-
-Import the public key used by the package management system
-
-```sh
-sudo apt-get install gnupg curl
-```
-
-Create a list file for MongoDB
-
-```sh
-echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
-```
-
-Reload local package database
-
-```sh
-sudo apt-get update
-```
-
-Install the MongoDB packages
-
-```sh
-sudo apt-get install -y mongodb-org
-
-```
-
-Confirm you have mongo db in your machine
-
-```sh
-mongod --version
-```
+2. Your IP address is not whitelisted in MongoDB Atlas
+3. The MongoDB connection string format is invalid or incomplete
 
 ### Mismatch User Id
 

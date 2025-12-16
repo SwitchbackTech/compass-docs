@@ -61,10 +61,13 @@ To use Google OAuth, create a Google Cloud Platform project and setup an OAuth s
    - Add to Authorized JavaScript origins: `http://localhost:9080`
    - Add to Authorized redirect URIs: `http://localhost:3000`
    - Copy the Client ID and Secret to your `.env` file
-5. Ensure that you explicitly enabled Google Calendar API
-   - Search for Google Calendar using the search bar in the top section of the page
-   - Click on "Google Calendar API"
-   - Enable the API if it is not enabled
+5. Enable the Google Calendar API in your GCP project
+   - Navigate to the [API Library](https://console.cloud.google.com/apis/library) in your Google Cloud project
+   - Use the search bar at the top of the page to search for "Google Calendar API"
+   - Click on "Google Calendar API" from the search results
+   - Click the "Enable" button to activate the API for your project
+   - Wait for the API to be enabled (this usually takes a few seconds)
+   - Once enabled, you'll see a confirmation message and can verify the API is active by checking the [Enabled APIs](https://console.cloud.google.com/apis/dashboard) page
 
 ### MongoDB
 
@@ -82,6 +85,7 @@ Compass connects to MongoDB through the NodeJS driver.
 2. Get your Node.js driver [connection string](https://www.mongodb.com/docs/drivers/node/current/fundamentals/connection/connect/#std-label-node-connect-to-mongodb)
 3. When you get your connection string,scroll down to the Network access in the left sidebar and add your current ip address. Make sure you always include your ip address when you switch networks because your device ip v4 address changes from one ISP to another and from time to time.
 4. Add connection string to your `.env` file
+5. **Recommended**: Install [MongoDB Compass](https://www.mongodb.com/products/compass) desktop app to visually inspect and manage your database during local development. You can connect to your MongoDB Atlas instance using the same connection string from your `.env` file.
 
 ### Supertokens
 
@@ -150,7 +154,7 @@ Both the frontend and backend support hot reloading during development:
 
 - **Viewing logs**: Check the terminal where you ran `yarn dev:backend` for API logs and the terminal where you ran `yarn dev:web` for build logs
 - **Testing changes**: After making changes, test them in the browser. The app should hot-reload automatically
-- **Database changes**: MongoDB collections are created automatically. You can use MongoDB Compass or a similar tool to inspect your database
+- **Database inspection**: MongoDB collections are created automatically. We recommend using the [MongoDB Compass](https://www.mongodb.com/products/compass) desktop app to visually inspect your database, view collections, documents, and run queries during local development. Connect using the same MongoDB connection string from your `.env` file.
 - **Clearing user data**: Use `yarn cli delete -u <email>` to clear a user's data and start fresh (see [CLI guide](../guides/cli.md))
 
 ### Debugging Tips
@@ -158,13 +162,14 @@ Both the frontend and backend support hot reloading during development:
 - Use browser DevTools to debug the frontend React app
 - Use Redux DevTools browser extension to inspect Redux state
 - Check backend logs in the terminal for API errors
-- Use MongoDB Compass to inspect database collections and documents
+- Use MongoDB Compass desktop app to inspect database collections and documents, run queries, and verify data changes in real-time
 - For webhook testing during development, set up Ngrok (see Optional Accounts section)
 
 ## Install Recommended Tools
 
 You already have everything you need, but these tools will make your life easier.
 
+- [MongoDB Compass](https://www.mongodb.com/products/compass): Desktop GUI for MongoDB that makes it easy to inspect collections, documents, and run queries during local development
 - [React Developer Tools](https://react.dev/learn/react-developer-tools): Helps debug React components
 - [Redux DevTools Browser Extension](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en): Helps debug Redux and Redux Saga
 
