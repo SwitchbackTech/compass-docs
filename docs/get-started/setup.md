@@ -28,12 +28,13 @@ Ready? Let's go!
    cd compass
    ```
 
-## Setup the `.env` file
+## Setup the `.env` files
 
 This is the file that contains your custom and sensitive information. We're creating the file now so we can update the values as we set up our third-party accounts.
 
-1. Copy `compass/packages/backend/.env.example` and save as `compass/packages/backend/.env`.
+1. Copy `compass/packages/backend/.env.local.example` and save as `compass/packages/backend/.env.local`.
 2. Read through the comments to familiarize yourself with the environment variables.
+3. If you plan on deploying Compass to a production environment, also create `.env.staging` and `.env.production` for further separation of environments.
 
 ## Setup Accounts
 
@@ -135,6 +136,30 @@ Pfew! That was a lot of setup. Now for the fun part. Run these commands from the
    - Setup a sync channel to receive Google Calendar webhook notifications for the duration specified in the `.env` (if using HTTPS)
 
 6. Make a change to the frontend and backend code to confirm each hot reloads
+
+## Development Workflow
+
+### Hot Reloading
+
+Both the frontend and backend support hot reloading during development:
+
+- **Frontend**: The React app running on `http://localhost:9080` will automatically reload when you make changes to files in `packages/web`
+- **Backend**: The Node.js API server running on `http://localhost:3000` will automatically restart when you make changes to files in `packages/backend`
+
+### Common Development Tasks
+
+- **Viewing logs**: Check the terminal where you ran `yarn dev:backend` for API logs and the terminal where you ran `yarn dev:web` for build logs
+- **Testing changes**: After making changes, test them in the browser. The app should hot-reload automatically
+- **Database changes**: MongoDB collections are created automatically. You can use MongoDB Compass or a similar tool to inspect your database
+- **Clearing user data**: Use `yarn cli delete -u <email>` to clear a user's data and start fresh (see [CLI guide](../guides/cli.md))
+
+### Debugging Tips
+
+- Use browser DevTools to debug the frontend React app
+- Use Redux DevTools browser extension to inspect Redux state
+- Check backend logs in the terminal for API errors
+- Use MongoDB Compass to inspect database collections and documents
+- For webhook testing during development, set up Ngrok (see Optional Accounts section)
 
 ## Install Recommended Tools
 

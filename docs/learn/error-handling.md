@@ -1,21 +1,49 @@
 # Error Handling
 
-## How to use the error handler
+## Error Handling Pattern
 
-Follow these [PR comments](https://github.com/SwitchbackTech/compass/pull/212/files)
+Compass uses a centralized error handling system to ensure consistent error responses and easier debugging.
 
-Rather than throwing a new `BaseError`, create an error in `error.constants` for this scenario.
+## How to Use the Error Handler
 
-Then throw it using the `error()` function like so:
+Rather than throwing a new `BaseError` directly, you should:
+
+1. **Define the error in `error.constants`** for your scenario (if it doesn't already exist)
+2. **Throw it using the `error()` function** with the appropriate error constant and description
+
+### Example
 
 ```typescript
+import { error } from "./error.utils";
+import { AuthError } from "./error.constants";
+
+// Throw an error
 throw error(AuthError.YourNewAuthError, "Access token not retrieved");
 ```
 
-The `description` property in the error provides more info about the error.
+## Error Function Parameters
 
-The second arg in the `error()` is meant to explain the result of the error not happening, which the client can use to determine next steps.
+The `error()` function takes two parameters:
 
-Try not to include too many implementation details in the result string, like "Probably needs a new refresh token to obtain a new access token." We don't want to send unnecessary info to the client. Instead, you can include that info in a debug log.
+1. **Error constant**: The error type from `error.constants` (e.g., `AuthError.YourNewAuthError`)
+2. **Description**: A message explaining what went wrong or what the result would be if the error didn't occur
 
-This'll make it easier to test, typecheck, and prevent bugs
+The `description` property in the error provides more information about the error that can be used by the client to determine next steps.
+
+## Best Practices
+
+- **Keep descriptions user-friendly**: Don't include too many implementation details in the result string
+- **Use debug logs for technical details**: Instead of "Probably needs a new refresh token to obtain a new access token" in the error message, include that information in a debug log
+- **Be specific but concise**: The description should help the client understand what happened and what they might need to do
+- **Follow existing patterns**: Look at existing error constants to understand the naming and organization
+
+## Benefits
+
+This approach makes it easier to:
+
+- **Test**: Errors are typed and predictable
+- **Typecheck**: TypeScript can catch error handling issues
+- **Prevent bugs**: Centralized error handling reduces inconsistencies
+- **Debug**: All errors follow the same structure
+
+For more details on the implementation, see [this PR discussion](https://github.com/SwitchbackTech/compass/pull/212/files).

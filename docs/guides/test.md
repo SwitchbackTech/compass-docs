@@ -1,6 +1,6 @@
 # Test
 
-This doc explains how to run tests locally. For information on writing tests, see the [Contributing Guide](../contribute/contribute.md).
+This doc explains how to run tests locally. For information on writing tests, see the [Testing Guide](../contribute/testing-guide.md).
 
 ## Automated Testing
 
@@ -37,7 +37,7 @@ Glossary:
 | Manual Tests      | UI               | Manual in browser                                |
 | E2E Tests         | n/a              | n/a                                              |
 
-The GitHub repo is also configured to run tests automatically after every push
+The GitHub repository is configured to run tests automatically via CI/CD after every push to ensure code quality.
 
 ## Manual Testing with Postman
 
