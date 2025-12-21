@@ -6,7 +6,7 @@ const FeatureList = [
   {
     title: "Frontend: React",
     Svg: require("@site/static/img/react.svg").default,
-    description: <>Redux, styled-components, TypeScript, webpack </>,
+    description: <>Redux, Tailwind, TypeScript, webpack </>,
   },
   {
     title: "Backend: Node",
