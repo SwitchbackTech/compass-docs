@@ -108,7 +108,7 @@ const config = {
             items: [
               {
                 label: "🔵 Production App",
-                href: "https://app.compasscalendar.com",
+                href: "https://app.compasscalendar.com?utm_source=docsite&utm_medium=footer",
               },
               {
                 label: "📓 Handbook",
@@ -116,7 +116,7 @@ const config = {
               },
               {
                 label: "✍ Blog",
-                href: "https://www.compasscalendar.com/blog",
+                href: "https://www.compasscalendar.com/blog?utm_source=docsite&utm_medium=footer",
               },
             ],
           },
@@ -124,8 +124,8 @@ const config = {
             title: "Social",
             items: [
               {
-                label: "💬 Discord",
-                href: "https://www.discord.gg/H3DVMnKmUd",
+                label: "💬 Discussions",
+                href: "https://github.com/SwitchbackTech/compass/discussions",
               },
               {
                 label: "🤝 LinkedIn",
