@@ -16,6 +16,8 @@ yarn test:web       # runs web tests
 yarn test:backend   # runs backend tests
 
 yarn test:core      # runs core tests
+
+yarn test:e2e       # runs e2e tests
 ```
 
 ### Our Testing Strategy
