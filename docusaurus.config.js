@@ -94,11 +94,11 @@ const config = {
             title: "Repos",
             items: [
               {
-                label: "🧭 Compass",
+                label: "Compass",
                 href: "https://github.com/SwitchbackTech/compass",
               },
               {
-                label: "📖 Doc Site (this one)",
+                label: "Doc Site (this one)",
                 href: "https://github.com/SwitchbackTech/compass-docs",
               },
             ],
@@ -107,15 +107,15 @@ const config = {
             title: "More",
             items: [
               {
-                label: "🔵 Production App",
+                label: "Production App",
                 href: "https://app.compasscalendar.com?utm_source=docsite&utm_medium=footer",
               },
               {
-                label: "📓 Handbook",
+                label: "Handbook",
                 href: "https://compasscalendar.notion.site/",
               },
               {
-                label: "✍ Blog",
+                label: "Blog",
                 href: "https://www.compasscalendar.com/blog?utm_source=docsite&utm_medium=footer",
               },
             ],
@@ -124,15 +124,15 @@ const config = {
             title: "Social",
             items: [
               {
-                label: "💬 Discussions",
+                label: "Discussions",
                 href: "https://github.com/SwitchbackTech/compass/discussions",
               },
               {
-                label: "🤝 LinkedIn",
+                label: "LinkedIn",
                 href: "https://www.linkedin.com/company/compass-calendar/",
               },
               {
-                label: "🐦 X",
+                label: "X",
                 href: "https://x.com/CompassCalendar",
               },
             ],
