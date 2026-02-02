@@ -19,6 +19,8 @@ Options:
 Commands:
   build [options] [nodePckgs | web]  build compass package
   delete [options]                   delete user data from compass database
+  migrate [options]                   run database schema migrations
+  seed [options]                      run seed migrations to populate the database with data
   help [command]                     display help for command
 ```
 
@@ -36,7 +38,7 @@ Arguments:
 
 Options:
   -c, --clientId <clientId>                 google client id to inject into build
-  -e, --environment [staging | production]  specify environment
+  -e, --environment [local | staging | production]  specify environment
   -h, --help                                display help for command
 ```
 
@@ -92,3 +94,23 @@ If you skip the cleanup during account deletion, you can manually visit the clea
 - **Local**: `http://localhost:9080/cleanup` (or your dev server port)
 
 The cleanup will run automatically when you visit the URL.
+
+## Database Migrations
+
+The CLI provides commands for managing database schema migrations:
+
+### Running Migrations
+
+```bash
+yarn cli migrate
+```
+
+This runs pending database schema migrations to update your database structure.
+
+### Seeding the Database
+
+```bash
+yarn cli seed
+```
+
+This runs seed migrations to populate the database with initial or test data.

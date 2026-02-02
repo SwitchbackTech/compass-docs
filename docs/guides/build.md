@@ -15,7 +15,7 @@ yarn cli build
 The CLI will prompt you to:
 
 1. Select which package to build (`nodePckgs` for backend or `web` for frontend)
-2. Specify the environment (`staging` or `production`)
+2. Specify the environment (`local`, `staging`, or `production`)
 3. Optionally provide a Google Client ID to inject into the build
 
 ### Build Options
@@ -23,6 +23,9 @@ The CLI will prompt you to:
 You can also use command-line options:
 
 ```bash
+# Build web package for local development
+yarn cli build web -e local
+
 # Build web package for production
 yarn cli build web -e production
 

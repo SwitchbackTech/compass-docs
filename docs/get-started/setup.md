@@ -18,6 +18,14 @@ You'll then be ready to play with the local web app and test any changes you'd l
 
 Ready? Let's go!
 
+## Prerequisites
+
+Before you begin, ensure you have:
+
+- **Node.js >= 24.0.0** installed ([Download Node.js](https://nodejs.org/))
+- **Yarn** package manager installed
+- A code editor (VS Code recommended)
+
 ## Get the Code
 
 1. Clone the repo:

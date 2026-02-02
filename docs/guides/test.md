@@ -17,6 +17,8 @@ yarn test:backend   # runs backend tests
 
 yarn test:core      # runs core tests
 
+yarn test:scripts   # runs scripts tests
+
 yarn test:e2e       # runs e2e tests
 ```
 
@@ -37,7 +39,7 @@ Glossary:
 | Integration Tests | API              | Jest + In-memory MongoDB (`@shelf/jest-mongodb`) |
 | Manual Tests      | API              | Postman                                          |
 | Manual Tests      | UI               | Manual in browser                                |
-| E2E Tests         | n/a              | n/a                                              |
+| E2E Tests         | User workflows   | Playwright                                       |
 
 The GitHub repository is configured to run tests automatically via CI/CD after every push to ensure code quality.
 

@@ -86,15 +86,17 @@ Command-line tools for development and deployment:
 
 - Building the application for production
 - Managing user data (deleting test users)
+- Running database migrations and seeders
 - Environment-specific builds
 
-### `packages/core` (if exists)
+### `packages/core`
 
 Shared code used by both frontend and backend:
 
 - Type definitions
 - Utility functions
 - Constants
+- Shared validation schemas (Zod)
 
 ## Data Flow
 
