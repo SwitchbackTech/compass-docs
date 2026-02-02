@@ -4,11 +4,13 @@
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
+// Import constants from central location
+const { HANDBOOK_URL } = require("./src/constants.js");
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Compass Docs",
-  tagline:
-    "Learn how to use Compass, the open source calendar for minimalists.",
+  tagline: "Learn how to use Compass, the task manager for engineers.",
   favicon: "img/favicon.ico",
   url: "https://docs.compasscalendar.com",
   // Set the /<baseUrl>/ pathname under which your site is served
@@ -112,7 +114,7 @@ const config = {
               },
               {
                 label: "Handbook",
-                href: "https://compasscalendar.notion.site/",
+                href: HANDBOOK_URL,
               },
               {
                 label: "Blog",

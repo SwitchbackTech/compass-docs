@@ -2,7 +2,7 @@
 
 **ALWAYS follow these instructions first.** Only fallback to additional search and context gathering if the information in these instructions is incomplete or found to be in error.
 
-Compass Docs is a Docusaurus v3.x documentation site for the Compass calendar application. It provides comprehensive documentation for developers and users of the open-source calendar for minimalists.
+Compass Docs is a Docusaurus v3.x documentation site for the Compass task manager. It provides comprehensive documentation for developers and users of the open-source task manager for engineers.
 
 ## Branch Naming & Commit Message Conventions
 
