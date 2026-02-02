@@ -44,6 +44,8 @@ Options:
 
 Since user data is stored across multiple collections and involves sessions and authorization, it's often best to start from scratch when things go awry in development.
 
+The CLI's delete workflow deletes the user's Compass data from the backend database. It also provides an automated way to clear browser-side data (session cookies, localStorage, and IndexedDB).
+
 The CLI's delete workflow only deletes the user's Compass data. It does not delete their Google Calendar data.
 
 ### Steps
@@ -58,35 +60,35 @@ To delete a user's Compass data:
 
 2. Confirm using your terminal prompt (press Enter)
 
-3. Log out of Compass (press `z` and then click Logout button)
+3. After backend deletion completes, you'll be prompted to clear browser data:
 
-   - This forces the browser to clear the user's session cookie
+4. If you confirm, it'll open the provided cleanup URL in your browser:
 
-4. Sign up again to start fresh
+   - The cleanup page will automatically:
+     - Log you out of your session
+     - Clear all localStorage data
+     - Delete the IndexedDB database
+     - Redirect you to the login page
 
-### Example Output
+5. Sign up again to start fresh
 
-```text
-yarn cli delete -u testuser1@gmail.com
+### Force Mode
 
-? This will delete all Compass data for all users matching: >> testuser1@gmail.com <<
-Continue? (Y/n) Yes
+For automated workflows, use the `--force` flag to skip all confirmation prompts:
 
-Okie dokie, deleting testuser1@gmail.com's Compass data ...
-
-Deleting Compass data for users matching: testuser1@gmail.com
-23-09-25 12:16:21 [debug] app:sync.service: Stopping all gcal event watches for user: 83n14f39a4fe422d472d6b99
-23-09-25 12:16:24 [info] app:user.service: Deleting all data for user: 83n14f39a4fe422d472d6b99
-
-Deleted: [
-  {
-    "priorities": 4,
-    "calendarlist": 1,
-    "events": 542,
-    "eventWatches": 1,
-    "syncs": 1,
-    "sessions": 10,
-    "user": 1
-  }
-]
+```bash
+yarn cli delete -u <email> --force
 ```
+
+When using `--force`, the CLI will:
+
+- Delete all data immediately (no confirmation prompt)
+- Automatically open the browser to the cleanup page (no prompt asking if you want to clean browser data)
+
+### Manual Cleanup
+
+If you skip the cleanup during account deletion, you can manually visit the cleanup URL later:
+
+- **Local**: `http://localhost:9080/cleanup` (or your dev server port)
+
+The cleanup will run automatically when you visit the URL.
