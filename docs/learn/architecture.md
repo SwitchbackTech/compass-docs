@@ -149,7 +149,6 @@ sequenceDiagram
 Compass uses a two-layer authentication system:
 
 1. **Compass Authentication**: Managed by Supertokens
-
    - User sessions
    - Access/refresh tokens
    - Session cookies
@@ -189,8 +188,8 @@ The backend broadcasts updates to all connected clients for a user.
 - **Database**: MongoDB (via Node.js driver)
 - **Authentication**: Supertokens (sessions), Google OAuth 2.0
 - **Build Tools**: Webpack, Babel
-- **Testing**: Jest, React Testing Library
-- **Package Management**: Yarn (with Lerna for monorepo)
+- **Testing**: Jest (unit/integration), React Testing Library (component tests), Playwright (E2E tests)
+- **Package Management**: Yarn workspaces for monorepo management
 
 ## Development vs Production
 
