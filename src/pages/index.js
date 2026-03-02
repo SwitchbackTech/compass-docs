@@ -19,7 +19,14 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/docs/get-started/setup"
           >
-            Get Started - 23 min ⏱️
+            Get Started
+          </Link>
+          <Link
+            className="button button--outline button--secondary button--lg"
+            to="/docs/contribute"
+            style={{ marginLeft: "1rem" }}
+          >
+            Contribute
           </Link>
         </div>
       </div>
