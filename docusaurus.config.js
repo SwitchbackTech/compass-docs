@@ -87,6 +87,7 @@ const config = {
             label: "Get Started",
           },
           { to: "/blog/about", label: "About", position: "left" },
+          { to: "/docs/contribute", label: "Contribute", position: "left" },
         ],
       },
       footer: {
