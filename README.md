@@ -2,7 +2,7 @@
 
 The source code for the Compass documentation site.
 
-To see the Compass source code, visit: [SwitchbackTech/compass](https://github.com/SwitchbackTech/compass)
+To see the Compass source code, visit: [SwitchbackTech/compass](https://github.com/SwitchbackTech/compass). The most up-to-date, low-level documentation lives in the [Compass codebase docs](https://github.com/SwitchbackTech/compass/tree/main/docs).
 
 ## Installation
 
