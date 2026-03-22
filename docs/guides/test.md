@@ -4,52 +4,58 @@ This doc explains how to run tests locally. For information on writing tests, se
 
 ## Automated Testing
 
-### How to run tests locally
+### Start with the Smallest Relevant Check
 
-Use these commands from the root directory to run the unit and integration tests locally:
+Most changes do not require the entire test suite. Start with the smallest command that covers your change, then widen only if the change crosses package boundaries.
+
+Use these commands from the repo root:
 
 ```bash
-yarn test           # runs all tests
-
-yarn test:web       # runs web tests
-
-yarn test:backend   # runs backend tests
-
-yarn test:core      # runs core tests
-
-yarn test:scripts   # runs scripts tests
-
-yarn test:e2e       # runs e2e tests
+yarn test:web       # web UI and interaction tests
+yarn test:backend   # backend route and service tests
+yarn test:core      # shared domain logic tests
+yarn test:scripts   # CLI, migrations, and script tests
+yarn type-check     # repository-wide TypeScript check
+yarn test:e2e       # Playwright end-to-end flows
 ```
+
+Use `yarn test` only when you explicitly want the full Jest suite.
+
+### What to Run
+
+- **Web-only UI change**: `yarn test:web`
+- **Backend route or service change**: `yarn test:backend`
+- **Shared types or business logic**: `yarn test:core`
+- **CLI, migration, or seeder change**: `yarn test:scripts`
+- **Cross-cutting changes**: combine the relevant commands and add `yarn type-check`
+- **Critical user flows**: add `yarn test:e2e`
 
 ### Our Testing Strategy
 
 Glossary:
 
 - Unit Tests: Verify individual functions and components
-- Integration Tests: Test interactions between components
+- Integration Tests: Test interactions between boundaries in the app
 - E2E Tests: Simulate user interactions
-- Manual Tests: Test in development environment
+- Manual Tests: Test in the development environment
 
-| Test Type         | Area under test  | Tool                                             |
-| ----------------- | ---------------- | ------------------------------------------------ |
-| Unit Tests        | Core logic       | Jest                                             |
-| Unit Tests        | React components | Jest + React Testing Library                     |
-| Unit Tests        | React hooks      | Jest + React Testing Library (hooks)             |
-| Integration Tests | API              | Jest + In-memory MongoDB (`@shelf/jest-mongodb`) |
-| Manual Tests      | API              | Postman                                          |
-| Manual Tests      | UI               | Manual in browser                                |
-| E2E Tests         | User workflows   | Playwright                                       |
+| Test Type | Area under test | Tool |
+| --------- | ---------------- | ---- |
+| Unit Tests | Core logic | Jest |
+| Unit Tests | React components and hooks | Jest + React Testing Library |
+| Integration Tests | Backend APIs and service boundaries | Jest |
+| Manual Tests | Local development flows | Browser + API requests |
+| E2E Tests | User workflows | Playwright |
 
-The GitHub repository is configured to run tests automatically via CI/CD after every push to ensure code quality.
+CI runs unit and end-to-end coverage separately, so local development is usually fastest when you mirror that targeted approach instead of defaulting to every test on every change.
 
 ## Manual Testing with Postman
 
-I've created a Postman collection that I use to test the API.
+For backend debugging, start with direct local requests before reaching for a larger collection. A simple health probe is often enough to confirm whether the backend is up and talking to MongoDB:
 
-However, I haven't cleaned it up for public use yet.
-
-If this would be helpful, please let me know by creating a GitHub issue or upvoting the existing one.
+```bash
+curl -i http://localhost:3000/api/health
+```
 
 ![Postman preview](./assets/postman.png)
 

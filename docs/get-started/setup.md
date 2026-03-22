@@ -11,8 +11,8 @@ By the end of this guide, you'll have a local development environment that has:
 1. a running NodeJS API server, which'll hot-reload upon changes
 1. a running React web app, which'll also hot-reload upon changes
 1. a MongoDB instance with your calendar data
-1. a CLI, which you can use to create a distributable artifact
-1. `package.json` scripts to run local tests
+1. a CLI for builds and maintenance tasks
+1. `package.json` scripts to run targeted tests
 
 You'll then be ready to play with the local web app and test any changes you'd like to make.
 
@@ -23,8 +23,14 @@ Ready? Let's go!
 Before you begin, ensure you have:
 
 - **Node.js >= 24.0.0** installed ([Download Node.js](https://nodejs.org/))
-- **Yarn** package manager installed
+- **Yarn 4** available via Corepack
 - A code editor (VS Code recommended)
+
+Enable Corepack if you have not already:
+
+```bash
+corepack enable
+```
 
 ## Get the Code
 
@@ -40,9 +46,9 @@ Before you begin, ensure you have:
 
 This is the file that contains your custom and sensitive information. We're creating the file now so we can update the values as we set up our third-party accounts.
 
-1. Copy `compass/packages/backend/.env.local.example` and save as `compass/packages/backend/.env.local`.
+1. Copy `compass/packages/backend/.env.local.example` and save as `compass/packages/backend/.env`.
 2. Read through the comments to familiarize yourself with the environment variables.
-3. If you plan on deploying Compass to a production environment, also create `.env.staging` and `.env.production` for further separation of environments.
+3. If you plan on deploying Compass to a production environment, also review `.env.staging` and `.env.production`.
 
 ## Setup Accounts
 
@@ -68,7 +74,7 @@ To use Google OAuth, create a Google Cloud Platform project and setup an OAuth s
    - Select Web Application
    - Add to Authorized JavaScript origins: `http://localhost:9080`
    - Add to Authorized redirect URIs: `http://localhost:3000`
-   - Copy the Client ID and Secret to your `.env.local` file
+   - Copy the Client ID and Secret to your backend env file
 5. Enable the Google Calendar API in your GCP project
    - Navigate to the [API Library](https://console.cloud.google.com/apis/library) in your Google Cloud project
    - Use the search bar at the top of the page to search for "Google Calendar API"
@@ -92,7 +98,7 @@ Compass connects to MongoDB through the NodeJS driver.
 1. Create a free [MongoDB Atlas account](https://www.mongodb.com/cloud/atlas/register)
 2. Get your Node.js driver [connection string](https://www.mongodb.com/docs/drivers/node/current/fundamentals/connection/connect/#std-label-node-connect-to-mongodb)
 3. When you get your connection string, scroll down to the Network access in the left sidebar and add your current ip address. Make sure you always include your ip address when you switch networks because your device ip v4 address changes from one ISP to another and from time to time.
-4. Add connection string to your `.env.local` file
+4. Add connection string to your backend env file
 5. **Recommended**: Install [MongoDB Compass](https://www.mongodb.com/products/compass) desktop app to visually inspect and manage your database during local development. You can connect to your MongoDB Atlas instance using the same connection string from your `.env` file.
 
 ### Supertokens
@@ -120,7 +126,7 @@ Pfew! That was a lot of setup. Now for the fun part. Run these commands from the
 1. Install dependencies
 
    ```bash
-   yarn
+   yarn install --immutable
    ```
 
 2. Start the backend in dev mode
@@ -151,18 +157,20 @@ Pfew! That was a lot of setup. Now for the fun part. Run these commands from the
 
 ## Development Workflow
 
-### Hot Reloading
+### Pick the Lightest Dev Mode
 
-Both the frontend and backend support hot reloading during development:
+You do not always need the full stack running:
 
-- **Frontend**: The React app running on `http://localhost:9080` will automatically reload when you make changes to files in `packages/web`
-- **Backend**: The Node.js API server running on `http://localhost:3000` will automatically restart when you make changes to files in `packages/backend`
+- **Frontend-only work**: Run `yarn dev:web` for layout, local interactions, and many task workflows.
+- **Backend or auth work**: Run `yarn dev:backend` when your change depends on MongoDB, sessions, Google OAuth, sync, or websockets.
+
+When both are running, each process hot-reloads as you edit files in its package.
 
 ### Common Development Tasks
 
 - **Viewing logs**: Check the terminal where you ran `yarn dev:backend` for API logs and the terminal where you ran `yarn dev:web` for build logs
-- **Testing changes**: After making changes, test them in the browser. The app should hot-reload automatically
-- **Database inspection**: MongoDB collections are created automatically. We recommend using the [MongoDB Compass](https://www.mongodb.com/products/compass) desktop app to visually inspect your database, view collections, documents, and run queries during local development. Connect using the same MongoDB connection string from your `.env.local` file.
+- **Testing changes**: Prefer the smallest relevant test command first, such as `yarn test:web` or `yarn test:backend`
+- **Database inspection**: MongoDB collections are created automatically. We recommend using the [MongoDB Compass](https://www.mongodb.com/products/compass) desktop app to visually inspect your database, view collections, documents, and run queries during local development. Connect using the same MongoDB connection string from your backend env file.
 - **Clearing user data**: Use `yarn cli delete -u <email>` to clear a user's data and start fresh (see [CLI guide](../guides/cli.md))
 
 ### Debugging Tips
@@ -170,6 +178,7 @@ Both the frontend and backend support hot reloading during development:
 - Use browser DevTools to debug the frontend React app
 - Use Redux DevTools browser extension to inspect Redux state
 - Check backend logs in the terminal for API errors
+- Check backend health with `curl -i http://localhost:3000/api/health` when startup or Mongo connectivity looks suspicious
 - Use MongoDB Compass desktop app to inspect database collections and documents, run queries, and verify data changes in real-time
 - For webhook testing during development, set up Ngrok (see Optional Accounts section)
 

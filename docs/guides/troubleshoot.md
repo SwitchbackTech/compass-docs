@@ -1,16 +1,31 @@
 # Troubleshoot
 
+## Backend Health Check
+
+Before debugging a deeper auth or sync issue, confirm the backend is actually up:
+
+```bash
+curl -i http://localhost:3000/api/health
+```
+
+Interpret the result like this:
+
+- `200`: the backend is running and can reach MongoDB
+- `500`: the backend is running but database connectivity failed
+- connection refused or timeout: the backend is not listening yet, or the port/base URL is wrong
+
 ## Unable to Sign In with Google in Local Compass Instance
 
 ### Missing User id
 
-When you encounter a missing user id, it is because Compass is not connected to your MongoDB database and there are no records of any user stored. The reason is because you are not connected to the MongoDB database.
+When you encounter a missing user id, Compass usually is not connected to MongoDB or the backend never started cleanly.
 
 Sometimes MongoDB is successfully connected when you run `yarn dev:backend` but you still get a missing user id error. This could be because:
 
-1. The MongoDB connection string in your `.env.local` file is incorrect
+1. The MongoDB connection string in your backend env file is incorrect
 2. Your IP address is not whitelisted in MongoDB Atlas
 3. The MongoDB connection string format is invalid or incomplete
+4. A required backend env variable is missing, so the server exited during startup
 
 ### Mismatch User Id
 
@@ -24,7 +39,7 @@ See the [CLI guide](./cli.md#cleaning-user-data) for more details on deleting us
 
 ### Invalid domain name
 
-When encountering an invalid domain name error, this is because the URL you provided in the `SUPERTOKENS_..` value in your `.env` file is incorrect. This could be caused by prematurely finishing the setup of your Supertokens instance.
+When encountering an invalid domain name error, the URL you provided in a `SUPERTOKENS_...` value is usually incorrect. This can happen if the Supertokens instance setup was not completed or the copied value was malformed.
 
 To fix this:
 
