@@ -1,11 +1,10 @@
 # CLI
 
-The Compass CLI was built to streamline common development tasks.
-It exists within the `scripts` package and is run from the root directory.
+The Compass CLI streamlines builds and a small set of maintenance workflows. Run it from the root directory.
 
 ## All CLI options
 
-To see all the supported commands, run `yarn cli -h` from the root directory
+To see all the supported commands, run `yarn cli --help` from the root directory
 
 ```bash
 $ yarn cli -h
@@ -88,7 +87,6 @@ To delete a user's Compass data:
 3. After backend deletion completes, you'll be prompted to clear browser data:
 
 4. If you confirm, it'll open the provided cleanup URL in your browser:
-
    - The cleanup page will automatically:
      - Log you out of your session
      - Clear all localStorage data
@@ -122,20 +120,28 @@ The cleanup will run automatically when you visit the URL.
 
 ## Database Migrations
 
-The CLI provides commands for managing database schema migrations:
+The CLI wraps the repo's migration and seeding flows.
 
 ### Running Migrations
 
 ```bash
-yarn cli migrate
+yarn cli migrate pending
+yarn cli migrate up
+yarn cli migrate executed
 ```
 
-This runs pending database schema migrations to update your database structure.
+Common subcommands include `up`, `down`, `pending`, `executed`, and `create`.
 
 ### Seeding the Database
 
 ```bash
-yarn cli seed
+yarn cli seed <subcommand>
 ```
 
-This runs seed migrations to populate the database with initial or test data.
+Use seed commands for database seeder flows built on the same framework as migrations.
+
+## Safety Tips
+
+- Treat `delete` as destructive.
+- Read the command help before running unfamiliar migration or seed operations.
+- Confirm whether you need `web` or `nodePckgs` before building.
