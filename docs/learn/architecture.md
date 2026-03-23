@@ -204,7 +204,7 @@ The backend broadcasts updates to all connected clients for a user.
 
 - Compiled JavaScript (TypeScript → JavaScript)
 - Optimized bundles
-- Environment-specific configuration (`.env.production`)
+- Environment-specific configuration (`.env.local`, `.env.staging`, `.env.production`)
 - Static assets served via Nginx or similar
 - Backend runs as Node.js process (often with PM2)
 

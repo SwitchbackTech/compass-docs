@@ -13,16 +13,18 @@ $ yarn cli -h
 Usage: cli [options] [command]
 
 Options:
-  -f, --force                        force operation, no cautionary prompts
   -h, --help                         display help for command
 
 Commands:
   build [options] [nodePckgs | web]  build compass package
   delete [options]                   delete user data from compass database
-  migrate [options]                   run database schema migrations
-  seed [options]                      run seed migrations to populate the database with data
+  migrate                            run database schema migrations
+  seed                               run seed migrations to populate the
+                                     database with data
   help [command]                     display help for command
 ```
+
+`yarn cli` automatically loads `packages/backend/.env.local` before the CLI starts.
 
 To see the options for a specific command, run `yarn cli <command> -h`
 
@@ -42,6 +44,21 @@ Options:
   -h, --help                                display help for command
 ```
 
+Delete command options:
+
+```bash
+$ yarn cli delete -h
+
+Usage: cli delete [options]
+
+delete user data from compass database
+
+Options:
+  -u, --user [id | email]  specify which user to run script for
+  -f, --force              force deletion without confirmation prompts
+  -h, --help               display help for command
+```
+
 ## Cleaning User Data
 
 Since user data is stored across multiple collections and involves sessions and authorization, it's often best to start from scratch when things go awry in development.
@@ -49,6 +66,12 @@ Since user data is stored across multiple collections and involves sessions and 
 The CLI's delete workflow deletes the user's Compass data from the backend database. It also provides an automated way to clear browser-side data (session cookies, localStorage, and IndexedDB).
 
 The CLI's delete workflow only deletes the user's Compass data. It does not delete their Google Calendar data.
+
+The cleanup URL now comes from explicit web URLs:
+
+- Local: `LOCAL_WEB_URL`
+- Staging: `STAGING_WEB_URL`
+- Production: `PROD_WEB_URL`
 
 ### Steps
 
@@ -92,6 +115,8 @@ When using `--force`, the CLI will:
 If you skip the cleanup during account deletion, you can manually visit the cleanup URL later:
 
 - **Local**: `http://localhost:9080/cleanup` (or your dev server port)
+- **Staging**: `<STAGING_WEB_URL>/cleanup`
+- **Production**: `<PROD_WEB_URL>/cleanup`
 
 The cleanup will run automatically when you visit the URL.
 

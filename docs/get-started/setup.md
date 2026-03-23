@@ -36,13 +36,22 @@ Before you begin, ensure you have:
    cd compass
    ```
 
-## Setup the `.env` files
+## Setup the environment files
 
-This is the file that contains your custom and sensitive information. We're creating the file now so we can update the values as we set up our third-party accounts.
+These files contain your custom and sensitive information. Create them now so you can fill values in as you set up third-party accounts.
 
 1. Copy `compass/packages/backend/.env.local.example` and save as `compass/packages/backend/.env.local`.
 2. Read through the comments to familiarize yourself with the environment variables.
-3. If you plan on deploying Compass to a production environment, also create `.env.staging` and `.env.production` for further separation of environments.
+3. Keep `LOCAL_WEB_URL=http://localhost:9080` in `.env.local`. Compass uses it for local browser cleanup flows and password reset links.
+4. If you plan on deploying Compass, also create `compass/packages/backend/.env.staging` and `compass/packages/backend/.env.production`.
+
+Compass uses explicit env file names:
+
+- `.env.local` for local development
+- `.env.staging` for staging
+- `.env.production` for production
+
+The root scripts load `packages/backend/.env.local` automatically. That includes `yarn dev:backend`, `yarn dev:web`, and `yarn cli`.
 
 ## Setup Accounts
 
@@ -93,7 +102,7 @@ Compass connects to MongoDB through the NodeJS driver.
 2. Get your Node.js driver [connection string](https://www.mongodb.com/docs/drivers/node/current/fundamentals/connection/connect/#std-label-node-connect-to-mongodb)
 3. When you get your connection string, scroll down to the Network access in the left sidebar and add your current ip address. Make sure you always include your ip address when you switch networks because your device ip v4 address changes from one ISP to another and from time to time.
 4. Add connection string to your `.env.local` file
-5. **Recommended**: Install [MongoDB Compass](https://www.mongodb.com/products/compass) desktop app to visually inspect and manage your database during local development. You can connect to your MongoDB Atlas instance using the same connection string from your `.env` file.
+5. **Recommended**: Install [MongoDB Compass](https://www.mongodb.com/products/compass) desktop app to visually inspect and manage your database during local development. You can connect to your MongoDB Atlas instance using the same connection string from your `.env.local` file.
 
 ### Supertokens
 
@@ -111,7 +120,7 @@ Supertokens will provision the auth infrastructure in AWS for you, presenting a 
 2. Click trough the onboarding steps
    - If prompted for a recipe, select Passwordless
 3. Select the Managed Core option
-4. After your instance is configured, copy the connection URI and API key to your `.env` file
+4. After your instance is configured, copy the connection URI and API key to your `.env.local` file
 
 ## Start in Dev Mode
 
@@ -145,7 +154,7 @@ Pfew! That was a lot of setup. Now for the fun part. Run these commands from the
    - Start a user session with Supertokens
    - Add the user's email to Kit (if enabled)
    - Import events from the user's `primary` Google Calendar into MongoDB
-   - Setup a sync channel to receive Google Calendar webhook notifications for the duration specified in the `.env` (if using HTTPS)
+   - Setup a sync channel to receive Google Calendar webhook notifications for the duration specified in `.env.local` (if using HTTPS)
 
 6. Make a change to the frontend and backend code to confirm each hot reloads
 
@@ -196,7 +205,7 @@ You can skip this if you don't want to add emails to Kit.
 1. Create a free [Kit account](https://kit.com/)
 2. Get your API secret from the Account Settings
 3. Get your Kit tag ID. You can find this in the URL of the tag page
-4. Add the API secret and tag ID to your `.env` file
+4. Add the API secret and tag ID to your `.env.local` file
 
 ### Calendar Sync Proxy: Ngrok
 
@@ -207,7 +216,7 @@ You can skip this if you're not working on, or going to test the webhook functio
 1. Create a free [Ngrok account](https://dashboard.ngrok.com/signup/)
 2. Get your [Authtoken](https://dashboard.ngrok.com/get-started/your-authtoken) from the Ngrok Dashboard
 3. Create a [Static Domain](https://dashboard.ngrok.com/domains) from the Ngrok Dashboard
-4. Add the Authtoken (`NGROK_AUTHTOKEN`) and Static Domain (`NGROK_DOMAIN`) to your `.env` file
+4. Add the Authtoken (`NGROK_AUTHTOKEN`) and Static Domain (`NGROK_DOMAIN`) to your `.env.local` file
 
 ### Analytics: PostHog
 
@@ -223,7 +232,7 @@ You can skip this if you don't want to collect analytics or error tracking data.
 2. Create a new project in your PostHog dashboard
 3. Get your Project API Key from the Project Settings
 4. Get your PostHog Host URL (usually `https://app.posthog.com` for PostHog Cloud, or your self-hosted URL)
-5. Add the API Key (`POSTHOG_KEY`) and Host URL (`POSTHOG_HOST`) to your `.env` file
+5. Add the API Key (`POSTHOG_KEY`) and Host URL (`POSTHOG_HOST`) to your `.env.local` file
 
 Alternatively, if you prefer to self-host PostHog:
 

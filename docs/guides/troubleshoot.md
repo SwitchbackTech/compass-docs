@@ -24,7 +24,7 @@ See the [CLI guide](./cli.md#cleaning-user-data) for more details on deleting us
 
 ### Invalid domain name
 
-When encountering an invalid domain name error, this is because the URL you provided in the `SUPERTOKENS_..` value in your `.env` file is incorrect. This could be caused by prematurely finishing the setup of your Supertokens instance.
+When encountering an invalid domain name error, this is because the URL you provided in the `SUPERTOKENS_..` value in your active environment file is incorrect. For local development that is usually `.env.local`. This could be caused by prematurely finishing the setup of your Supertokens instance.
 
 To fix this:
 
