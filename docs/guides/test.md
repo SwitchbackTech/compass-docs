@@ -39,13 +39,13 @@ Glossary:
 - E2E Tests: Simulate user interactions
 - Manual Tests: Test in the development environment
 
-| Test Type | Area under test | Tool |
-| --------- | ---------------- | ---- |
-| Unit Tests | Core logic | Jest |
-| Unit Tests | React components and hooks | Jest + React Testing Library |
-| Integration Tests | Backend APIs and service boundaries | Jest |
-| Manual Tests | Local development flows | Browser + API requests |
-| E2E Tests | User workflows | Playwright |
+| Test Type         | Area under test                     | Tool                         |
+| ----------------- | ----------------------------------- | ---------------------------- |
+| Unit Tests        | Core logic                          | Jest                         |
+| Unit Tests        | React components and hooks          | Jest + React Testing Library |
+| Integration Tests | Backend APIs and service boundaries | Jest                         |
+| Manual Tests      | Local development flows             | Browser + API requests       |
+| E2E Tests         | User workflows                      | Playwright                   |
 
 CI runs unit and end-to-end coverage separately, so local development is usually fastest when you mirror that targeted approach instead of defaulting to every test on every change.
 

@@ -6,9 +6,11 @@ In order to allow users to sign-in and sync their Google Calendars, you'll need 
 
 Then you'll need to update a few configuration values:
 
-1. Update `BASEURL` in `packages/backend/.env.production` with your URI
-2. Add the URL to the `CORS` list in `.env.production`
-3. Add your domain to the list of allowed redirect URIs in your Google Cloud project
+1. Put your runtime values in `packages/backend/.env.production` for production or `packages/backend/.env.staging` for staging.
+2. Set `BASEURL` to your public API base URL, including `/api`.
+3. Set `PROD_WEB_URL` or `STAGING_WEB_URL` to the public web app URL for that environment.
+4. Add the deployed web URL to the `CORS` list in the matching env file.
+5. Add your deployed web origin and redirect URIs to your Google Cloud project.
 
 ## Web
 
@@ -18,7 +20,7 @@ We use a Nginx reverse proxy to serve the static assets and handle SSL. This req
 
 ## Backend (API)
 
-After running [the build CLI for the backend](./build), you'll have a bunch of Node files in the `/build` directory. You can copy these to your server and run them directly like a normal Node app -- by running `node build/packages/backend/src/app.js`. Similar to the web app, it's up to you to decide how to configure your Node server. You could turn it into a container and deploy it on a PaaS. Or you could run it in a VM on a cloud provider and use a tool like `pm2` to manage it. Depending on the PaaS you choose, you might need to configure the webserver to support WebSocket connections over a reverse proxy.
+After running [the build CLI for the backend](./build), the compiled backend is written to `/build/node` and includes the selected environment file as `/build/node/.env`. You can copy that directory to your server and run the API like a normal Node app with `node build/node/packages/backend/src/app.js`. Similar to the web app, it's up to you to decide how to configure your Node server. You could turn it into a container and deploy it on a PaaS. Or you could run it in a VM on a cloud provider and use a tool like `pm2` to manage it. Depending on the PaaS you choose, you might need to configure the webserver to support WebSocket connections over a reverse proxy.
 
 Getting the backend production-ready can be a headache. If you'd like to get up-and-running quickly and want it done right, ask about our white-glove install service.
 
