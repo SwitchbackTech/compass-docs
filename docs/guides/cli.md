@@ -58,6 +58,26 @@ Options:
   -h, --help               display help for command
 ```
 
+## Supported Commands
+
+The current CLI focuses on four areas:
+
+- `build`: create production-style web or node package builds
+- `delete`: remove a user's Compass data
+- `migrate`: manage database schema migrations
+- `seed`: run database seeder flows
+
+## Build
+
+Use the build command when you need compiled output rather than the hot-reloading dev workflow.
+
+```bash
+yarn cli build web --environment staging --clientId "test-client-id"
+yarn cli build nodePckgs --environment staging
+```
+
+Use `web` for frontend build artifacts and `nodePckgs` for compiled node packages.
+
 ## Cleaning User Data
 
 Since user data is stored across multiple collections and involves sessions and authorization, it's often best to start from scratch when things go awry in development.
