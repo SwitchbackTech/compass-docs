@@ -179,7 +179,7 @@ When both are running, each process hot-reloads as you edit files in its package
 - **Viewing logs**: Check the terminal where you ran `yarn dev:backend` for API logs and the terminal where you ran `yarn dev:web` for build logs
 - **Testing changes**: Prefer the smallest relevant test command first, such as `yarn test:web` or `yarn test:backend`
 - **Database inspection**: MongoDB collections are created automatically. We recommend using the [MongoDB Compass](https://www.mongodb.com/products/compass) desktop app to visually inspect your database, view collections, documents, and run queries during local development. Connect using the same MongoDB connection string from your backend env file.
-- **Clearing user data**: Use `yarn cli delete -u <email>` to clear a user's data and start fresh (see [CLI guide](../guides/cli.md))
+- **Clearing user data**: Use `yarn cli delete -u <email>` to clear a user's data and start fresh.
 
 ### Debugging Tips
 
