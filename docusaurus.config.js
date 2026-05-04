@@ -49,8 +49,24 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/SwitchbackTech/compass/tree/main",
+          async sidebarItemsGenerator({ defaultSidebarItemsGenerator, ...args }) {
+            const items = await defaultSidebarItemsGenerator(args);
+            const capitalize = (label) =>
+              label.charAt(0).toUpperCase() + label.slice(1);
+            const applyToItems = (items) =>
+              items.map((item) => {
+                if (item.type === "category") {
+                  return {
+                    ...item,
+                    label: capitalize(item.label),
+                    items: applyToItems(item.items ?? []),
+                  };
+                }
+                return item;
+              });
+            return applyToItems(items);
+          },
         },
         blog: {
           showReadingTime: true,
