@@ -8,13 +8,26 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  color: hsl(0, 0%, 95%);
   background: linear-gradient(
     135deg,
-    hsl(202, 100%, 67%),
-    hsl(195, 78%, 56%),
-    hsl(196, 60%, 59%),
-    hsl(205, 33%, 61%),
-    hsl(196, 45%, 78%)
+    hsl(222, 35%, 18%),
+    hsl(214, 60%, 32%),
+    hsl(202, 80%, 50%)
+  );
+}
+
+.heroBanner h1,
+.heroBanner p {
+  color: hsl(0, 0%, 95%);
+}
+
+:global([data-theme="dark"]) .heroBanner {
+  background: linear-gradient(
+    135deg,
+    hsl(222, 28%, 6%),
+    hsl(218, 27%, 10%),
+    hsl(202, 70%, 22%)
   );
 }
 
@@ -28,4 +41,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media screen and (max-width: 480px) {
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1.5rem;
+  }
+
+  .buttons a {
+    width: 100%;
+  }
 }

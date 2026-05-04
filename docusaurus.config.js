@@ -10,7 +10,7 @@ const { HANDBOOK_URL } = require("./src/constants.js");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Compass Docs",
-  tagline: "Learn how to use Compass, the task manager for engineers.",
+  tagline: "Compass is the daily planner for minimalists. Explore the docs to understand how it works.",
   favicon: "img/favicon.ico",
   url: "https://docs.compasscalendar.com",
   // Set the /<baseUrl>/ pathname under which your site is served
