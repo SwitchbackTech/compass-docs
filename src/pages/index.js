@@ -17,16 +17,16 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/get-started/setup"
+            to="/docs/intro"
           >
-            Get Started
+            Read the Docs
           </Link>
           <Link
             className="button button--outline button--secondary button--lg"
-            to="/docs/contribute"
+            href="https://github.com/SwitchbackTech/compass"
             style={{ marginLeft: "1rem" }}
           >
-            Contribute
+            GitHub
           </Link>
         </div>
       </div>
