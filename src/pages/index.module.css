@@ -9,12 +9,19 @@
   position: relative;
   overflow: hidden;
   color: hsl(0, 0%, 95%);
+  min-height: calc(100vh - var(--ifm-navbar-height));
+  display: flex;
+  align-items: center;
   background: linear-gradient(
     135deg,
     hsl(222, 35%, 18%),
     hsl(214, 60%, 32%),
     hsl(202, 80%, 50%)
   );
+}
+
+.heroBanner > .container {
+  width: 100%;
 }
 
 .heroBanner h1,
