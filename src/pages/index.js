@@ -3,7 +3,6 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
 
 import styles from "./index.module.css";
 
@@ -24,9 +23,8 @@ function HomepageHeader() {
           <Link
             className="button button--outline button--secondary button--lg"
             href="https://github.com/SwitchbackTech/compass"
-            style={{ marginLeft: "1rem" }}
           >
-            GitHub
+            Read the Code
           </Link>
         </div>
       </div>
@@ -42,9 +40,6 @@ export default function Home() {
       description="Docs for Compass Calendar"
     >
       <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
     </Layout>
   );
 }
