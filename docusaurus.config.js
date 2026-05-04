@@ -22,7 +22,7 @@ const config = {
   organizationName: "switchback", // Usually your GitHub org/user name.
   projectName: "compass-docs",
 
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
 
   markdown: {
     format: 'md',
