@@ -23,6 +23,7 @@ function HomepageHeader() {
           <Link
             className="button button--outline button--secondary button--lg"
             href="https://github.com/SwitchbackTech/compass"
+            style={{ color: "hsl(0, 0%, 95%)", borderColor: "hsl(0, 0%, 95%)" }}
           >
             Read the Code
           </Link>
