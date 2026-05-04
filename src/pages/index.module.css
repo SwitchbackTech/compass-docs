@@ -29,6 +29,16 @@
   color: hsl(0, 0%, 95%);
 }
 
+.heroBanner :global(.button--outline) {
+  color: hsl(0, 0%, 95%);
+  border-color: hsl(0, 0%, 95%);
+}
+
+.heroBanner :global(.button--outline:hover) {
+  background: hsla(0, 0%, 95%, 0.12);
+  color: hsl(0, 0%, 95%);
+}
+
 :global([data-theme="dark"]) .heroBanner {
   background: linear-gradient(
     135deg,
