@@ -25,6 +25,7 @@ const config = {
   onBrokenLinks: "throw",
 
   markdown: {
+    format: 'md',
     mermaid: true,
     hooks: {
       onBrokenMarkdownLinks: "warn",
@@ -49,7 +50,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/SwitchbackTech/compass-docs/tree/main",
+          editUrl: "https://github.com/SwitchbackTech/compass/tree/main",
         },
         blog: {
           showReadingTime: true,
@@ -84,10 +85,9 @@ const config = {
             type: "docSidebar",
             sidebarId: "tutorialSidebar",
             position: "left",
-            label: "Get Started",
+            label: "Docs",
           },
           { to: "/blog/about", label: "About", position: "left" },
-          { to: "/docs/contribute", label: "Contribute", position: "left" },
         ],
       },
       footer: {
