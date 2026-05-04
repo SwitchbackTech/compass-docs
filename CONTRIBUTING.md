@@ -8,9 +8,9 @@ Doc improvements are a great way to get started—typos, broken links, clearer e
 
 1. Use **Edit this page** on any doc (at the bottom of each page on [docs.compasscalendar.com](https://docs.compasscalendar.com))
 2. Open a PR to this repository (compass-docs)
-3. Run the doc site locally to verify: `yarn` then `yarn start`
+3. Run the doc site locally to verify: `bun install` then `bun start`
 
-Doc PRs don't need full Compass app setup. Just ensure the site builds and renders (`yarn build`).
+Doc PRs don't need full Compass app setup. Just ensure the site builds and renders (`bun run build`).
 
 Full details: [How to Contribute - Improve the Docs](https://docs.compasscalendar.com/docs/contribute#improve-the-docs)
 
