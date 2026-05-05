@@ -19,7 +19,7 @@ People liked the concepts, but they said the UX sucked.
 
 So I started building a calendar from scratch in 2022.
 
-I ran out of money in Sept 2023, got a job, and [open-sourced everything](https://www.tylerdane.com/post/why-i-open-sourced-my-calendar-app-after-2-years).
+I ran out of money in Sept 2023, got a job, and [open-sourced everything](https://www.compasscalendar.com/blog/compass-is-open-source).
 
 I worked on a few side projects in 2024 in attempt to make lots of $ before concluding: having purpose is better than having a billion dollars.
 
