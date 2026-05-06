@@ -3,6 +3,12 @@
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const path = require("path");
+
+const languageServerTypesEsm = path.join(
+  path.dirname(require.resolve("vscode-languageserver-types")),
+  "../esm/main.js"
+);
 
 // Import constants from central location
 const { HANDBOOK_URL } = require("./src/constants.js");
@@ -33,17 +39,18 @@ const config = {
   },
 
   plugins: [
-    function ignoreKnownServerBundleWarnings() {
+    function useEsmLanguageServerTypes() {
       return {
-        name: "ignore-known-server-bundle-warnings",
+        name: "use-esm-language-server-types",
         configureWebpack() {
           return {
-            ignoreWarnings: [
-              {
-                module: /vscode-languageserver-types\/lib\/umd\/main\.js/,
-                message: /require function is used in a way/,
+            resolve: {
+              alias: {
+                // Mermaid pulls this through Langium. The package's default
+                // export is UMD, so prefer its ESM build when webpack bundles it.
+                "vscode-languageserver-types$": languageServerTypesEsm,
               },
-            ],
+            },
           };
         },
       };
