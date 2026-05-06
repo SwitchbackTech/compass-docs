@@ -32,9 +32,9 @@
 :global([data-theme="dark"]) .heroBanner {
   background: linear-gradient(
     135deg,
-    hsl(222, 28%, 6%),
-    hsl(218, 27%, 10%),
-    hsl(202, 70%, 22%)
+    hsl(222, 28%, 7%) 0%,
+    hsl(218, 24%, 9%) 52%,
+    hsl(202, 100%, 20%) 100%
   );
 }
 
