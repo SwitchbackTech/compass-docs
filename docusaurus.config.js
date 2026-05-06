@@ -32,6 +32,24 @@ const config = {
     },
   },
 
+  plugins: [
+    function ignoreKnownServerBundleWarnings() {
+      return {
+        name: "ignore-known-server-bundle-warnings",
+        configureWebpack() {
+          return {
+            ignoreWarnings: [
+              {
+                module: /vscode-languageserver-types\/lib\/umd\/main\.js/,
+                message: /require function is used in a way/,
+              },
+            ],
+          };
+        },
+      };
+    },
+  ],
+
   themes: ["@docusaurus/theme-mermaid"],
 
   // Even if you don't use internalization, you can use this field to set useful

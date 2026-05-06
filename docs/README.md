@@ -2,7 +2,7 @@
 
 Internal documentation for engineers and agents working in the Compass repo.
 
-Start with [AGENTS.md](../AGENTS.md) for repo rules and command defaults. Use this index for codebase shape, subsystem behavior, and acceptance runbooks.
+Start with the root `CONTRIBUTING.md` for repo rules and command defaults. Use this index for codebase shape, subsystem behavior, and acceptance runbooks.
 
 ## How docs get published
 
