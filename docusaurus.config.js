@@ -39,6 +39,17 @@ const config = {
   },
 
   plugins: [
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: [
+          {
+            from: "/blog/about",
+            to: "https://www.compasscalendar.com/blog/about",
+          },
+        ],
+      },
+    ],
     function useEsmLanguageServerTypes() {
       return {
         name: "use-esm-language-server-types",
@@ -128,7 +139,11 @@ const config = {
             position: "left",
             label: "Docs",
           },
-          { to: "/blog/about", label: "About", position: "left" },
+          {
+            href: "https://www.compasscalendar.com/blog/about",
+            label: "About",
+            position: "left",
+          },
         ],
       },
       footer: {
