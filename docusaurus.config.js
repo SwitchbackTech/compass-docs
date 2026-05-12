@@ -139,11 +139,6 @@ const config = {
             position: "left",
             label: "Docs",
           },
-          {
-            href: "https://www.compasscalendar.com/blog/about",
-            label: "About",
-            position: "left",
-          },
         ],
       },
       footer: {
