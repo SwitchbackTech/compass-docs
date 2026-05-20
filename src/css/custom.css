@@ -29,38 +29,43 @@
 }
 
 [data-theme="dark"] {
-  --compass-bg-primary: hsl(222, 28%, 7%);
+  --compass-bg-primary: hsl(217, 28%, 7%);
   --compass-bg-secondary: hsl(218, 24%, 9%);
-  --compass-bg-navbar: hsl(218, 27%, 8%);
+  --compass-bg-navbar: rgba(13, 16, 23, 0.85);
   --compass-bg-card: hsl(215, 28%, 17%);
+  --compass-bg-code: hsl(218, 24%, 9%);
   --compass-accent: hsl(202, 100%, 67%);
-  --compass-accent-soft: hsl(196, 45%, 78%);
-  --compass-text: hsl(47, 7%, 73%);
+  --compass-accent-strong: hsl(214, 85%, 62%);
+  --compass-accent-soft: hsl(202, 100%, 86%);
+  --compass-text: hsl(0, 0%, 100%);
   --compass-text-bright: hsl(0, 0%, 100%);
-  --compass-text-muted: hsl(208, 13%, 71%, 54.9%);
-  --compass-border: hsl(219, 18%, 34%, 20%);
-  --compass-panel: hsl(219, 8%, 46%, 20%);
-  --compass-shadow: hsl(0, 0%, 0%, 50.2%);
+  --compass-text-secondary: hsl(0, 0%, 83%);
+  --compass-text-muted: hsl(217, 12%, 65%);
+  --compass-border: hsl(211, 10%, 33%);
+  --compass-border-subtle: hsla(211, 10%, 33%, 0.6);
+  --compass-panel: hsla(219, 8%, 46%, 0.2);
+  --compass-panel-strong: hsl(217, 19%, 27%);
+  --compass-shadow: hsla(0, 0%, 0%, 0.502);
 
   --ifm-color-primary: var(--compass-accent);
-  --ifm-color-primary-dark: hsl(202, 100%, 59%);
+  --ifm-color-primary-dark: hsl(202, 100%, 60%);
   --ifm-color-primary-darker: hsl(202, 100%, 54%);
-  --ifm-color-primary-darkest: hsl(202, 100%, 44%);
-  --ifm-color-primary-light: hsl(202, 100%, 74%);
-  --ifm-color-primary-lighter: var(--compass-accent-soft);
-  --ifm-color-primary-lightest: hsl(206, 69%, 94%);
+  --ifm-color-primary-darkest: hsl(214, 85%, 48%);
+  --ifm-color-primary-light: hsl(202, 100%, 73%);
+  --ifm-color-primary-lighter: hsl(202, 100%, 78%);
+  --ifm-color-primary-lightest: hsl(202, 100%, 86%);
 
   --ifm-background-color: var(--compass-bg-primary);
-  --ifm-background-surface-color: var(--compass-bg-secondary);
+  --ifm-background-surface-color: var(--compass-bg-card);
   --ifm-navbar-background-color: var(--compass-bg-navbar);
-  --ifm-footer-background-color: var(--compass-bg-secondary);
+  --ifm-footer-background-color: var(--compass-bg-primary);
   --ifm-dropdown-background-color: var(--compass-bg-card);
   --ifm-menu-color-background-active: var(--compass-panel);
   --ifm-menu-color-background-hover: var(--compass-panel);
   --ifm-hover-overlay: var(--compass-panel);
   --ifm-card-background-color: var(--compass-bg-card);
   --ifm-code-background: var(--compass-bg-card);
-  --ifm-pre-background: var(--compass-bg-secondary);
+  --ifm-pre-background: var(--compass-bg-code);
   --ifm-blockquote-border-color: var(--compass-border);
   --ifm-hr-border-color: var(--compass-border);
   --ifm-table-border-color: var(--compass-border);
@@ -72,28 +77,28 @@
   --ifm-color-emphasis-200: var(--compass-panel);
   --ifm-color-emphasis-300: var(--compass-border);
   --ifm-color-emphasis-600: var(--compass-text-muted);
-  --ifm-color-emphasis-700: var(--compass-text);
-  --ifm-color-emphasis-800: var(--compass-accent-soft);
+  --ifm-color-emphasis-700: var(--compass-text-secondary);
+  --ifm-color-emphasis-800: var(--compass-text);
   --ifm-color-emphasis-900: var(--compass-text-bright);
 
-  --ifm-font-color-base: var(--compass-text);
+  --ifm-font-color-base: var(--compass-text-secondary);
   --ifm-heading-color: var(--compass-text-bright);
-  --ifm-color-content: var(--compass-text);
+  --ifm-color-content: var(--compass-text-secondary);
   --ifm-color-content-secondary: var(--compass-text-muted);
   --ifm-link-color: var(--compass-accent);
   --ifm-link-hover-color: var(--compass-accent-soft);
-  --ifm-navbar-link-color: var(--compass-text);
+  --ifm-navbar-link-color: var(--compass-text-secondary);
   --ifm-navbar-link-hover-color: var(--compass-accent);
-  --ifm-menu-color: var(--compass-text);
+  --ifm-menu-color: var(--compass-text-secondary);
   --ifm-menu-color-active: var(--compass-accent);
   --ifm-code-color: var(--compass-accent-soft);
 
   --docusaurus-highlighted-code-line-bg: var(--compass-panel);
 
   --docsearch-primary-color: var(--compass-accent);
-  --docsearch-text-color: var(--compass-text);
+  --docsearch-text-color: var(--compass-text-secondary);
   --docsearch-muted-color: var(--compass-text-muted);
-  --docsearch-container-background: hsl(222, 28%, 7%, 85%);
+  --docsearch-container-background: hsla(217, 28%, 7%, 0.85);
   --docsearch-modal-background: var(--compass-bg-secondary);
   --docsearch-modal-shadow: 0 16px 48px var(--compass-shadow);
   --docsearch-searchbox-background: var(--compass-bg-primary);
@@ -115,23 +120,61 @@
   --docsearch-footer-shadow: 0 -1px 0 var(--compass-border);
 }
 
+html[data-theme="dark"],
+[data-theme="dark"] body,
+[data-theme="dark"] #__docusaurus,
+[data-theme="dark"] .main-wrapper,
+[data-theme="dark"] .theme-layout-main,
+[data-theme="dark"] main,
+[data-theme="dark"] aside {
+  background: var(--compass-bg-primary);
+}
+
 [data-theme="dark"] .navbar {
-  border-bottom: 1px solid var(--compass-border);
+  background: var(--compass-bg-navbar);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--compass-border-subtle);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .footer {
+  background: var(--compass-bg-primary);
+  border-top: 1px solid var(--compass-border-subtle);
+  color: var(--compass-text-muted);
+}
+
+[data-theme="dark"] .footer__title {
+  color: var(--compass-text);
+}
+
+[data-theme="dark"] .footer__link-item {
+  color: var(--compass-text-muted);
+}
+
+[data-theme="dark"] .footer__link-item:hover {
+  color: var(--compass-text);
 }
 
 [data-theme="dark"] .theme-doc-sidebar-container,
 [data-theme="dark"] .table-of-contents {
-  border-color: var(--compass-border) !important;
+  border-color: var(--compass-border-subtle) !important;
+}
+
+[data-theme="dark"] .theme-doc-sidebar-container,
+[data-theme="dark"] .theme-doc-sidebar-container .menu,
+[data-theme="dark"] .navbar-sidebar,
+[data-theme="dark"] .navbar-sidebar__items {
+  background: var(--compass-bg-primary);
 }
 
 [data-theme="dark"] .menu__link {
-  color: var(--compass-text);
+  color: var(--compass-text-muted);
 }
 
 [data-theme="dark"] .menu__link:hover,
 [data-theme="dark"] .menu__caret:hover {
   background: var(--compass-panel);
-  color: var(--compass-text-bright);
+  color: var(--compass-text);
 }
 
 [data-theme="dark"] .menu__link--active {
@@ -139,8 +182,29 @@
   color: var(--compass-accent);
 }
 
-[data-theme="dark"] .table-of-contents__link {
+[data-theme="dark"] .theme-doc-markdown,
+[data-theme="dark"] .theme-doc-markdown p,
+[data-theme="dark"] .theme-doc-markdown li {
+  color: var(--compass-text-secondary);
+}
+
+[data-theme="dark"] .theme-doc-markdown h1,
+[data-theme="dark"] .theme-doc-markdown h2,
+[data-theme="dark"] .theme-doc-markdown h3,
+[data-theme="dark"] .theme-doc-markdown h4,
+[data-theme="dark"] .theme-doc-markdown h5,
+[data-theme="dark"] .theme-doc-markdown h6,
+[data-theme="dark"] .theme-doc-markdown strong {
   color: var(--compass-text);
+}
+
+[data-theme="dark"] .theme-doc-markdown blockquote {
+  color: var(--compass-text-muted);
+  border-color: var(--compass-border);
+}
+
+[data-theme="dark"] .table-of-contents__link {
+  color: var(--compass-text-muted);
 }
 
 [data-theme="dark"] .table-of-contents__link:hover,
@@ -151,7 +215,7 @@
 [data-theme="dark"] .breadcrumbs__link,
 [data-theme="dark"] .pagination-nav__link,
 [data-theme="dark"] .dropdown__link {
-  color: var(--compass-text);
+  color: var(--compass-text-secondary);
 }
 
 [data-theme="dark"] .breadcrumbs__link:hover,
@@ -160,23 +224,54 @@
   color: var(--compass-accent);
 }
 
+[data-theme="dark"] .breadcrumbs__link,
 [data-theme="dark"] .pagination-nav__link,
 [data-theme="dark"] .card,
-[data-theme="dark"] .dropdown__menu {
+[data-theme="dark"] .dropdown__menu,
+[data-theme="dark"] .theme-doc-toc-mobile {
   background: var(--compass-bg-card);
-  border-color: var(--compass-border);
+  border-color: var(--compass-border-subtle);
+}
+
+[data-theme="dark"] .pagination-nav__link:hover {
+  border-color: var(--compass-accent);
+}
+
+[data-theme="dark"] table,
+[data-theme="dark"] th,
+[data-theme="dark"] td {
+  border-color: var(--compass-border-subtle);
+}
+
+[data-theme="dark"] thead {
+  background: var(--compass-bg-secondary);
+}
+
+[data-theme="dark"] tbody tr:nth-child(2n) {
+  background: var(--compass-panel);
+}
+
+[data-theme="dark"] :not(pre) > code {
+  background: var(--compass-bg-card);
+  color: var(--compass-accent-soft);
+  border: 1px solid var(--compass-border-subtle);
+}
+
+[data-theme="dark"] .theme-code-block {
+  border: 1px solid var(--compass-border-subtle);
+  box-shadow: 0 24px 80px hsla(0, 0%, 0%, 0.24);
 }
 
 [data-theme="dark"] .DocSearch-Button {
   background: var(--compass-bg-card);
-  border: 1px solid var(--compass-border);
-  color: var(--compass-text);
+  border: 1px solid var(--compass-border-subtle);
+  color: var(--compass-text-secondary);
 }
 
 [data-theme="dark"] .DocSearch-Button:hover {
   background: var(--compass-panel);
-  box-shadow: inset 0 0 0 1px var(--compass-border);
-  color: var(--compass-text-bright);
+  box-shadow: inset 0 0 0 1px var(--compass-border-subtle);
+  color: var(--compass-text);
 }
 
 [data-theme="dark"] .DocSearch-Search-Icon,
@@ -187,7 +282,7 @@
 
 [data-theme="dark"] .DocSearch-Button-Key {
   background: var(--compass-bg-secondary);
-  border: 1px solid var(--compass-border);
+  border: 1px solid var(--compass-border-subtle);
   box-shadow: none;
   top: 0;
 }

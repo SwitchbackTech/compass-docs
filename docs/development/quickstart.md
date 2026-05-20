@@ -8,6 +8,7 @@ git clone git@github.com:SwitchbackTech/compass.git
 cd compass
 
 bun install
+```
 
 ## Setup config values
 
