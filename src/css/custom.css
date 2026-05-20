@@ -34,9 +34,9 @@
   --compass-bg-navbar: rgba(13, 16, 23, 0.85);
   --compass-bg-card: hsl(215, 28%, 17%);
   --compass-bg-code: hsl(218, 24%, 9%);
-  --compass-accent: hsl(196, 45%, 78%);
-  --compass-accent-strong: hsl(202, 100%, 67%);
-  --compass-accent-soft: hsl(206, 69%, 94%);
+  --compass-accent: hsl(202, 100%, 67%);
+  --compass-accent-strong: hsl(214, 85%, 62%);
+  --compass-accent-soft: hsl(202, 100%, 86%);
   --compass-text: hsl(0, 0%, 100%);
   --compass-text-bright: hsl(0, 0%, 100%);
   --compass-text-secondary: hsl(0, 0%, 83%);
@@ -48,12 +48,12 @@
   --compass-shadow: hsla(0, 0%, 0%, 0.502);
 
   --ifm-color-primary: var(--compass-accent);
-  --ifm-color-primary-dark: hsl(196, 45%, 68%);
-  --ifm-color-primary-darker: hsl(196, 45%, 58%);
-  --ifm-color-primary-darkest: hsl(196, 45%, 48%);
-  --ifm-color-primary-light: hsl(196, 45%, 84%);
-  --ifm-color-primary-lighter: hsl(196, 45%, 88%);
-  --ifm-color-primary-lightest: hsl(206, 69%, 94%);
+  --ifm-color-primary-dark: hsl(202, 100%, 60%);
+  --ifm-color-primary-darker: hsl(202, 100%, 54%);
+  --ifm-color-primary-darkest: hsl(214, 85%, 48%);
+  --ifm-color-primary-light: hsl(202, 100%, 73%);
+  --ifm-color-primary-lighter: hsl(202, 100%, 78%);
+  --ifm-color-primary-lightest: hsl(202, 100%, 86%);
 
   --ifm-background-color: var(--compass-bg-primary);
   --ifm-background-surface-color: var(--compass-bg-card);
