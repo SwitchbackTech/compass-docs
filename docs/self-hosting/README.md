@@ -4,7 +4,7 @@ Self-hosting Compass means running it on a server you control instead of using `
 
 Start with [Run Compass on a server](./server-guide.md). It walks through a small VPS setup with your own domain, HTTPS, and the Compass services running behind Caddy.
 
-If you only want to run Compass on your own computer, use the normal local development flow with Bun instead of the self-host installer. See [Run Compass without the installer](./advanced-manual.md).
+If you only want to run Compass on your own computer, use the normal local development flow with Bun instead of the self-host installer. See [Local Development](../development/local-development.md).
 
 ## What Compass is made of
 
@@ -33,9 +33,9 @@ flowchart TD
 ## Start here
 
 - New self-host install: [Run Compass on a server](./server-guide.md)
-- Backups and restore: [Back up and restore your data](./backups-and-restore.md)
+- Backups and restore: [Back up and restore your data](./backup-and-restore.md)
 - Google Calendar: [Add Google Calendar](./google-calendar.md)
-- Manual Bun setup: [Run Compass without the installer](./advanced-manual.md)
+- Manual Bun setup: [Local Development](../development/local-development.md)
 - Monitoring: [Monitoring](./monitoring.md)
 
 ## What you still need to handle yourself
