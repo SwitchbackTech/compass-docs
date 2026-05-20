@@ -52,7 +52,7 @@ git tag -d v1.2.3
 
 ## Publish Docker Images
 
-Source: [`.github/workflows/publish-docker-images.yml`](https://github.com/SwitchbackTech/compass/blob/main/.github/workflows/publish-docker-images.yml)
+Source: [`.github/workflows/publish-docker-images.yml`](../../.github/workflows/publish-docker-images.yml)
 
 ### How it works
 
@@ -77,7 +77,7 @@ publishing images.
 
 ## Staging Deploy
 
-Source: [`.github/workflows/deploy-staging.yml`](https://github.com/SwitchbackTech/compass/blob/main/.github/workflows/deploy-staging.yml)
+Source: [`.github/workflows/deploy-staging.yml`](../../.github/workflows/deploy-staging.yml)
 
 The deploy workflow SSHes into the staging VPS and runs `./compass update`,
 which pulls the Docker Hub image tag configured by the staging `compass.yaml` file and

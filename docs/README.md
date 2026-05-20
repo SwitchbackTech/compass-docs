@@ -2,7 +2,7 @@
 
 Internal documentation for engineers and agents working in the Compass repo.
 
-Use this index for codebase shape, subsystem behavior, and acceptance runbooks.
+Start with [AGENTS.md](../AGENTS.md) for repo rules and command defaults. Use this index for codebase shape, subsystem behavior, and acceptance runbooks.
 
 ## How docs get published
 
@@ -40,8 +40,8 @@ Markdown files in this `docs/` directory are automatically mirrored to [docs.com
 - [Self-Hosting](./self-hosting/README.md)
 - [Testing Playbook](./development/testing-playbook.md)
 - [Types And Validation](./development/types-and-validation.md)
-- [CI/CD](./ci-cd/workflows.md)
-- [CLI And Maintenance Commands](./development/cli.md)
+- [CI/CD](./ci-cd/README.md)
+- [CLI And Maintenance Commands](./ci-cd/cli-and-maintenance-commands.md)
 - [Versioning](./ci-cd/versioning.md)
 
 ## Feature Deep Dives

@@ -2,7 +2,7 @@
 
 This guide describes the recommended first server setup for one person hosting Compass on a small VPS. One public domain, Compass on `127.0.0.1`, Caddy in front for HTTPS.
 
-If you only want Compass on your own computer, use the normal Bun-based local setup instead of this self-hosting guide. See [Local Development](../development/local-development.md).
+If you only want Compass on your own computer, use the normal Bun-based local setup instead of this self-hosting guide. See [Run Compass without the installer](./advanced-manual.md).
 
 ## Before you start
 
@@ -338,7 +338,7 @@ See [Connect Google Calendar — Public watch notifications](./google-calendar.m
 
 ## Updating
 
-> **Warning: back up before every update.** `./compass update` rebuilds with newer code. There is no rollback. Back up `~/compass/compass.yaml`, the Mongo volume, and the SuperTokens Postgres volume **together**. See [Backups and restore](./backup-and-restore.md).
+> **Warning: back up before every update.** `./compass update` rebuilds with newer code. There is no rollback. Back up `~/compass/compass.yaml`, the Mongo volumes, and the SuperTokens Postgres volume **together**. See [Backups and restore](./backup-and-restore.md).
 
 Then:
 
