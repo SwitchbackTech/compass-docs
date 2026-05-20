@@ -7,6 +7,9 @@
 # VSCode
 .vscode
 
+# Claude
+.claude
+
 # Generated files
 .docusaurus
 .cache-loader
