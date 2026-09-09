@@ -262,8 +262,13 @@ scrolls, so the first wheel tick does not re-rasterize the backdrop.
 
 - **Status:** a **Meeting page** switch reflects whether the page is
   live. When on, it shows the meeting link with Copy and
-  **Open meeting page**. When off, it shows "Off. Turn it on to share
-  your link." and the address the page will use.
+  **Open meeting page**. When off and the page has been saved, it
+  still shows the meeting link with Copy (not Open, because the public
+  page answers not found) and the line "Off. Guests can use this link
+  once you turn it on." When off and the host has never saved a page,
+  it shows "Off. Turn it on to share your link." and "It will be at"
+  plus the address. Typed-but-unsaved address edits do not change the
+  copyable link until Save.
   Once a page has been saved, a broken calendar connection does not
   hide the switch or the link. A status banner above the header says
   what is wrong: reconnect (`Guests can't book right now.` plus the
@@ -296,11 +301,18 @@ scrolls, so the first wheel tick does not re-rasterize the backdrop.
 - **First run:** before any draft exists, Meeting settings open a guided
   setup wizard: one question per screen with "Step N of M", a title, one
   sentence, and **Continue** (Mod+Enter). Steps are address, weekly hours,
-  duration, destination calendar (only when more than one writable calendar
-  exists), then go live. Plain Enter continues from the address input or the
-  Continue button; `k` continues and `j` goes back when focus is not in an
-  editable target; Esc goes back one step (on step 1 it closes Settings).
-  Address **Continue** saves a disabled draft so the slug is reserved.
+  duration, destination calendar (hidden only when exactly one writable
+  calendar exists; with zero writable calendars the destination step shows
+  "Connect a calendar you can write to before going live." and connect
+  buttons, **Continue** stays disabled, and go live is unreachable until a
+  writable calendar exists), then go live. Every step after the first shows
+  a **Back** button beside **Continue**. The keyboard hint row labels its
+  keys ("Enter Continue", "Esc Back", "K Next", "J Back"). Plain Enter
+  continues from the address input or the Continue button; `k` continues and
+  `j` goes back when focus is not in an editable target; Esc goes back one
+  step (on step 1 it closes Settings). When the address step fails with
+  "That address is already taken. Try another.", focus moves to the address
+  field. Address **Continue** saves a disabled draft so the slug is reserved.
   **Turn on and copy link** on the last step saves with `enabled: true`,
   copies the link, and then shows the full form with the switch focused.
 - **Discovery:** a signed-in host whose page is not live sees a sidebar
@@ -643,6 +655,10 @@ first scroll: the panel is promoted at mount, and an inner wrapper owns
 overflow so the transform transition is not on the scroll container. The
 Meeting tab's lazy chunk reserves height so the dialog does not collapse
 to the nav column while it loads.
+
+An off Meeting page that already has an address still shows the meeting
+link with Copy, without Open, and the line that guests can use the link
+once the page is on.
 
 A host who returns to Compass after a guest booked sees one toast for the
 new meetings, with Show jumping to that week. Compass still does not send
